@@ -72,3 +72,13 @@ Invariant: im-imagingstudy-01
 Description: "A DICOM instance UID must start with 'urn:oid:'"
 * severity = #warning
 * expression = "identifier.where(system='urn:dicom:uid').value.startsWith('urn:oid:')"
+
+
+Instance: example-imagingstudy
+InstanceOf: ImImagingStudy
+Usage: #example
+Title: "Example Prostate MRI ImagingStudy"
+* status = #available
+* subject = Reference(example-male-patient)
+* identifier[studyInstanceUid].system = "urn:dicom:uid"
+* identifier[studyInstanceUid].value = "urn:oid:1.2.840.113619.2.55.3.604688433.781.1591782334.467"

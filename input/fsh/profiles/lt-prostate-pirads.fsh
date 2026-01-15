@@ -19,7 +19,7 @@ Severity: #error
 Profile: LTProstatePIRADSObservation
 Parent: Observation
 Id: lt-prostate-pirads-observation
-Title: "PI-RADS Score Observation"
+Title: "PI-RADS Score"
 Description: "Observation representing a PI-RADS score (1–5) for a prostate lesion, as part of prostate cancer diagnostics."
 * status 1..1
 * status = #final
