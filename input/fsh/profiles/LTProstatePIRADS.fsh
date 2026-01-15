@@ -16,7 +16,6 @@ Expression: "$this <= 5"
 Severity: #error
 
 
-
 Profile: LTProstatePIRADSObservation
 Parent: Observation
 Id: lt-prostate-pirads-observation
@@ -48,7 +47,7 @@ Title: "Example PI-RADS Observation — Lesion 1 in Peripheral Zone"
 Usage: #example
 * status = #final
 * code = $sct#350501000146102 "Prostate Imaging-Reporting and Data System score"
-* subject = Reference(example-patient)
+* subject = Reference(example-male-patient)
 * encounter = Reference(example-encounter1)
 * effectiveDateTime = "2025-09-22T10:30:00Z"
 * valueInteger = 4
