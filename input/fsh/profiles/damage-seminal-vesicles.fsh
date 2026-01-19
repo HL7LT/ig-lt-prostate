@@ -22,9 +22,9 @@ Description: "Anatomical location of seminal vesicle damage."
 * ^status = #active
 * ^publisher = "HL7 Lithuania"
 
-* $sct#24028007 "Right (qualifier value)"
-* $sct#7771000  "Left (qualifier value)"
-* $sct#36082003 "Structure of base of prostate (body structure)"
+* $sct#74308000 "Structure of right seminal vesicle (body structure)"
+* $sct#42320003 "Structure of left seminal vesicle (body structure)"
+* $sct#36082003 "Structure of base of prostate (body structure)" //Should this be prostate base or should we find base of seminal vesicles?
 
 
 Profile: LTSeminalVesicleDamage
@@ -63,6 +63,6 @@ Usage: #example
 * effectiveDateTime = "2026-01-13T14:45:00+02:00"
 
 * valueCodeableConcept = $sct#52101004 "Present (qualifier value)"
-* bodySite = $sct#7771000 "Left (qualifier value)"
+* bodySite = $sct#42320003 "Structure of left seminal vesicle (body structure)"
 
 * method = $sct#75691003 "Magnetic resonance imaging of prostate (procedure)"
