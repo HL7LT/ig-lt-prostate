@@ -5,19 +5,7 @@ Description: "Zones of the prostate used for PI-RADS scoring."
 * include $sct#399384005 "Structure of transition zone of prostate"
 * include $sct#279491002 "Structure of peripheral zone of prostate"
 
-
-Invariant: pirads-min
-Description: "PI-RADS score must be at least 1."
-Expression: "$this >= 1"
-Severity: #error
-
-Invariant: pirads-max
-Description: "PI-RADS score must be at most 5."
-Expression: "$this <= 5"
-Severity: #error
-
-
-Profile: c
+Profile: LTProstatePIRADSAssessment
 Parent: LTBaseObservation
 Id: lt-prostate-pirads-assessment
 Title: "PI-RADS Assessment"

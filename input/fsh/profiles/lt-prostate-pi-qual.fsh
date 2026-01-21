@@ -9,15 +9,6 @@ Id: lt-prostate-piqual-vs
 Title: "PI-QUAL ValueSet"
 * include codes from system LTProstatePIQualCS
 
-Invariant: piqual-min
-Description: "PI-QUAL must be at least 1."
-Expression: "$this >= 1"
-Severity: #error
-
-Invariant: piqual-max
-Description: "PI-QUAL must be at most 3."
-Expression: "$this <= 3"
-Severity: #error
 
 Profile: LTProstatePIQualObservation
 Parent: LTBaseObservation
