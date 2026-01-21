@@ -5,6 +5,7 @@ Description: "Zones of the prostate used for PI-RADS scoring."
 * include $sct#399384005 "Structure of transition zone of prostate"
 * include $sct#279491002 "Structure of peripheral zone of prostate"
 
+
 Invariant: pirads-min
 Description: "PI-RADS score must be at least 1."
 Expression: "$this >= 1"
@@ -16,11 +17,11 @@ Expression: "$this <= 5"
 Severity: #error
 
 
-Profile: LTProstatePIRADSObservation
-Parent: Observation
-Id: lt-prostate-pirads-observation
-Title: "PI-RADS Score"
-Description: "Observation representing a PI-RADS score (1–5) for a prostate lesion, as part of prostate cancer diagnostics."
+Profile: c
+Parent: LTBaseObservation
+Id: lt-prostate-pirads-assessment
+Title: "PI-RADS Assessment"
+Description: "PI-RADS assessment (score 1–5) assigned to a prostate lesion based on mpMRI findings."
 * status 1..1
 * status = #final
 * code 1..1
@@ -33,24 +34,30 @@ Description: "Observation representing a PI-RADS score (1–5) for a prostate le
 * effective[x] only dateTime
 * value[x] 1..1
 * value[x] only integer
-* valueInteger obeys pirads-min and pirads-max
+* valueInteger obeys prostate-score-min-1 and prostate-score-max-5
+// lesion --> this PI-RADS is assigned to
+* focus 1..1
+* focus only Reference(LTProstateLesion)
+// anatomical zone context
 * bodySite 1..1
 * bodySite from LTProstateZoneVS (required)
+// PI-RADS version
 * method 0..1
-* method.text ^short = "PI-RADS version or method (e.g., PI-RADS v2.1)"
+* method.text ^short = "PI-RADS version (e.g., PI-RADS v2.1)"
 * note 0..*
 
 
 Instance: example-pirads-lesion1
-InstanceOf: LTProstatePIRADSObservation
-Title: "Example PI-RADS Observation — Lesion 1 in Peripheral Zone"
+InstanceOf: LTProstatePIRADSAssesment
+Title: "Example PI-RADS Assessment — Lesion 1"
 Usage: #example
 * status = #final
 * code = $sct#350501000146102 "Prostate Imaging-Reporting and Data System score"
 * subject = Reference(example-male-patient)
 * encounter = Reference(example-encounter1)
 * effectiveDateTime = "2025-09-22T10:30:00Z"
+* focus = Reference(example-prostate-lesion1)
 * valueInteger = 4
 * bodySite = $sct#279491002 "Structure of peripheral zone of prostate"
 * method.text = "PI-RADS v2.1"
-* note.text = "Lesion 1 in the right peripheral zone, 8 mm, high suspicion."
+* note.text = "Lesion 1 in the peripheral zone, 8 mm, high suspicion."

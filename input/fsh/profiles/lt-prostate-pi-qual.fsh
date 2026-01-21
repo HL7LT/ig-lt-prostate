@@ -20,7 +20,7 @@ Expression: "$this <= 3"
 Severity: #error
 
 Profile: LTProstatePIQualObservation
-Parent: Observation
+Parent: LTBaseObservation
 Id: lt-prostate-piqual-observation
 Title: "PI-QUAL Score"
 Description: "Observation representing the PI-QUAL image quality score for prostate MRI."
@@ -36,7 +36,7 @@ Description: "Observation representing the PI-QUAL image quality score for prost
 * effective[x] only dateTime
 * value[x] 1..1
 * value[x] only integer
-* valueInteger obeys piqual-min and piqual-max
+* valueInteger obeys prostate-score-min-1 and prostate-score-max-3
 * note 0..*
 
 Instance: example-piqual
