@@ -17,12 +17,10 @@ Description: "An anatomical lesion in the prostate identified on MRI."
 Instance: example-prostate-lesion1
 InstanceOf: LTProstateLesion
 Usage: #example
-Title: "Example Prostate Lesion 1"
+Title: "Example Prostate Lesion – Left Peripheral Zone"
 * patient = Reference(example-male-patient)
 * includedStructure.structure = $sct#279706003 "Structure of peripheral glandular zone of prostate"
 * includedStructure.laterality = $sct#7771000 "Left"
 * morphology = $sct#49755003 "Morphologically abnormal structure"
-* description = "Focal lesion in left peripheral zone."
-
-
+* description = "MRI-visible focal lesion in the left peripheral zone."
 

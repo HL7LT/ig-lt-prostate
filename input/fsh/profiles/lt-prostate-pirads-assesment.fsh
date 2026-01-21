@@ -48,7 +48,7 @@ Description: "PI-RADS assessment (score 1–5) assigned to a prostate lesion bas
 
 
 Instance: example-pirads-lesion1
-InstanceOf: LTProstatePIRADSAssesment
+InstanceOf: LTProstatePIRADSAssessment
 Title: "Example PI-RADS Assessment — Lesion 1"
 Usage: #example
 * status = #final
