@@ -8,21 +8,18 @@ Description: "Sequence/image types used in prostate mpMRI scoring (DICOM termino
 * include $dicom-dcm#110816 "T1 Weighted Dynamic Contrast Enhanced MR Signal Intensity"
 
 
-Invariant: score-min
-Description: "Score must be at least 1."
-Expression: "$this >= 1"
-Severity: #error
-
-Invariant: score-max
-Description: "Score must be at most 5."
-Expression: "$this <= 5"
-Severity: #error
-
 Profile: LTProstateSequenceScoreObservation
 Parent: LTBaseObservation
 Id: lt-prostate-sequence-score-observation
 Title: "Prostate MRI Sequence Score Observation"
-Description: "Numeric 1–5 score for a specific prostate MRI sequence (T2, DWI, ADC, DCE) for a given prostate lesion."
+Description: """
+Observation representing a numeric (1–5) assessment score for a specific prostate
+MRI sequence (T2-weighted, DWI, ADC or DCE), evaluated for a defined prostate lesion.
+
+These sequence-level scores represent the individual imaging components used
+to derive the overall PI-RADS assessment, but do not themselves constitute a
+final diagnostic conclusion.
+"""
 * status 1..1
 * status = #final
 * code 1..1
@@ -35,7 +32,7 @@ Description: "Numeric 1–5 score for a specific prostate MRI sequence (T2, DWI,
 * effective[x] only dateTime
 * value[x] 1..1
 * value[x] only integer
-* valueInteger obeys score-min and score-max
+* valueInteger obeys prostate-score-min-1 and prostate-score-max-5
 * focus 1..1
 * focus only Reference(LTProstateLesion)
 * bodySite 0..1

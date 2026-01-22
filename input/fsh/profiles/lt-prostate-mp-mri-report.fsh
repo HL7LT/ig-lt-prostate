@@ -9,7 +9,16 @@ Profile: LTProstateMpMRIReport
 Parent: ImDiagnosticReport
 Id: lt-prostate-mpmri-report
 Title: "Prostate mpMRI Diagnostic Report"
-Description: "DiagnosticReport for prostate MRI (bi-parametric or multi-parametric) in the Lithuanian prostate diagnostics workflow. Acts as the anchor for structured findings (PI-RADS, sequence scores, PI-QUAL, prostate volume, PSAD etc.) and links to the narrative Composition."
+Description: """
+DiagnosticReport representing a prostate MRI examination (bi-parametric or multi-parametric).
+
+This resource acts as the clinical and temporal anchor for all imaging-based
+assessments and measurements, including PI-RADS assessment, MRI sequence scores,
+PI-QUAL image quality evaluation, prostate volume and PSAD.
+
+The report itself contains the overall narrative conclusion, while detailed
+findings are represented as linked Observation and BodyStructure resources.
+"""
 * subject 1..1
 * subject only Reference(LTBasePatient)
 * encounter 0..1

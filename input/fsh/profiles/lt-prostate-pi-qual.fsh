@@ -14,7 +14,14 @@ Profile: LTProstatePIQualObservation
 Parent: LTBaseObservation
 Id: lt-prostate-piqual-observation
 Title: "PI-QUAL Score"
-Description: "Observation representing the PI-QUAL image quality score for prostate MRI."
+Description: """
+PI-QUAL is a quality assurance score for prostate MRI examinations.
+It reflects whether the technical image quality is sufficient to allow
+reliable interpretation and PI-RADS assessment.
+
+Low PI-QUAL scores indicate that PI-RADS results should be interpreted
+with caution or may not be reliable.
+"""
 * status 1..1
 * status = #final
 * code 1..1
