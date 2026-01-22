@@ -57,6 +57,15 @@ Description: "Example mpMRI report anchor. Structured results will be added as s
 * code.coding.code = #719178004
 * code.coding.display = "Multiparametric magnetic resonance imaging of prostate (procedure)"
 * conclusion = "Multiparametric prostate MRI performed. Peripheral zone focus with high suspicion. See linked observations."
+// Imaging findings
+* result[+] = Reference(example-pirads-lesion1)
+* result[+] = Reference(example-dwi-score)
+* result[+] = Reference(example-piqual)
+// Clinical context
+* supportingInfo[+] = Reference(prostate-psa-example)
+* supportingInfo[+] = Reference(prostate-volume-example)
+* supportingInfo[+] = Reference(prostate-psad-example)
+
 
 
 Instance: example-mri-procedure
@@ -66,3 +75,4 @@ Title: "Example Prostate MRI Procedure"
 * status = #completed
 * code = $sct#719178004 "Multiparametric magnetic resonance imaging of prostate"
 * subject = Reference(example-male-patient)
+
