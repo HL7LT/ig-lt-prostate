@@ -1,6 +1,9 @@
 // Aliases
 
+Alias: $sct = http://snomed.info/sct
+Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
 Alias: $laterality = http://hl7.org/fhir/ValueSet/bodysite-laterality
+Alias: $ucum = http://unitsofmeasure.org
 
 // Damage Status
 
