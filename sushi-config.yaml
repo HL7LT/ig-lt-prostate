@@ -25,7 +25,8 @@ dependencies:
   hl7.fhir.eu.base-r5: 0.1.0
   hl7.fhir.eu.extensions: current
 #  hl7.fhir.eu.imaging-r5: current
-  lt.hl7.fhir.vitalsigns: 0.0.1 
+  lt.hl7.fhir.vitalsigns: 0.0.1
+#  lt.hl7.fhir.laboratory: current
   
 # hl7.fhir.eu.imaging-r5: 0.1.0  
 # HL7 Europe Imaging FHIR IG (https://build.fhir.org/ig/hl7-eu/imaging-r5) not published yeat :(

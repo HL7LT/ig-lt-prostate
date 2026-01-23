@@ -107,9 +107,8 @@ but interprets change between studies.
 * component[sizeChangeMm].code 1..1
 * component[sizeChangeMm].code = LTProstatePreciseComponentCS#size-change-mm "Size change in millimeters"
 * component[sizeChangeMm].value[x] 1..1
-* component[sizeChangeMm].value[x] only Quantity
-* component[sizeChangeMm].valueQuantity.unit 1..1
-* component[sizeChangeMm].valueQuantity.unit = "mm"
+* component[sizeChangeMm].value[x] only $EuQuantityUrl
+* component[sizeChangeMm].valueQuantity = $ucum#mm
 
 
 Instance: example-precise-lesion1
