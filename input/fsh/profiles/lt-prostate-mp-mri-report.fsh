@@ -62,9 +62,12 @@ Description: "Example mpMRI report anchor. Structured results will be added as s
 * result[+] = Reference(example-dwi-score)
 * result[+] = Reference(example-piqual)
 // Clinical context
-* supportingInfo[+] = Reference(prostate-psa-example)
-* supportingInfo[+] = Reference(prostate-volume-example)
-* supportingInfo[+] = Reference(prostate-psad-example)
+* supportingInfo[+].reference = Reference(Observation/prostate-psa-example)
+* supportingInfo[=].type = http://terminology.hl7.org/CodeSystem/v2-0936#RSLT
+* supportingInfo[+].reference = Reference(Observation/prostate-volume-example)
+* supportingInfo[=].type = http://terminology.hl7.org/CodeSystem/v2-0936#RSLT
+* supportingInfo[+].reference = Reference(Observation/prostate-psad-example)
+* supportingInfo[=].type = http://terminology.hl7.org/CodeSystem/v2-0936#SCI
 
 
 
