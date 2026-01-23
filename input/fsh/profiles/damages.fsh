@@ -1,9 +1,6 @@
 // Aliases
 
-Alias: $sct = http://snomed.info/sct
-Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
 Alias: $laterality = http://hl7.org/fhir/ValueSet/bodysite-laterality
-Alias: $ucum = http://unitsofmeasure.org
 
 // Damage Status
 
@@ -106,6 +103,6 @@ Description: "MRI shows present damage of seminal vesicles at the prostate base.
 * valueCodeableConcept = $sct#52101004 "Present (qualifier value)"
 * bodySite = $sct#36082003 "Structure of base of prostate (body structure)"
 
-* subject = Reference(Patient/example)   // ← THIS WAS MISSING
+* subject = Reference(Patient/example)
 
 * method = $sct#75691003 "Magnetic resonance imaging of prostate (procedure)"
