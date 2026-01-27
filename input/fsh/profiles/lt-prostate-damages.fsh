@@ -23,9 +23,9 @@ Description: "Body structures that may be invaded or damaged by neoplasm."
 
 * $sct#60405008 "Structure of capsule of prostate (body structure)"
 * $sct#64739004 "Seminal vesicle structure (body structure)"
-* $sct#36082003 "Structure of base of prostate (body structure)"
+* $sct#36082003 "Structure of base of prostate (body structure)" //this should be base of seminal vesicle, but the code does not exist (also approved to exclude from laterality and add as body structure)
 * $sct#59820001 "Blood vessel structure (body structure)"
-* $sct#312500006  "Regional lymph node structure (body structure)"
+* $sct#312500006  "Regional lymph node structure (body structure)" //this should be neurovascular bundles, but could not find the code
 
 
 // Extension: LT Observation Structure Laterality
@@ -77,6 +77,25 @@ Description: "Damage/invasion status for a body structure, with optional lateral
 // Laterality (EU ValueSet)
 * extension contains LTObservationStructureLaterality named structureLaterality 0..1
 * extension[structureLaterality].value[x] only CodeableConcept
+
+// Regional lymph nodes: optional free-text localization + size (mm) of the largest changed node
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component ^slicing.ordered = false
+
+* component contains
+    regionalLymphNodeLocation 0..1 and
+    regionalLymphNodeLargestSize 0..1
+
+* component[regionalLymphNodeLocation].code = $sct#1279931003 "Anatomic location of lymph node microscopically examined (observable entity)" //location is not microscopically examined, but can-t find better code
+* component[regionalLymphNodeLocation].value[x] only string
+
+* component[regionalLymphNodeLargestSize].code = $sct#301866000 "Finding of size of lymph node (finding)" //maybe finding is not a great option here
+* component[regionalLymphNodeLargestSize].value[x] only Quantity
+* component[regionalLymphNodeLargestSize].valueQuantity.system = "http://unitsofmeasure.org"
+* component[regionalLymphNodeLargestSize].valueQuantity.code = #mm
+* component[regionalLymphNodeLargestSize].valueQuantity.unit = "mm"
 
 
 // Examples
@@ -139,3 +158,6 @@ Title: "Example: Lymph node, left, present"
 * valueCodeableConcept = $sct#52101004 "Present (qualifier value)"
 * bodySite = $sct#312500006  "Regional lymph node structure (body structure)"
 * extension[structureLaterality].valueCodeableConcept = $sct#7771000 "Left"
+
+* component[regionalLymphNodeLocation].valueString = "Largest suspicious node: left obturator region"
+* component[regionalLymphNodeLargestSize].valueQuantity = 9 'mm'
