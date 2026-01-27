@@ -27,6 +27,10 @@ Description: "Body structures that may be invaded or damaged by neoplasm."
 * $sct#59820001 "Blood vessel structure (body structure)"
 * $sct#312500006  "Regional lymph node structure (body structure)" //this should be neurovascular bundles, but could not find the code
 
+* $sct#89837001 "Urinary bladder structure (body structure)"
+* $sct#34402009 "Rectum structure (body structure)"
+* $sct#272673000 "Bone structure (body structure)"
+
 
 // Extension: LT Observation Structure Laterality
 
@@ -97,6 +101,39 @@ Description: "Damage/invasion status for a body structure, with optional lateral
 * component[regionalLymphNodeLargestSize].valueQuantity.code = #mm
 * component[regionalLymphNodeLargestSize].valueQuantity.unit = "mm"
 
+// Profile: Pelvic organ changes (bladder / rectum / bone)
+Profile: PelvicOrganChangesObservation
+Parent: Observation
+Id: pelvic-organ-changes-observation
+Title: "Pelvic Organ Changes"
+Description: "Bladder/rectal/bone changes. Same answer set as damages (none/suspected/present) + free text. No laterality."
+* ^publisher = "HL7 Lithuania"
+
+* status 1..1
+* status = #final (exactly)
+
+* category 1..1
+* category = $observation-category#exam
+
+* code 1..1
+* code = $sct#263703002 "Changed status (qualifier value)"
+* subject 1..1
+
+// Answer: None / Suspected / Present (reuse same VS)
+* value[x] 1..1
+* value[x] only CodeableConcept
+* valueCodeableConcept from DamageStatus (required)
+
+// Where (reuse the same body structures VS)
+* bodySite 1..1
+* bodySite from DamageBodyStructuresVS (required)
+
+// Free text line
+* note 0..1
+* note.text 1..1
+
+* component 0..0
+
 
 // Examples
 
@@ -161,3 +198,37 @@ Title: "Example: Lymph node, left, present"
 
 * component[regionalLymphNodeLocation].valueString = "Largest suspicious node: left obturator region"
 * component[regionalLymphNodeLargestSize].valueQuantity = 9 'mm'
+
+// Examples: Changes in the bladder / rectum / bones (all have optional free text)
+Instance: ExampleChange-Bladder-Suspected
+InstanceOf: PelvicOrganChangesObservation
+Title: "Example: Bladder changes, suspected"
+* status = #final
+* category = $observation-category#exam
+* code = $sct#263703002 "Changed status (qualifier value)"
+* subject = Reference(Patient/example)
+* valueCodeableConcept = $sct#415684004 "Suspected (qualifier value)"
+* bodySite = $sct#89837001 "Urinary bladder structure (body structure)"
+* note.text = "Bladder wall thickening; non-neoplastic changes favored. Correlate clinically."
+
+Instance: ExampleChange-Rectum-None
+InstanceOf: PelvicOrganChangesObservation
+Title: "Example: Rectal changes, none"
+* status = #final
+* category = $observation-category#exam
+* code = $sct#263703002 "Changed status (qualifier value)"
+* subject = Reference(Patient/example)
+* valueCodeableConcept = $sct#260413007 "None (qualifier value)"
+* bodySite = $sct#34402009 "Rectum structure (body structure)"
+* note.text = "No rectal wall changes."
+
+Instance: ExampleChange-Bone-Present
+InstanceOf: PelvicOrganChangesObservation
+Title: "Example: Bone changes, present"
+* status = #final
+* category = $observation-category#exam
+* code = $sct#263703002 "Changed status (qualifier value)"
+* subject = Reference(Patient/example)
+* valueCodeableConcept = $sct#52101004 "Present (qualifier value)"
+* bodySite = $sct#272673000 "Bone structure (body structure)"
+* note.text = "Sclerotic lesions in pelvic bones suspicious for metastases; recommend PSMA PET/CT."
