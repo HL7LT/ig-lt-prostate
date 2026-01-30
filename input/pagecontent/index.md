@@ -21,7 +21,10 @@ It covers the following clinical domains:
 
 * **Laboratory testing** — primarily **Prostate-Specific Antigen (PSA)** measurement,
 * **Imaging acquisition** — multiparametric or biparametric prostate MRI,
-* **Radiological interpretation and reporting** using **PI-RADS** and **PRECISE**,
+* **Radiological interpretation and reporting** using:
+  * **PI-RADS** for **lesion-level risk stratification**, and  
+  * **PRECISE** for **exam-level longitudinal assessment of disease change over time**,
+* Detailed anatomical localisation of prostate findings using the **PI-RADS 39-sector model**, represented with SNOMED CT body structure codes,
 * Explicit modelling of **assessment and workflow decisions**,
 * **Referrals** to urologists, radiologists, and pathologists,
 * **Invasive diagnostic procedures** — prostate biopsy,
@@ -44,10 +47,31 @@ The modelling approach is based on the following core principles:
    PSA testing, prostate MRI, radiological scoring, biopsy, and pathology require domain-specific profiles that differ fundamentally from general preventive or lifestyle-based models.
 
 4. **Longitudinal coherence**  
-   All data elements are designed to support linkage across time, allowing screening results, follow-up imaging, biopsies, pathology, and surveillance data to be connected into a continuous clinical history.
+   All data elements are designed to support linkage across time, allowing screening results, follow-up imaging, biopsies, pathology, and surveillance data to be connected into a continuous clinical history.  
+   PRECISE assessments are modelled as **exam-level longitudinal observations**, linked to prior MRI examinations, enabling standardized tracking of progression, stability, or regression across follow-up studies.
 
 5. **Structured but flexible documentation**  
    The guide supports fully structured, partially structured, and narrative data, allowing both standardized data exchange and necessary clinical nuance.
+
+6. **High-resolution anatomical localisation**  
+   Prostate lesions are localized using the full **PI-RADS 39-sector model**, enabling precise, standardized anatomical referencing across imaging, pathology, and longitudinal follow-up.
+
+7. **Lesion-centric scoring with exam-level interpretation**  
+   * PI-RADS assessments and MRI sequence component scores (T2, DWI, ADC, DCE) are modelled **per lesion**.  
+   * PRECISE assessments are modelled **per exam/patient**, summarizing overall longitudinal change informed by lesion-level findings.
+
+## Radiology Assessment Architecture
+
+The guide follows a layered radiology modelling approach:
+
+* **LTProstateMpMRIReport** acts as the clinical and temporal anchor for each MRI examination.
+* **LTProstateLesion (BodyStructure)** represents anatomically localized lesions using the PI-RADS 39-sector model.
+* **PI-RADS assessments** are assigned **per lesion**.
+* **Sequence scores (T2, DWI, ADC, DCE)** are recorded **per lesion and per sequence**.
+* **PI-QUAL** represents **exam-level image quality**.
+* **PRECISE** represents **exam-level longitudinal change**, linked to prior MRI examinations.
+
+This structure ensures clear separation between acquisition, lesion characterization, per-sequence scoring, and longitudinal disease assessment.
 
 ## Content of the Guide
 
@@ -77,8 +101,8 @@ Navigate the sections below to access the profiles, terminology bindings, and de
 
 ### Contributors
 
-| Name                                             | Role          | Organization                  |
-|--------------------------------------------------|---------------|-------------------------------|
-| [Igor Bossenko](https://about.askigor.eu)        | Primary Author| [HELEX](https://helex.health)|
+| Name                                             | Role           | Organization                  |
+|--------------------------------------------------|----------------|-------------------------------|
+| [Igor Bossenko](https://about.askigor.eu)        | Primary Author | [HELEX](https://helex.health)|
 | [Kati Laidus](https://www.linkedin.com/in/kati-laidus/) | Co-Author | [HELEX](https://helex.health)|
-| Martynas Bieliauskas                             | Reviewer      | [LMB](https://lmb.lt)        |
+| Martynas Bieliauskas                             | Reviewer       | [LMB](https://lmb.lt)        |
