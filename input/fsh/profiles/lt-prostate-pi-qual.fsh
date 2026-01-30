@@ -16,8 +16,10 @@ Id: lt-prostate-piqual-observation
 Title: "PI-QUAL Score"
 Description: """
 PI-QUAL is a quality assurance score for prostate MRI examinations.
-It reflects whether the technical image quality is sufficient to allow
-reliable interpretation and PI-RADS assessment.
+It reflects whether the technical image quality of a specific MRI exam
+is sufficient to allow reliable interpretation and PI-RADS assessment.
+
+This score applies to the entire MRI examination (not to individual lesions).
 
 Low PI-QUAL scores indicate that PI-RADS results should be interpreted
 with caution or may not be reliable.

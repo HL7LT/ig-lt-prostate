@@ -38,6 +38,7 @@ findings are represented as linked Observation and BodyStructure resources.
 * composition 1..1
 * composition only Reference($CompositionEuImagingUrl)
 * result 0..*
+* result ^short = "Imaging-based observations including PI-RADS, sequence scores, PI-QUAL and PRECISE assessment"
 * supportingInfo 0..*
 
 
@@ -61,6 +62,7 @@ Description: "Example mpMRI report anchor. Structured results will be added as s
 * result[+] = Reference(example-pirads-lesion1)
 * result[+] = Reference(example-dwi-score)
 * result[+] = Reference(example-piqual)
+* result[+] = Reference(example-precise-followup)
 // Clinical context
 * supportingInfo[+].reference = Reference(Observation/prostate-psa-example)
 * supportingInfo[=].type = http://terminology.hl7.org/CodeSystem/v2-0936#RSLT
