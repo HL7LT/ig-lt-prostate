@@ -1,6 +1,6 @@
-CodeSystem: LTProstatePreciseCS
-Id: lt-prostate-precise-cs
-Title: "Lithuanian Prostate PRECISE CodeSystem"
+CodeSystem: PreciseCategoryProstateLtCS
+Id: precise-category-prostate-lt
+Title: "CodeSystem: Prostate - PRECISE Category"
 Description: """
 PRECISE categories for longitudinal assessment of prostate MRI follow-up examinations.
 These categories describe overall change compared to a prior MRI examination.
@@ -13,27 +13,35 @@ These categories describe overall change compared to a prior MRI examination.
 * #precise-5 "PRECISE 5 - Definite progression"
 * #precise-x "PRECISE X - Inadequate comparison or non-evaluable"
 
-ValueSet: LTProstatePreciseVS
-Id: lt-prostate-precise-vs
-Title: "PRECISE Category ValueSet"
-Description: "Allowed PRECISE categories for longitudinal prostate MRI assessment."
-* include codes from system LTProstatePreciseCS
 
-CodeSystem: LTProstatePreciseChangePatternCS
-Id: lt-prostate-precise-change-pattern-cs
-Title: "PRECISE Change Pattern CodeSystem"
+ValueSet: PreciseCategoryProstateLt
+Id: precise-category-prostate-lt
+Title: "ValueSet: Prostate - PRECISE Category"
+Description: "Allowed PRECISE categories for longitudinal prostate MRI assessment."
+* ^status = #active
+* ^publisher = "HL7 Lithuania"
+* include codes from system PreciseCategoryProstateLtCS
+
+
+CodeSystem: PreciseChangePatternProstateLtCS
+Id: precise-change-pattern-prostate-lt
+Title: "CodeSystem: Prostate - PRECISE Change Pattern"
 Description: "Pattern of change on follow-up MRI."
 * #local "Local change"
 * #diffuse "Diffuse change"
 
-ValueSet: LTProstatePreciseChangePatternVS
-Id: lt-prostate-precise-change-pattern-vs
-Title: "PRECISE Change Pattern ValueSet"
-* include codes from system LTProstatePreciseChangePatternCS
 
-CodeSystem: LTProstatePreciseComponentCS
-Id: lt-prostate-precise-component-cs
-Title: "PRECISE Component Codes"
+ValueSet: PreciseChangePatternProstateLt
+Id: precise-change-pattern-prostate-lt
+Title: "ValueSet: Prostate - PRECISE Change Pattern"
+* ^status = #active
+* ^publisher = "HL7 Lithuania"
+* include codes from system PreciseChangePatternProstateLtCS
+
+
+CodeSystem: PreciseComponentProstateLtCS
+Id: precise-component-prostate-lt
+Title: "CodeSystem: Prostate - PRECISE Component"
 Description: "Local codes for detailed PRECISE assessment components."
 * #precise-assessment "PRECISE longitudinal assessment"
 * #new-lesion "New lesion indicator"
@@ -41,9 +49,10 @@ Description: "Local codes for detailed PRECISE assessment components."
 * #best-sequence "Best MRI sequence for change assessment"
 * #size-change-mm "Size change in millimeters"
 
-Profile: LTProstatePreciseAssessment
+
+Profile: PreciseAssessmentProstateLt
 Parent: LTBaseObservation
-Id: lt-prostate-precise-assessment
+Id: precise-assessment-prostate-lt
 Title: "PRECISE Longitudinal Assessment"
 Description: """
 PRECISE is an exam-level longitudinal assessment for prostate MRI follow-up.
@@ -52,25 +61,23 @@ It summarizes overall change compared to a prior MRI examination, using the PREC
 PRECISE does not replace PI-RADS (which is lesion-level). Instead, it provides a
 patient/exam-level progression/regression category informed by lesion changes.
 """
+* ^publisher = "HL7 Lithuania"
 * status 1..1
 * status = #final
 * code 1..1
-* code = LTProstatePreciseComponentCS#precise-assessment "PRECISE longitudinal assessment"
+* code = PreciseComponentProstateLtCS#precise-assessment "PRECISE longitudinal assessment"
 * subject 1..1
 * subject only Reference(LTBasePatient)
 * encounter 0..1
 * encounter only Reference(LTBaseEncounter)
 * effective[x] 1..1
 * effective[x] only dateTime
-// Comparison baseline (prior exam or prior PRECISE)
 * derivedFrom 0..*
-* derivedFrom only Reference(ImImagingStudy)
+* derivedFrom only Reference(ImagingStudy)
 * derivedFrom ^short = "Prior ImagingStudy used as baseline for PRECISE longitudinal comparison"
-// PRECISE category (main result)
 * value[x] 1..1
 * value[x] only CodeableConcept
-* valueCodeableConcept from LTProstatePreciseVS (required)
-// Component slicing
+* valueCodeableConcept from PreciseCategoryProstateLt (required)
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
@@ -79,48 +86,37 @@ patient/exam-level progression/regression category informed by lesion changes.
     changePattern 0..1 and
     bestSequence 0..1 and
     sizeChangeMm 0..1
-* component[newLesion].code 1..1
-* component[newLesion].code = LTProstatePreciseComponentCS#new-lesion "New lesion indicator"
+* component[newLesion].code = PreciseComponentProstateLtCS#new-lesion "New lesion indicator"
 * component[newLesion].value[x] 1..1
 * component[newLesion].value[x] only boolean
-* component[changePattern].code 1..1
-* component[changePattern].code = LTProstatePreciseComponentCS#change-pattern "Change pattern"
+* component[changePattern].code = PreciseComponentProstateLtCS#change-pattern "Change pattern"
 * component[changePattern].value[x] 1..1
 * component[changePattern].value[x] only CodeableConcept
-* component[changePattern].valueCodeableConcept from LTProstatePreciseChangePatternVS (required)
-* component[bestSequence].code 1..1
-* component[bestSequence].code = LTProstatePreciseComponentCS#best-sequence "Best MRI sequence for change assessment"
+* component[changePattern].valueCodeableConcept from PreciseChangePatternProstateLt (required)
+* component[bestSequence].code = PreciseComponentProstateLtCS#best-sequence "Best MRI sequence for change assessment"
 * component[bestSequence].value[x] 1..1
 * component[bestSequence].value[x] only CodeableConcept
-* component[bestSequence].valueCodeableConcept from LTProstateSequenceTypeVS (extensible)
-* component[sizeChangeMm].code 1..1
-* component[sizeChangeMm].code = LTProstatePreciseComponentCS#size-change-mm "Size change in millimeters"
+* component[bestSequence].valueCodeableConcept from SequenceTypeProstateLt (extensible)
+* component[sizeChangeMm].code = PreciseComponentProstateLtCS#size-change-mm "Size change in millimeters"
 * component[sizeChangeMm].value[x] 1..1
-* component[sizeChangeMm].valueQuantity 1..1
 * component[sizeChangeMm].valueQuantity only $EuQuantityUrl
-* component[sizeChangeMm].valueQuantity.system 1..1
 * component[sizeChangeMm].valueQuantity.system = "http://unitsofmeasure.org"
-* component[sizeChangeMm].valueQuantity.code 1..1
 * component[sizeChangeMm].valueQuantity.code = #mm
-* component[sizeChangeMm].valueQuantity.unit 0..1
 
 
-
-Instance: example-precise-followup
-InstanceOf: LTProstatePreciseAssessment
+Instance: observation-prostate-precise-followup-example2
+InstanceOf: PreciseAssessmentProstateLt
 Usage: #example
-Title: "Example PRECISE Assessment – Follow-up MRI"
+Title: "Observation: Prostate - PRECISE Longitudinal Assessment Example"
 * status = #final
-* code = LTProstatePreciseComponentCS#precise-assessment "PRECISE longitudinal assessment"
+* code = PreciseComponentProstateLtCS#precise-assessment "PRECISE longitudinal assessment"
 * subject = Reference(example-male-patient)
 * encounter = Reference(example-encounter1)
 * effectiveDateTime = "2026-03-15T10:30:00Z"
-* valueCodeableConcept = LTProstatePreciseCS#precise-4 "PRECISE 4 - Likely progression"
-// prior exam used for comparison
 * derivedFrom[+] = Reference(example-imagingstudy)
-// Components (supporting details)
+* valueCodeableConcept = PreciseCategoryProstateLtCS#precise-4 "PRECISE 4 - Likely progression"
 * component[newLesion].valueBoolean = false
-* component[changePattern].valueCodeableConcept = LTProstatePreciseChangePatternCS#local "Local change"
+* component[changePattern].valueCodeableConcept = PreciseChangePatternProstateLtCS#local "Local change"
 * component[bestSequence].valueCodeableConcept = $dicom-dcm#113043 "Diffusion weighted"
 * component[sizeChangeMm].valueQuantity = 3 'mm'
 * note.text = "Follow-up MRI shows likely progression compared to prior study; progression driven by lesion growth and increased DWI restriction."

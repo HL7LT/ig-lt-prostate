@@ -1,6 +1,6 @@
-ValueSet: LTProstatePIRADSSectorVS
-Id: lt-prostate-pirads-sector-vs
-Title: "PI-RADS Prostate Sector (39-sector map)"
+ValueSet:  PIRADSSectorProstateLt
+Id: pirads-sector-prostate-lt
+Title: "ValueSet: Prostate - PI-RADS Sector (39-Sector Map)"
 Description: """
 PI-RADS prostate sector locations based on the 39-sector PI-RADS map.
 Includes detailed SNOMED CT body structure codes for base/mid/apex,
@@ -48,9 +48,9 @@ zone, side, and anterior/posterior subdivisions.
 * include $sct#716935009 "Structure of apical part of peripheral zone of left half prostate"
 
 
-Profile: LTProstatePIRADSAssessment
+Profile: PIRADSAssessmentProstateLt
 Parent: LTBaseObservation
-Id: lt-prostate-pirads-assessment
+Id: lpirads-assessment-prostate-lt
 Title: "PI-RADS Assessment"
 Description: """
 PI-RADS assessment (score 1–5) assigned to a specific prostate lesion
@@ -73,19 +73,19 @@ sector-based prostate body structures (39-sector map).
 * valueInteger obeys prostate-score-min-1 and prostate-score-max-5
 // PI-RADS is assigned to a specific lesion
 * focus 1..1
-* focus only Reference(LTProstateLesion)
+* focus only Reference(LesionProstateLt)
 // Anatomical context using PI-RADS 39-sector map
 * bodySite 1..1
-* bodySite from LTProstatePIRADSSectorVS (required)
+* bodySite from PIRADSSectorProstateLt (required)
 // PI-RADS version
 * method 0..1
 * method.text ^short = "PI-RADS version (e.g., PI-RADS v2.1)"
 * note 0..*
 
 
-Instance: example-pirads-lesion1
-InstanceOf: LTProstatePIRADSAssessment
-Title: "Example PI-RADS Assessment — Lesion 1"
+Instance: observation-prostate-pirads-lesion1-example2
+InstanceOf: PIRADSAssessmentProstateLt
+Title: "Observation: Prostate - PI-RADS Assessment (Lesion 1) Example"
 Usage: #example
 * status = #final
 * code = $sct#350501000146102 "Prostate Imaging-Reporting and Data System score"
@@ -93,7 +93,7 @@ Usage: #example
 * encounter = Reference(example-encounter1)
 * effectiveDateTime = "2025-09-22T10:30:00Z"
 // Link to lesion
-* focus = Reference(example-prostate-lesion1)
+* focus = Reference(bodyStructure-prostate-lesion1-example)
 // PI-RADS score
 * valueInteger = 4
 // Exact PI-RADS 39-sector location

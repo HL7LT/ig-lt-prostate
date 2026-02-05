@@ -1,16 +1,22 @@
-ValueSet: LTProstateISUPGradeGroupVS
-* include $sct#1279715000 "ISUP Grade Group 1 (Gleason 3+3)"
-* include $sct#1279714001 "ISUP Grade Group 2 (Gleason 3+4)"
-* include $sct#1279716004 "ISUP Grade Group 3 (Gleason 4+3)"
-* include $sct#1279717008 "ISUP Grade Group 4 (Gleason 8)"
-* include $sct#1279720000 "ISUP Grade Group 5 (Gleason 9–10)"
+ValueSet: ProstateIsupGradeGroupProstateLt
+Id: prostate-isup-grade-group-prostate-lt
+Title: "ValueSet: Prostate - ISUP Grade Group"
+Description: "ISUP Grade Groups for prostate cancer histopathology, aligned with Gleason grading."
+* ^status = #active
+* ^publisher = "HL7 Lithuania"
+* $sct#1279715000 "ISUP Grade Group 1 (Gleason 3+3)"
+* $sct#1279714001 "ISUP Grade Group 2 (Gleason 3+4)"
+* $sct#1279716004 "ISUP Grade Group 3 (Gleason 4+3)"
+* $sct#1279717008 "ISUP Grade Group 4 (Gleason 8)"
+* $sct#1279720000 "ISUP Grade Group 5 (Gleason 9–10)"
 
 
-Profile: LTProstateGleasonObservation
+Profile: GleasonIsupObservationProstateLt
 Parent: LTBaseObservation
-Id: lt-prostate-gleason-observation
-Title: "Prostate Histopathology – Gleason / ISUP Grade Group"
+Id: gleason-isup-observation-prostate-lt
+Title: "Gleason / ISUP Grade Group"
 Description: "Histopathological grading of prostate cancer using Gleason score and ISUP Grade Group."
+* ^publisher = "HL7 Lithuania"
 * status 1..1
 * status = #final
 * code 1..1
@@ -21,7 +27,7 @@ Description: "Histopathological grading of prostate cancer using Gleason score a
 * effective[x] only dateTime
 * value[x] 1..1
 * value[x] only CodeableConcept
-* valueCodeableConcept from LTProstateISUPGradeGroupVS (required)
+* valueCodeableConcept from ProstateIsupGradeGroupProstateLt (required)
 * focus 0..1
-* focus only Reference(LTProstateLesion)
+* focus only Reference(LesionProstateLt)
 * note 0..*

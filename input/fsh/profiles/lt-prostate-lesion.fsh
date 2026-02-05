@@ -1,6 +1,6 @@
-Profile: LTProstateLesion
+Profile: LesionProstateLt
 Parent: $EuBodyStructureUrl
-Id: lt-prostate-lesion
+Id: lesion-prostate-lt
 Title: "Prostate Lesion"
 Description: """
 An anatomical prostate lesion identified on MRI and localized using
@@ -13,7 +13,7 @@ side and position).
 * patient only Reference(LTBasePatient)
 * includedStructure 1..1
 * includedStructure.structure 1..1
-* includedStructure.structure from LTProstatePIRADSSectorVS (required)
+* includedStructure.structure from PIRADSSectorProstateLt (required)
 * morphology 0..1
 * description 0..1
 

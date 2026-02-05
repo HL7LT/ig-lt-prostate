@@ -1,18 +1,19 @@
-CodeSystem: LTProstatePIQualCS
-Id: lt-prostate-piqual-cs
-Title: "Lithuanian Prostate Imaging Quality (PI-QUAL) CodeSystem"
+CodeSystem: PiqualProstateLtCS
+Id: piqual-prostate-lt-cs
+Title: "CodeSystem: Prostate - PI-QUAL"
 Description: "Local code system for PI-QUAL image quality assessment."
 * #piqual "PI-QUAL image quality score"
 
-ValueSet: LTProstatePIQualVS
-Id: lt-prostate-piqual-vs
-Title: "PI-QUAL ValueSet"
-* include codes from system LTProstatePIQualCS
+
+ValueSet: PiqualProstateLtVS
+Id: piqual-prostate-lt-vs
+Title: "ValueSet: Prostate - PI-QUAL"
+* include codes from system PiqualProstateLtCS
 
 
-Profile: LTProstatePIQualObservation
+Profile: PiqualProstateLtObservation
 Parent: LTBaseObservation
-Id: lt-prostate-piqual-observation
+Id: piqual-observation-prostate-lt
 Title: "PI-QUAL Score"
 Description: """
 PI-QUAL is a quality assurance score for prostate MRI examinations.
@@ -24,10 +25,11 @@ This score applies to the entire MRI examination (not to individual lesions).
 Low PI-QUAL scores indicate that PI-RADS results should be interpreted
 with caution or may not be reliable.
 """
+* ^publisher = "HL7 Lithuania"
 * status 1..1
 * status = #final
 * code 1..1
-* code from LTProstatePIQualVS (required)
+* code from PiqualProstateLtVS (required)
 * subject 1..1
 * subject only Reference(LTBasePatient)
 * encounter 0..1
@@ -39,11 +41,13 @@ with caution or may not be reliable.
 * valueInteger obeys prostate-score-min-1 and prostate-score-max-3
 * note 0..*
 
-Instance: example-piqual
-InstanceOf: LTProstatePIQualObservation
+
+Instance: observation-prostate-piqual-example
+InstanceOf: PiqualProstateLtObservation
 Usage: #example
+Title: "Observation: Prostate - PI-QUAL Score Example"
 * status = #final
-* code = LTProstatePIQualCS#piqual "PI-QUAL image quality score"
+* code = PiqualProstateLtCS#piqual "PI-QUAL image quality score"
 * subject = Reference(example-male-patient)
 * encounter = Reference(example-encounter1)
 * effectiveDateTime = "2025-09-22T10:30:00Z"

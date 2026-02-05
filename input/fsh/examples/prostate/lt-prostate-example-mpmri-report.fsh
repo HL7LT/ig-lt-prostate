@@ -1,5 +1,5 @@
 Instance: bodyStructure-prostate-lesion1-example
-InstanceOf: LTProstateLesion
+InstanceOf: LesionProstateLt
 Usage: #example
 Title: "BodyStructure: Prostate - Lesion (Anterior Mid Transition Zone, crosses midline) Example"
 * patient = Reference(example-male-patient)
@@ -9,7 +9,7 @@ Title: "BodyStructure: Prostate - Lesion (Anterior Mid Transition Zone, crosses 
 
 
 Instance: observation-prostate-pirads-lesion1-example
-InstanceOf: LTProstatePIRADSAssessment
+InstanceOf: PIRADSAssessmentProstateLt
 Usage: #example
 Title: "Observation: Prostate - PI-RADS Assessment (Lesion 1) Example"
 * status = #final
@@ -25,7 +25,7 @@ Title: "Observation: Prostate - PI-RADS Assessment (Lesion 1) Example"
 
 
 Instance: observation-prostate-t2-score-lesion1-example
-InstanceOf: LTProstateSequenceScoreObservation
+InstanceOf: SequenceScoreProstateLt
 Usage: #example         
 Title: "Observation: Prostate - T2 Score (Lesion 1) Example"
 * status = #final
@@ -39,7 +39,7 @@ Title: "Observation: Prostate - T2 Score (Lesion 1) Example"
 
 
 Instance: observation-prostate-dwi-score-lesion1-example
-InstanceOf: LTProstateSequenceScoreObservation
+InstanceOf: SequenceScoreProstateLt
 Usage: #example
 Title: "Observation: Prostate - DWI Score (Lesion 1) Example"
 * status = #final
@@ -53,7 +53,7 @@ Title: "Observation: Prostate - DWI Score (Lesion 1) Example"
 
 
 Instance: observation-prostate-adc-score-lesion1-example
-InstanceOf: LTProstateSequenceScoreObservation
+InstanceOf: SequenceScoreProstateLt
 Usage: #example
 Title: "Observation: Prostate - ADC Score (Lesion 1) Example"
 * status = #final
@@ -67,7 +67,7 @@ Title: "Observation: Prostate - ADC Score (Lesion 1) Example"
 
 
 Instance: observation-prostate-dce-score-lesion1-example
-InstanceOf: LTProstateSequenceScoreObservation
+InstanceOf: SequenceScoreProstateLt
 Usage: #example
 Title: "Observation: Prostate - DCE (Lesion 1, Positive) Example"
 * status = #final
@@ -81,18 +81,18 @@ Title: "Observation: Prostate - DCE (Lesion 1, Positive) Example"
 
 
 Instance: observation-prostate-precise-followup-example
-InstanceOf: LTProstatePreciseAssessment
+InstanceOf: PreciseAssessmentProstateLt
 Usage: #example
 Title: "Observation: Prostate - PRECISE Longitudinal Assessment Example"
 * status = #final
-* code = LTProstatePreciseComponentCS#precise-assessment "PRECISE longitudinal assessment"
+* code = PreciseComponentProstateLtCS#precise-assessment "PRECISE longitudinal assessment"
 * subject = Reference(example-male-patient)
 * encounter = Reference(example-encounter1)
 * effectiveDateTime = "2024-05-27T10:30:00Z"
-* valueCodeableConcept = LTProstatePreciseCS#precise-3 "PRECISE 3 - Stable disease"
+* valueCodeableConcept = PreciseCategoryProstateLtCS#precise-3 "PRECISE 3 - Stable disease"
 * derivedFrom[+] = Reference(example-imagingstudy)
 * component[newLesion].valueBoolean = false
-* component[changePattern].valueCodeableConcept = LTProstatePreciseChangePatternCS#local "Local change"
+* component[changePattern].valueCodeableConcept = PreciseChangePatternProstateLtCS#local "Local change"
 * component[bestSequence].valueCodeableConcept = $dicom-dcm#113043 "Diffusion weighted"
 * note.text = "Stable disease compared to prior MRI examinations."
 
@@ -169,7 +169,7 @@ Title: "Composition: Prostate - mpMRI Report Example"
 
 
 Instance: diagnosticReport-prostate-mpmri-report-example
-InstanceOf: LTProstateMpMRIReport
+InstanceOf: MpMRIReportProstateLt
 Usage: #example
 Title: "DiagnosticReport: Prostate - mpMRI Report Example"
 * status = #final
@@ -178,9 +178,7 @@ Title: "DiagnosticReport: Prostate - mpMRI Report Example"
 * performer[author] = Reference(example-radiologist-role)
 * composition = Reference(Composition-prostate-mpmri-report-example)
 * effectiveDateTime = "2024-05-27T10:30:00Z"
-* code.coding.system = "http://snomed.info/sct"
-* code.coding.code = #719178004
-* code.coding.display = "Multiparametric magnetic resonance imaging of prostate (procedure)"
+* code = $sct#719178004 "Multiparametric magnetic resonance imaging of prostate (procedure)"
 * conclusion = "PI-RADS 5 lesion in the anterior transition zone (~32 mm), extending across midline. PRECISE 3 stable disease. No seminal vesicle invasion, no neurovascular bundle involvement, no regional lymphadenopathy. Possible capsular contact anteriorly."
 * result[+] = Reference(observation-prostate-pirads-lesion1-example)
 * result[+] = Reference(observation-prostate-t2-score-lesion1-example)
@@ -200,7 +198,7 @@ Title: "DiagnosticReport: Prostate - mpMRI Report Example"
 
 
 Instance: observation-prostate-seminal-vesicle-invasion-example
-InstanceOf: ProstateNeoplasmInvasionDamageObservation
+InstanceOf: NeoplasmInvasionProstateLt
 Usage: #example
 Title: "Observation: Prostate - Seminal Vesicle Invasion (Absent) Example"
 * status = #final
@@ -213,7 +211,7 @@ Title: "Observation: Prostate - Seminal Vesicle Invasion (Absent) Example"
 
 
 Instance: observation-prostate-neurovascular-bundle-invasion-example
-InstanceOf: ProstateNeoplasmInvasionDamageObservation
+InstanceOf: NeoplasmInvasionProstateLt
 Usage: #example
 Title: "Observation: Prostate - Neurovascular Bundle Invasion (Absent) Example"
 * status = #final
@@ -226,7 +224,7 @@ Title: "Observation: Prostate - Neurovascular Bundle Invasion (Absent) Example"
 
 
 Instance: observation-prostate-regional-lymph-node-invasion-example
-InstanceOf: ProstateNeoplasmInvasionDamageObservation
+InstanceOf: NeoplasmInvasionProstateLt
 Usage: #example
 Title: "Observation: Prostate - Regional Lymph Node Involvement (Absent) Example"
 * status = #final
@@ -239,7 +237,7 @@ Title: "Observation: Prostate - Regional Lymph Node Involvement (Absent) Example
 
 
 Instance: observation-prostate-capsule-invasion-suspected-example
-InstanceOf: ProstateNeoplasmInvasionDamageObservation
+InstanceOf: NeoplasmInvasionProstateLt
 Usage: #example
 Title: "Observation: Prostate - Capsular Invasion (Suspected) Example"
 * status = #final
@@ -252,7 +250,7 @@ Title: "Observation: Prostate - Capsular Invasion (Suspected) Example"
 
 
 Instance: observation-prostate-urinary-bladder-changes-example
-InstanceOf: PelvicOrganChangesObservation
+InstanceOf: PelvicOrganChangesProstateLt    
 Usage: #example
 Title: "Observation: Prostate - Urinary Bladder Wall Thickening Example"
 * status = #final
@@ -265,7 +263,7 @@ Title: "Observation: Prostate - Urinary Bladder Wall Thickening Example"
 
 
 Instance: observation-prostate-rectum-changes-example
-InstanceOf: PelvicOrganChangesObservation
+InstanceOf: PelvicOrganChangesProstateLt
 Usage: #example
 Title: "Observation: Prostate - Rectal Changes (Absent) Example"
 * status = #final
@@ -288,7 +286,7 @@ Description: "Right mid-gland peripheral zone sector (PI-RADS 39-sector map)."
 
 
 Instance: observation-prostate-peripheral-zone-diffuse-enhancement-example
-InstanceOf: PelvicOrganChangesObservation
+InstanceOf: PelvicOrganChangesProstateLt
 Usage: #example
 Title: "Observation: Prostate - Peripheral Zone Diffuse Enhancement (No Focal Lesion) Example"
 * status = #final
@@ -301,7 +299,7 @@ Title: "Observation: Prostate - Peripheral Zone Diffuse Enhancement (No Focal Le
 
 
 Instance: observation-prostate-gleason-gradegroup-example
-InstanceOf: LTProstateGleasonObservation
+InstanceOf: GleasonIsupObservationProstateLt
 Usage: #example
 Title: "Observation: Prostate - Gleason / ISUP Grade Group Example"
 * status = #final
@@ -336,3 +334,4 @@ Description: "Imaging finding representing a prostate lesion identified on mpMRI
 * hasMember[+] = Reference(observation-prostate-rectum-changes-example)
 * hasMember[+] = Reference(observation-prostate-peripheral-zone-diffuse-enhancement-example)
 * hasMember[+] = Reference(observation-prostate-precise-followup-example)
+
