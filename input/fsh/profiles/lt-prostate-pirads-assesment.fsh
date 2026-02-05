@@ -33,7 +33,7 @@ zone, side, and anterior/posterior subdivisions.
 * include $sct#716910003 "Structure of middle regional part of anterior fibromuscular stroma of left half prostate"
 * include $sct#716919002 "Structure of anterior middle regional part of peripheral zone of right half prostate"
 * include $sct#716920008 "Structure of anterior middle regional part of peripheral zone of left half prostate"
-// NOTE: Mid TZ central (IDs 27–28) not included — no SNOMED codes available
+// NB! : Mid TZ central (IDs 27–28) not included — no snomed codes available
 // APEX (Sectors 29–39)
 * include $sct#716938006 "Structure of posterolateral apical part of peripheral zone of right half prostate"
 * include $sct#716940001 "Structure of posteromedial apical part of peripheral zone of right half prostate"
