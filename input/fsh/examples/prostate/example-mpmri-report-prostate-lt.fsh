@@ -277,7 +277,7 @@ Title: "Observation: Prostate - Rectal Changes (Absent) Example"
 * note.text = "No rectal wall changes."
 
 
-Instance: bodyStructureProstatePeripheralZoneMidRightExample
+Instance: bodyStructure-prostate-peripheral-zone-mid-right-example
 InstanceOf: $EuBodyStructure
 Title: "BodyStructure: Prostate Peripheral Zone Mid-Gland Right (PI-RADS sector)"
 Description: "Right mid-gland peripheral zone sector (PI-RADS 39-sector map)."
@@ -296,7 +296,7 @@ Title: "Observation: Prostate - Peripheral Zone Diffuse Enhancement (No Focal Le
 * code = $sct#364636000 "Lesion observable (observable entity)"
 * subject = Reference(example-male-patient)
 * valueCodeableConcept = $sct#415684004 "Suspected (qualifier value)"
-* bodyStructure = Reference(bodyStructureProstatePeripheralZoneMidRightExample)
+* bodyStructure = Reference(bodyStructure-prostate-peripheral-zone-mid-right-example)
 * note.text = "Diffuse contrast enhancement in the right peripheral zone; no discrete focal lesion identified. No focal PI-RADS lesion in PZ."
 
 
@@ -312,3 +312,27 @@ Title: "Observation: Prostate - Gleason / ISUP Grade Group Example"
 * focus = Reference(bodyStructure-prostate-lesion1-example)
 * note.text = "Histopathology shows Gleason score 3+3. Patient managed with active surveillance."
 
+
+Instance: imfinding-prostate-lesion1-example
+InstanceOf: ImFinding
+Usage: #example
+Title: "ImagingFinding: Prostate - Lesion 1 Example"
+Description: "Imaging finding representing a prostate lesion identified on mpMRI."
+* status = #final
+* code = $sct#49755003 "Morphologically abnormal structure"
+* subject = Reference(example-male-patient)
+* effectiveDateTime = "2024-05-27T10:30:00Z"
+* bodyStructure = Reference(bodyStructure-prostate-lesion1-example)
+* hasMember[+] = Reference(observation-prostate-pirads-lesion1-example)
+* hasMember[+] = Reference(observation-prostate-t2-score-lesion1-example)
+* hasMember[+] = Reference(observation-prostate-dwi-score-lesion1-example)
+* hasMember[+] = Reference(observation-prostate-adc-score-lesion1-example)
+* hasMember[+] = Reference(observation-prostate-dce-score-lesion1-example)
+* hasMember[+] = Reference(observation-prostate-seminal-vesicle-invasion-example)
+* hasMember[+] = Reference(observation-prostate-neurovascular-bundle-invasion-example)
+* hasMember[+] = Reference(observation-prostate-regional-lymph-node-invasion-example)
+* hasMember[+] = Reference(observation-prostate-capsule-invasion-suspected-example)
+* hasMember[+] = Reference(observation-prostate-urinary-bladder-changes-example)
+* hasMember[+] = Reference(observation-prostate-rectum-changes-example)
+* hasMember[+] = Reference(observation-prostate-peripheral-zone-diffuse-enhancement-example)
+* hasMember[+] = Reference(observation-prostate-precise-followup-example)

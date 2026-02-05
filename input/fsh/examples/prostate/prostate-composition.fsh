@@ -67,7 +67,7 @@ Description: "ImComposition example summarizing prostate mpMRI findings for ADP 
 * section[findings].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Anterior transition zone lesion with PI-RADS 5. No seminal vesicle, neurovascular bundle, or nodal invasion. Possible anterior capsular contact. Diffuse enhancement in right peripheral zone without focal lesion.</div>"
 
 // Lesion + imaging findings
-* section[findings].entry[finding][+] = Reference(bodyStructure-prostate-lesion1-example)
+* section[findings].entry[finding][+] = Reference(imfinding-prostate-lesion1-example)
 * section[findings].entry[finding][+] = Reference(observation-prostate-pirads-lesion1-example)
 * section[findings].entry[finding][+] = Reference(observation-prostate-t2-score-lesion1-example)
 * section[findings].entry[finding][+] = Reference(observation-prostate-dwi-score-lesion1-example)
