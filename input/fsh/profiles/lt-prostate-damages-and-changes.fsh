@@ -1,5 +1,4 @@
 // ValueSet: Damage Status
-
 ValueSet: ProstateDamageAndChangeStatus
 Id: lt-prostate-damage-and-change-status
 Title: "Prostate Damage and Change Status"
@@ -13,7 +12,6 @@ Description: "Absent, suspected, present damage and change."
 
 
 // ValueSet: Damage Body Structures (includes base)
-
 ValueSet: ProstateBodyStructuresVS
 Id: lt-prostate-body-structures-vs
 Title: "Prostate Body Structures for Damages and Changes"
@@ -32,34 +30,25 @@ Description: "Body structures that may be damaged by neoplasm or have lesions."
 
 
 // Profile: Presence of direct invasion by neoplasm
-
 Profile: ProstateNeoplasmInvasionDamageObservation
 Parent: Observation
 Id: prostate-neoplasm-invasion-damage-observation
 Title: "Presence of Direct Invasion by Neoplasm to prostate Structures"
 Description: "Damage/invasion status for a prostate body structure."
 * ^publisher = "HL7 Lithuania"
-
 * status 1..1
 * status = #final (exactly)
-
 * category 1..1
 * category = $observation-category#exam
-
 * code 1..1
 * code = $sct#371487005 "Presence of direct invasion by neoplasm (observable entity)"
-
 * subject 1..1
-
 * value[x] 1..1
 * value[x] only CodeableConcept
 * valueCodeableConcept from ProstateDamageAndChangeStatus (required)
-
 * bodySite 0..0
-
 * bodyStructure 1..1
 * bodyStructure only Reference($EuBodyStructure)
-
 * note 0..1
 * note.text 1..1
 
@@ -72,26 +61,19 @@ Id: pelvic-organ-changes-observation
 Title: "Pelvic Organ Changes"
 Description: "Bladder, rectal, bone changes status in prostate cancer staging."
 * ^publisher = "HL7 Lithuania"
-
 * status 1..1
 * status = #final (exactly)
-
 * category 1..1
 * category = $observation-category#exam
-
 * code 1..1
 * code = $sct#364636000 "Lesion observable (observable entity)"
 * subject 1..1
-
 * value[x] 1..1
 * value[x] only CodeableConcept
 * valueCodeableConcept from ProstateDamageAndChangeStatus (required)
-
 * bodySite 0..0
-
 * bodyStructure 1..1
 * bodyStructure only Reference($EuBodyStructure)
-
 * note 0..1
 * note.text 1..1
 
