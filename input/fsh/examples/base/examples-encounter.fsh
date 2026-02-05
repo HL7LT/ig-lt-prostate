@@ -1,4 +1,4 @@
-Instance: example-encounter1
+Instance: example-encounter2
 InstanceOf: LTBaseEncounter
 Title: "Example of the first visit for the breast examination"
 Usage: #example
