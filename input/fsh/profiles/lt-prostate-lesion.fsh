@@ -1,7 +1,7 @@
 Profile: LesionProstateLt
 Parent: $EuBodyStructureUrl
 Id: lesion-prostate-lt
-Title: "Prostate Lesion"
+Title: "BodyStructure: Prostate Lesion"
 Description: """
 An anatomical prostate lesion identified on MRI and localized using
 the PI-RADS 39-sector model.

@@ -14,7 +14,7 @@ Description: "ISUP Grade Groups for prostate cancer histopathology, aligned with
 Profile: GleasonIsupObservationProstateLt
 Parent: LTBaseObservation
 Id: gleason-isup-observation-prostate-lt
-Title: "Gleason / ISUP Grade Group"
+Title: "Observation: Gleason / ISUP Grade Group"
 Description: "Histopathological grading of prostate cancer using Gleason score and ISUP Grade Group."
 * ^publisher = "HL7 Lithuania"
 * status 1..1
