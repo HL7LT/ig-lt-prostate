@@ -1,6 +1,6 @@
 CodeSystem: PreciseCategoryProstateLtCS
 Id: precise-category-prostate-lt
-Title: "CodeSystem: Prostate - PRECISE Category"
+Title: "Prostate - PRECISE Category"
 Description: """
 PRECISE categories for longitudinal assessment of prostate MRI follow-up examinations.
 These categories describe overall change compared to a prior MRI examination.
@@ -16,7 +16,7 @@ These categories describe overall change compared to a prior MRI examination.
 
 ValueSet: PreciseCategoryProstateLt
 Id: precise-category-prostate-lt
-Title: "ValueSet: Prostate - PRECISE Category"
+Title: "Prostate - PRECISE Category"
 Description: "Allowed PRECISE categories for longitudinal prostate MRI assessment."
 * ^status = #active
 * ^publisher = "HL7 Lithuania"
@@ -25,7 +25,7 @@ Description: "Allowed PRECISE categories for longitudinal prostate MRI assessmen
 
 CodeSystem: PreciseChangePatternProstateLtCS
 Id: precise-change-pattern-prostate-lt
-Title: "CodeSystem: Prostate - PRECISE Change Pattern"
+Title: "Prostate - PRECISE Change Pattern"
 Description: "Pattern of change on follow-up MRI."
 * #local "Local change"
 * #diffuse "Diffuse change"
@@ -33,7 +33,7 @@ Description: "Pattern of change on follow-up MRI."
 
 ValueSet: PreciseChangePatternProstateLt
 Id: precise-change-pattern-prostate-lt
-Title: "ValueSet: Prostate - PRECISE Change Pattern"
+Title: "Prostate - PRECISE Change Pattern"
 * ^status = #active
 * ^publisher = "HL7 Lithuania"
 * include codes from system PreciseChangePatternProstateLtCS
@@ -41,7 +41,7 @@ Title: "ValueSet: Prostate - PRECISE Change Pattern"
 
 CodeSystem: PreciseComponentProstateLtCS
 Id: precise-component-prostate-lt
-Title: "CodeSystem: Prostate - PRECISE Component"
+Title: "Prostate - PRECISE Component"
 Description: "Local codes for detailed PRECISE assessment components."
 * #precise-assessment "PRECISE longitudinal assessment"
 * #new-lesion "New lesion indicator"
@@ -53,7 +53,7 @@ Description: "Local codes for detailed PRECISE assessment components."
 Profile: PreciseAssessmentProstateLt
 Parent: LTBaseObservation
 Id: precise-assessment-prostate-lt
-Title: "PRECISE Longitudinal Assessment"
+Title: "Observation: PRECISE Longitudinal Assessment"
 Description: """
 PRECISE is an exam-level longitudinal assessment for prostate MRI follow-up.
 It summarizes overall change compared to a prior MRI examination, using the PRECISE framework.

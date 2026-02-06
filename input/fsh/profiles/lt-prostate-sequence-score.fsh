@@ -1,6 +1,6 @@
 ValueSet: SequenceTypeProstateLt
 Id: sequence-type-prostate-lt
-Title: "ValueSet: Prostate - mpMRI Sequence Type"
+Title: "Prostate - mpMRI Sequence Type"
 Description: "Sequence/image types used in prostate mpMRI scoring (DICOM terminology)."
 * ^status = #active
 * ^publisher = "HL7 Lithuania"
@@ -13,7 +13,7 @@ Description: "Sequence/image types used in prostate mpMRI scoring (DICOM termino
 Profile: SequenceScoreProstateLt
 Parent: LTBaseObservation
 Id: sequence-score-prostate-lt
-Title: "MRI Sequence Score"
+Title: "Observation: MRI Sequence Score"
 Description: """
 Observation representing a numeric (1–5) assessment score for a specific prostate
 MRI sequence (T2-weighted, DWI, ADC or DCE), evaluated for a defined prostate lesion.

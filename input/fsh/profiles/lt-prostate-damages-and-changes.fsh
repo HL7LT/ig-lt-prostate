@@ -14,7 +14,7 @@ Description: "Absent, suspected, or present damage and change status for prostat
 // ValueSet: Body Structures – Prostate LT
 ValueSet: BodyStructuresProstateLt
 Id: body-structures-prostate-lt
-Title: "ValueSet: Prostate - Body Structures"
+Title: "Prostate - Body Structures"
 Description: "Body structures that may be affected by prostate cancer invasion or local organ changes."
 * ^status = #active
 * ^publisher = "HL7 Lithuania"
@@ -33,7 +33,7 @@ Description: "Body structures that may be affected by prostate cancer invasion o
 Profile: NeoplasmInvasionProstateLt
 Parent: LTBaseObservation
 Id: neoplasm-invasion-prostate-lt
-Title: "Neoplasm Invasion"
+Title: "Observation: Neoplasm Invasion"
 Description: "Direct invasion of prostate-related structures by neoplasm."
 * ^publisher = "HL7 Lithuania"
 * status 1..1
@@ -59,7 +59,7 @@ Description: "Direct invasion of prostate-related structures by neoplasm."
 Profile: PelvicOrganChangesProstateLt
 Parent: LTBaseObservation
 Id: pelvic-organ-changes-prostate-lt
-Title: "Pelvic Organ Changes"
+Title: "Observation: Pelvic Organ Changes"
 Description: "Bladder, rectal, and bone changes in prostate cancer staging."
 * ^publisher = "HL7 Lithuania"
 * status 1..1

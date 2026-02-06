@@ -1,6 +1,6 @@
 ValueSet: MRITypeProstateLt
 Id: mri-type-prostate-lt
-Title: "ValueSet: Prostate - MRI Examination Type"
+Title: "Prostate - MRI Examination Type"
 Description: "Type of prostate MRI examination, including bi-parametric and multi-parametric MRI."
 * ^status = #active
 * ^publisher = "HL7 Lithuania"
@@ -11,7 +11,7 @@ Description: "Type of prostate MRI examination, including bi-parametric and mult
 Profile: MpMRIReportProstateLt
 Parent: ImDiagnosticReport
 Id: mpmri-report-prostate-lt
-Title: "Prostate mpMRI Diagnostic Report"
+Title: "Diagnostic Report: Prostate mpMRI"
 Description: "Diagnostic report representing a prostate MRI examination (bi-parametric or multi-parametric) that serves as the clinical anchor for imaging-based prostate assessment."
 * ^publisher = "HL7 Lithuania"
 * subject 1..1

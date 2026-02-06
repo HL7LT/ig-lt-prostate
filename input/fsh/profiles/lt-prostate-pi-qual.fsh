@@ -1,20 +1,20 @@
 CodeSystem: PiqualProstateLtCS
 Id: piqual-prostate-lt-cs
-Title: "CodeSystem: Prostate - PI-QUAL"
+Title: "Prostate - PI-QUAL"
 Description: "Local code system for PI-QUAL image quality assessment."
 * #piqual "PI-QUAL image quality score"
 
 
 ValueSet: PiqualProstateLtVS
 Id: piqual-prostate-lt-vs
-Title: "ValueSet: Prostate - PI-QUAL"
+Title: "Prostate - PI-QUAL"
 * include codes from system PiqualProstateLtCS
 
 
 Profile: PiqualProstateLtObservation
 Parent: LTBaseObservation
 Id: piqual-observation-prostate-lt
-Title: "PI-QUAL Score"
+Title: "Observation: I-QUAL Score"
 Description: """
 PI-QUAL is a quality assurance score for prostate MRI examinations.
 It reflects whether the technical image quality of a specific MRI exam

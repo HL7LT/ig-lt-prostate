@@ -1,6 +1,6 @@
 ValueSet:  PIRADSSectorProstateLt
 Id: pirads-sector-prostate-lt
-Title: "ValueSet: Prostate - PI-RADS Sector (39-Sector Map)"
+Title: "Prostate - PI-RADS Sector (39-Sector Map)"
 Description: """
 PI-RADS prostate sector locations based on the 39-sector PI-RADS map.
 Includes detailed SNOMED CT body structure codes for base/mid/apex,
@@ -51,7 +51,7 @@ zone, side, and anterior/posterior subdivisions.
 Profile: PIRADSAssessmentProstateLt
 Parent: LTBaseObservation
 Id: lpirads-assessment-prostate-lt
-Title: "PI-RADS Assessment"
+Title: "Observation: PI-RADS Assessment"
 Description: """
 PI-RADS assessment (score 1–5) assigned to a specific prostate lesion
 based on mpMRI findings.
