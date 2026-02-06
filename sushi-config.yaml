@@ -184,13 +184,28 @@ menu:
 # is specified by id or name, SUSHI will replace it with the correct
 # URL when generating the IG JSON.
 #
-# groups:
-#   GroupA:
-#     name: Group A
-#     description: The Alpha Group
-#     resources:
-#     - StructureDefinition/animal-patient
-#     - StructureDefinition/arm-procedure
+groups:
+  GroupA:
+    name: HL7 EU Imaging profiles
+    description: HL7 EU Imaging profiles
+    resources:
+    - StructureDefinition/ImComposition
+    - StructureDefinition/ImWadoEndpoint
+    - StructureDefinition/ImImagingStudy
+    - StructureDefinition/ImKeyImageImagingSelection
+    - StructureDefinition/ImKeyImageDocumentReference
+    - StructureDefinition/ImImagingSelection
+    - StructureDefinition/ImProcedure
+    - StructureDefinition/ImOrder
+    - StructureDefinition/ImImagingDevice
+    - StructureDefinition/ImImageIidViewerEndpoint
+    - StructureDefinition/ImFinding
+    - StructureDefinition/ImDiagnosticReport
+    - StructureDefinition/instance-description
+    - StructureDefinition/im-composition-diagnosticReportReference
+    - StructureDefinition/im-study-instance-uid-identifier
+    - StructureDefinition/im-accession-number-identifier
+
 #   GroupB:
 #     name: Group B
 #     description: The Beta Group
