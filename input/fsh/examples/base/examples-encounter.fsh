@@ -1,6 +1,6 @@
 Instance: example-encounter2
 InstanceOf: LTBaseEncounter
-Title: "Example of the first visit for the breast examination"
+Title: "Encounter: Prostate - Diagnostic Visit Example"
 Usage: #example
 * status = #completed
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB

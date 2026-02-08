@@ -1,7 +1,7 @@
 Instance: example-mpmri-composition
 InstanceOf: $CompositionEuImagingUrl
 Usage: #example
-Title: "Example mpMRI Composition"
+Title: "Composition: Prostate - mpMRI Report Example"
 * status = #final
 * subject = Reference(example-male-patient)
 * date = "2025-09-22T10:30:00Z"
