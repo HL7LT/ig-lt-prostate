@@ -49,6 +49,6 @@ Title: "Observation: Prostate - PI-QUAL Score Example"
 * status = #final
 * code = PiqualProstateLtCS#piqual "PI-QUAL image quality score"
 * subject = Reference(example-male-patient)
-* encounter = Reference(example-encounter1)
+* encounter = Reference(example-encounter2)
 * effectiveDateTime = "2025-09-22T10:30:00Z"
 * valueInteger = 3

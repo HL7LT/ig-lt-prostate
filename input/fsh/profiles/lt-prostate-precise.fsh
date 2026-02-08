@@ -111,7 +111,7 @@ Title: "Observation: Prostate - PRECISE Longitudinal Assessment Example"
 * status = #final
 * code = PreciseComponentProstateLtCS#precise-assessment "PRECISE longitudinal assessment"
 * subject = Reference(example-male-patient)
-* encounter = Reference(example-encounter1)
+* encounter = Reference(example-encounter2)
 * effectiveDateTime = "2026-03-15T10:30:00Z"
 * derivedFrom[+] = Reference(example-imagingstudy)
 * valueCodeableConcept = PreciseCategoryProstateLtCS#precise-4 "PRECISE 4 - Likely progression"

@@ -49,7 +49,7 @@ Title: "Observation: Prostate - DWI Score (Lesion 1) Example"
 * status = #final
 * code = $dicom-dcm#113043 "Diffusion weighted"
 * subject = Reference(example-male-patient)
-* encounter = Reference(example-encounter1)
+* encounter = Reference(example-encounter2)
 * effectiveDateTime = "2025-09-22T10:30:00Z"
 * focus = Reference(bodyStructure-prostate-lesion1-example)
 * valueInteger = 5

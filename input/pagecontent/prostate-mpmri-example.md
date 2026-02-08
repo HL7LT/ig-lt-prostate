@@ -24,7 +24,7 @@ The mpMRI report is represented using both a DiagnosticReport and an EU Imaging 
 
 The imaging examination is represented as a FHIR Procedure and ImagingStudy:
 
-- [Multiparametric prostate MRI procedure](Procedure-prostate-mpmri-example.html)  
+- [Multiparametric prostate MRI procedure](Procedure-procedure-prostate-mpmri-example.html)  
 - [Imaging study](ImagingStudy-example-imagingstudy.html)
 
 ---
@@ -35,13 +35,13 @@ The imaging examination is represented as a FHIR Procedure and ImagingStudy:
 
 The main lesion in the anterior transition zone is represented as a BodyStructure and linked imaging observations:
 
-- [Prostate lesion (BodyStructure)](BodyStructure-prostate-lesion1-example.html)  
+- [Prostate lesion (BodyStructure)](BodyStructure-bodyStructure-prostate-lesion1-example.html)  
 - [Lesion imaging finding (ImFinding)](ImFinding-imfinding-prostate-lesion1-example.html)  
-- [PI-RADS assessment](Observation-prostate-pirads-lesion1-example.html)  
-- [T2 score](Observation-prostate-t2-score-lesion1-example.html)  
-- [DWI score](Observation-prostate-dwi-score-lesion1-example.html)  
-- [ADC score](Observation-prostate-adc-score-lesion1-example.html)  
-- [DCE assessment](Observation-prostate-dce-score-lesion1-example.html)
+- [PI-RADS assessment](Observation-observation-prostate-pirads-lesion1-example.html)  
+- [T2 score](Observation-observation-prostate-t2-score-lesion1-example.html)  
+- [DWI score](Observation-observation-prostate-dwi-score-lesion1-example.html)  
+- [ADC score](Observation-observation-prostate-adc-score-lesion1-example.html)  
+- [DCE assessment](Observation-observation-prostate-dce-score-lesion1-example.html)
 
 ---
 
@@ -49,8 +49,8 @@ The main lesion in the anterior transition zone is represented as a BodyStructur
 
 Diffuse enhancement in the peripheral zone without a focal lesion is captured as:
 
-- [Peripheral zone diffuse enhancement](Observation-prostate-peripheral-zone-diffuse-enhancement-example.html)  
-- [Peripheral zone sector (PI-RADS map)](BodyStructure-prostate-peripheral-zone-mid-right-example.html)
+- [Peripheral zone diffuse enhancement](Observation-observation-prostate-peripheral-zone-diffuse-enhancement-example.html)  
+- [Peripheral zone sector (PI-RADS map)](BodyStructure-bodystructure-prostate-peripheral-zone-mid-right-example.html)
 
 ---
 
@@ -58,12 +58,12 @@ Diffuse enhancement in the peripheral zone without a focal lesion is captured as
 
 Local staging findings from the report are represented as structured observations:
 
-- [Capsular contact (suspected)](Observation-prostate-capsule-invasion-suspected-example.html)  
-- [Seminal vesicle invasion (absent)](Observation-prostate-seminal-vesicle-invasion-example.html)  
-- [Neurovascular bundle involvement (absent)](Observation-prostate-neurovascular-bundle-invasion-example.html)  
-- [Regional lymph node involvement (absent)](Observation-prostate-regional-lymph-node-invasion-example.html)  
-- [Urinary bladder wall thickening](Observation-prostate-urinary-bladder-changes-example.html)  
-- [Rectal changes (absent)](Observation-prostate-rectum-changes-example.html)
+- [Capsular contact (suspected)](Observation-observation-prostate-capsule-invasion-suspected-example.html)  
+- [Seminal vesicle invasion (absent)](Observation-observation-prostate-seminal-vesicle-invasion-example.html)  
+- [Neurovascular bundle involvement (absent)](Observation-observation-prostate-neurovascular-bundle-invasion-example.html)  
+- [Regional lymph node involvement (absent)](Observation-observation-prostate-regional-lymph-node-invasion-example.html)  
+- [Urinary bladder wall thickening](Observation-observation-prostate-urinary-bladder-changes-example.html)  
+- [Rectal changes (absent)](Observation-observation-prostate-rectum-changes-example.html)
 
 ---
 
@@ -71,9 +71,9 @@ Local staging findings from the report are represented as structured observation
 
 Key laboratory and derived parameters included in the radiology report are modeled as laboratory observations:
 
-- [PSA](Observation-prostate-psa-example.html)  
-- [Prostate volume](Observation-prostate-volume-example.html)  
-- [PSA density](Observation-prostate-psad-example.html)
+- [PSA](Observation-observation-prostate-psa-example.html)  
+- [Prostate volume](Observation-observation-prostate-volume-example.html)  
+- [PSA density](Observation-observation-prostate-psad-example.html)
 
 ---
 
@@ -81,7 +81,7 @@ Key laboratory and derived parameters included in the radiology report are model
 
 The known histopathology result used for clinical context and follow-up:
 
-- [Gleason / ISUP Grade Group](Observation-prostate-gleason-gradegroup-example.html)
+- [Gleason / ISUP Grade Group](Observation-observation-prostate-gleason-gradegroup-example.html)
 
 ---
 
@@ -89,7 +89,7 @@ The known histopathology result used for clinical context and follow-up:
 
 Follow-up comparison and PRECISE scoring:
 
-- [PRECISE longitudinal assessment](Observation-prostate-precise-followup-example.html)
+- [PRECISE longitudinal assessment](Observation-observation-prostate-precise-followup-example.html)
 
 ---
 
@@ -97,7 +97,7 @@ Follow-up comparison and PRECISE scoring:
 
 All observations and findings are compiled into a structured imaging report and clinical document:
 
-- [mpMRI DiagnosticReport](DiagnosticReport-prostate-mpmri-report-example.html)  
-- [mpMRI Composition (EU Imaging Report)](Composition-prostate-mpmri-report-example.html)
+- [mpMRI DiagnosticReport](DiagnosticReport-diagnosticReport-prostate-mpmri-report-example.html)  
+- [mpMRI Composition (EU Imaging Report)](Composition-composition-prostate-mpmri-report-example.html)
 
 This example demonstrates how a real-world prostate mpMRI report can be represented in a structured, interoperable way using FHIR, enabling reuse of imaging findings across clinical care, research, and secondary use scenarios.

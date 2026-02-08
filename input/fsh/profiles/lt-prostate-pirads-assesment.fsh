@@ -90,7 +90,7 @@ Usage: #example
 * status = #final
 * code = $sct#350501000146102 "Prostate Imaging-Reporting and Data System score"
 * subject = Reference(example-male-patient)
-* encounter = Reference(example-encounter1)
+* encounter = Reference(example-encounter2)
 * effectiveDateTime = "2025-09-22T10:30:00Z"
 // Link to lesion
 * focus = Reference(bodyStructure-prostate-lesion1-example)
