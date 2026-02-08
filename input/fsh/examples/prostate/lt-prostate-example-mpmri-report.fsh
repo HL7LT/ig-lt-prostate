@@ -15,7 +15,7 @@ Title: "Observation: Prostate - PI-RADS Assessment (Lesion 1) Example"
 * status = #final
 * code = $sct#350501000146102 "Prostate Imaging-Reporting and Data System score"
 * subject = Reference(example-male-patient)
-* encounter = Reference(example-encounter1)
+* encounter = Reference(example-encounter2)
 * effectiveDateTime = "2024-05-27T10:30:00Z"
 * focus = Reference(bodyStructure-prostate-lesion1-example)
 * valueInteger = 5
@@ -31,7 +31,7 @@ Title: "Observation: Prostate - T2 Score (Lesion 1) Example"
 * status = #final
 * code = $dicom-dcm#110805 "T2 Weighted MR Signal Intensity"
 * subject = Reference(example-male-patient)
-* encounter = Reference(example-encounter1)
+* encounter = Reference(example-encounter2)
 * effectiveDateTime = "2024-05-27T10:30:00Z"
 * focus = Reference(bodyStructure-prostate-lesion1-example)
 * valueInteger = 5
@@ -45,7 +45,7 @@ Title: "Observation: Prostate - DWI Score (Lesion 1) Example"
 * status = #final
 * code = $dicom-dcm#113043 "Diffusion weighted"
 * subject = Reference(example-male-patient)
-* encounter = Reference(example-encounter1)
+* encounter = Reference(example-encounter2)
 * effectiveDateTime = "2024-05-27T10:30:00Z"
 * focus = Reference(bodyStructure-prostate-lesion1-example)
 * valueInteger = 5
@@ -59,7 +59,7 @@ Title: "Observation: Prostate - ADC Score (Lesion 1) Example"
 * status = #final
 * code = $dicom-dcm#113041 "Apparent Diffusion Coefficient"
 * subject = Reference(example-male-patient)
-* encounter = Reference(example-encounter1)
+* encounter = Reference(example-encounter2)
 * effectiveDateTime = "2024-05-27T10:30:00Z"
 * focus = Reference(bodyStructure-prostate-lesion1-example)
 * valueInteger = 5
@@ -73,7 +73,7 @@ Title: "Observation: Prostate - DCE (Lesion 1, Positive) Example"
 * status = #final
 * code = $dicom-dcm#110816 "T1 Weighted Dynamic Contrast Enhanced MR Signal Intensity"
 * subject = Reference(example-male-patient)
-* encounter = Reference(example-encounter1)
+* encounter = Reference(example-encounter2)
 * effectiveDateTime = "2024-05-27T10:30:00Z"
 * focus = Reference(bodyStructure-prostate-lesion1-example)
 * valueInteger = 5
@@ -87,7 +87,7 @@ Title: "Observation: Prostate - PRECISE Longitudinal Assessment Example"
 * status = #final
 * code = PreciseComponentProstateLtCS#precise-assessment "PRECISE longitudinal assessment"
 * subject = Reference(example-male-patient)
-* encounter = Reference(example-encounter1)
+* encounter = Reference(example-encounter2)
 * effectiveDateTime = "2024-05-27T10:30:00Z"
 * valueCodeableConcept = PreciseCategoryProstateLtCS#precise-3 "PRECISE 3 - Stable disease"
 * derivedFrom[+] = Reference(example-imagingstudy)
@@ -155,7 +155,7 @@ Title: "Composition: Prostate - mpMRI Report Example"
 * status = #final
 * subject = Reference(example-male-patient)
 * date = "2024-05-27T10:30:00Z"
-* author = Reference(example-radiologist-role)
+* author[author] = Reference(example-radiologist-role)
 * title = "Multiparametric prostate MRI report"
 * identifier.system = "https://hl7.lt/fhir/prostate/composition-id"
 * identifier.value = "mpmri-report-example2-0001"
@@ -174,7 +174,7 @@ Usage: #example
 Title: "DiagnosticReport: Prostate - mpMRI Report Example"
 * status = #final
 * subject = Reference(example-male-patient)
-* encounter = Reference(example-encounter1)
+* encounter = Reference(example-encounter2)
 * performer[author] = Reference(example-radiologist-role)
 * composition = Reference(Composition-prostate-mpmri-report-example)
 * effectiveDateTime = "2024-05-27T10:30:00Z"

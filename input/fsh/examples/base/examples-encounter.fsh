@@ -4,7 +4,7 @@ Title: "Encounter: Prostate - Diagnostic Visit Example"
 Usage: #example
 * status = #completed
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
-* subject = Reference(Patient/example)
+* subject = Reference(example-male-patient)
 * participant
   * type = $v3-ParticipationType#ATND "attender"
   * actor = Reference(Practitioner/example-practitioner)

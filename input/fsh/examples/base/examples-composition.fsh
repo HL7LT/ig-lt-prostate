@@ -5,7 +5,7 @@ Title: "Composition: Prostate - mpMRI Report Example"
 * status = #final
 * subject = Reference(example-male-patient)
 * date = "2025-09-22T10:30:00Z"
-* author = Reference(example-radiologist-role)
+* author[author] = Reference(example-radiologist-role)
 * title = "Multiparametric prostate MRI report"
 * identifier.system = "https://hl7.lt/fhir/prostate/composition-id"
 * identifier.value = "mpmri-report-2025-0001"
