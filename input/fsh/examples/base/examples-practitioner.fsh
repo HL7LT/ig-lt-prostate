@@ -1,21 +1,25 @@
-Instance: example-practitioner
-InstanceOf: Practitioner
-Title: "Example of Practitioner"
+Profile: LTBasePractitionerRole
+Parent: PractitionerRoleEuCore
+Id: lt-practitioner-role
+Title: "LT Base Practitioner Role"
+Description: "Lithuanian Base Practitioner Role profile, used to define roles of the healthcare practitioner in the healthcare facilities"
+* ^experimental = true
+* ^status = #active
+* practitioner MS
+* practitioner only Reference(LTBasePractitioner)
+* organization MS
+* organization only Reference(LTBaseOrganization)
+* code MS
+//* code from PractitionerRoleCodeVS (required)
+* location MS
+* location only Reference(LTBaseLocation)
+* specialty MS
+Instance: example-practitioner-role
+InstanceOf: LTBasePractitionerRole
 Usage: #example
-* name.text = "Registrar"
-* qualification.code = $sct#224538006 "Triage nurse (occupation)"
-
-Instance: example-doctor
-InstanceOf: Practitioner
-Title: "Example of Doctor"
-Usage: #example
-* name.text = "Radiologist"
-* qualification.code = $sct#78729002 "Diagnostic radiologist"
-
-Instance: example-radiologist-role
-InstanceOf: PractitionerRoleEu
-Usage: #example
-Title: "Example Radiologist Role"
-* practitioner = Reference(example-doctor)
+Title: "Dr. Petras Kazlauskas at Vilniaus miesto ligoninė - LT Base Practitioner Role Example"
+Description: "An example Practitioner Role conforming to the Lithuanian Base Profile."
+* practitioner = Reference(example-practitioner)
 * organization = Reference(example-organization)
-* code.text = "Radiologist"
+* code[0] = http://terminology.hl7.org/CodeSystem/practitioner-role#doctor "Doctor"
+* active = true
