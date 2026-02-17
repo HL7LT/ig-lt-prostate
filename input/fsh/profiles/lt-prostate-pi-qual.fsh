@@ -2,6 +2,8 @@ CodeSystem: PiqualProstateLtCS
 Id: piqual-prostate-lt-cs
 Title: "Prostate - PI-QUAL"
 Description: "Local code system for PI-QUAL image quality assessment."
+* ^experimental = false
+* ^caseSensitive = true
 * #piqual "PI-QUAL image quality score"
 
 

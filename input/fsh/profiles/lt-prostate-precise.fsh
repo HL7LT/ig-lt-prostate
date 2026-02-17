@@ -5,6 +5,8 @@ Description: """
 PRECISE categories for longitudinal assessment of prostate MRI follow-up examinations.
 These categories describe overall change compared to a prior MRI examination.
 """
+* ^experimental = false
+* ^caseSensitive = true
 * #precise-1 "PRECISE 1 - Resolution or definite regression"
 * #precise-2 "PRECISE 2 - Likely regression"
 * #precise-3 "PRECISE 3 - Stable disease"
@@ -29,6 +31,8 @@ Title: "Prostate - PRECISE Change Pattern"
 Description: "Pattern of change on follow-up MRI."
 * #local "Local change"
 * #diffuse "Diffuse change"
+* ^experimental = false
+* ^caseSensitive = true
 
 
 ValueSet: PreciseChangePatternProstateLt
@@ -43,6 +47,8 @@ CodeSystem: PreciseComponentProstateLtCS
 Id: precise-component-prostate-lt
 Title: "Prostate - PRECISE Component"
 Description: "Local codes for detailed PRECISE assessment components."
+* ^experimental = false
+* ^caseSensitive = true
 * #precise-assessment "PRECISE longitudinal assessment"
 * #new-lesion "New lesion indicator"
 * #change-pattern "Change pattern"
