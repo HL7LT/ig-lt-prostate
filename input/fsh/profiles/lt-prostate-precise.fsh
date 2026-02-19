@@ -21,6 +21,7 @@ Id: precise-category-prostate-lt
 Title: "Prostate - PRECISE Category"
 Description: "Allowed PRECISE categories for longitudinal prostate MRI assessment."
 * ^status = #active
+* ^experimental = false
 * ^publisher = "HL7 Lithuania"
 * include codes from system PreciseCategoryProstateLtCS
 
@@ -38,7 +39,9 @@ Description: "Pattern of change on follow-up MRI."
 ValueSet: PreciseChangePatternProstateLt
 Id: precise-change-pattern-prostate-lt
 Title: "Prostate - PRECISE Change Pattern"
+Description: "Pattern of change observed on follow-up prostate MRI examination (local, diffuse)."
 * ^status = #active
+* ^experimental = false
 * ^publisher = "HL7 Lithuania"
 * include codes from system PreciseChangePatternProstateLtCS
 
@@ -54,6 +57,16 @@ Description: "Local codes for detailed PRECISE assessment components."
 * #change-pattern "Change pattern"
 * #best-sequence "Best MRI sequence for change assessment"
 * #size-change-mm "Size change in millimeters"
+
+
+ValueSet: PreciseComponentProstateLtVS
+Id: precise-component-prostate-lt
+Title: "Prostate - PRECISE Component"
+Description: "Codes for detailed PRECISE assessment components used in longitudinal prostate MRI follow-up evaluation."
+* ^status = #active
+* ^experimental = false
+* ^publisher = "HL7 Lithuania"
+* include codes from system PreciseComponentProstateLtCS
 
 
 Profile: PreciseAssessmentProstateLt

@@ -4,6 +4,7 @@ Id: damage-and-change-status-prostate-lt
 Title: "ValueSet: Prostate - Damage and Change Status"
 Description: "Absent, suspected, or present damage and change status for prostate cancer staging."
 * ^status = #active
+* ^experimental = false
 * ^publisher = "HL7 Lithuania"
 * $sct#2667000 "Absent (qualifier value)"
 * $sct#415684004 "Suspected (qualifier value)"
@@ -17,6 +18,7 @@ Id: body-structures-prostate-lt
 Title: "Prostate - Body Structures"
 Description: "Body structures that may be affected by prostate cancer invasion or local organ changes."
 * ^status = #active
+* ^experimental = false
 * ^publisher = "HL7 Lithuania"
 * $sct#60405008 "Structure of capsule of prostate (body structure)"
 * $sct#64739004 "Seminal vesicle structure (body structure)"

@@ -160,9 +160,11 @@ Title: "Composition: Prostate - mpMRI Report Example"
 * identifier.system = "https://hl7.lt/fhir/prostate/composition-id"
 * identifier.value = "mpmri-report-example2-0001"
 * extension[diagnosticreport-reference].url = $CompositionDiagnosticReportReferenceUrl
-* extension[diagnosticreport-reference].valueReference = Reference(DiagnosticReport-prostate-mpmri-report-example)
-* event[imagingstudy].detail = Reference(example-imagingstudy)
-* event[procedure].detail = Reference(procedure-prostate-mpmri-example)
+* extension[diagnosticreport-reference].valueReference = Reference(diagnosticReport-prostate-mpmri-report-example)
+* event[imagingstudy].detail.concept = http://dicom.nema.org/resources/ontology/DCM#MR "Magnetic Resonance"
+* event[imagingstudy].detail.reference = Reference(example-imagingstudy)
+* event[procedure].detail.concept = $sct#103693007 "Diagnostic procedure (procedure)"
+* event[procedure].detail.reference = Reference(procedure-prostate-mpmri-example)
 * section[imagingstudy].entry = Reference(example-imagingstudy)
 * section.text.status = #generated
 * section.text.div = "<div><p>Multiparametric prostate MRI performed. PI-RADS 5 anterior transition zone lesion (~32 mm). PRECISE 3 stable disease.</p></div>"
@@ -206,7 +208,7 @@ Title: "Observation: Prostate - Seminal Vesicle Invasion (Absent) Example"
 * code = $sct#371487005 "Presence of direct invasion by neoplasm (observable entity)"
 * subject = Reference(example-male-patient)
 * valueCodeableConcept = $sct#2667000 "Absent (qualifier value)"
-* bodyStructure = Reference(bodyStructureProstateSeminalVesicleLeftExample)
+* bodyStructure = Reference(bodyStructure-prostate-seminal-vesicle-left-example)
 * note.text = "No seminal vesicle invasion."
 
 
@@ -219,7 +221,7 @@ Title: "Observation: Prostate - Neurovascular Bundle Invasion (Absent) Example"
 * code = $sct#371487005 "Presence of direct invasion by neoplasm (observable entity)"
 * subject = Reference(example-male-patient)
 * valueCodeableConcept = $sct#2667000 "Absent (qualifier value)"
-* bodyStructure = Reference(bodyStructureProstateNeurovascularBundleRightExample)
+* bodyStructure = Reference(bodyStructure-prostate-neurovascular-bundle-right-example)
 * note.text = "No neurovascular bundle involvement."
 
 
@@ -232,7 +234,7 @@ Title: "Observation: Prostate - Regional Lymph Node Involvement (Absent) Example
 * code = $sct#371487005 "Presence of direct invasion by neoplasm (observable entity)"
 * subject = Reference(example-male-patient)
 * valueCodeableConcept = $sct#2667000 "Absent (qualifier value)"
-* bodyStructure = Reference(bodyStructureProstateRegionalLymphNodeLeftExample)
+* bodyStructure = Reference(bodyStructure-prostate-regional-lymph-node-left-example)
 * note.text = "No regional lymphadenopathy."
 
 
@@ -245,7 +247,7 @@ Title: "Observation: Prostate - Capsular Invasion (Suspected) Example"
 * code = $sct#371487005 "Presence of direct invasion by neoplasm (observable entity)"
 * subject = Reference(example-male-patient)
 * valueCodeableConcept = $sct#415684004 "Suspected (qualifier value)"
-* bodyStructure = Reference(bodyStructureProstateProstaticCapsuleRightExample)
+* bodyStructure = Reference(bodyStructure-prostatic-capsule-right-example)
 * note.text = "Possible capsular involvement; long tumor contact with anterior capsule."
 
 
@@ -258,7 +260,7 @@ Title: "Observation: Prostate - Urinary Bladder Wall Thickening Example"
 * code = $sct#364636000 "Lesion observable (observable entity)"
 * subject = Reference(example-male-patient)
 * valueCodeableConcept = $sct#415684004 "Suspected (qualifier value)"
-* bodyStructure = Reference(bodyStructureProstateUrinaryBladderExample)
+* bodyStructure = Reference(bodyStructure-prostate-urinary-bladder-example)
 * note.text = "Urinary bladder wall thickening noted."
 
 
@@ -271,7 +273,7 @@ Title: "Observation: Prostate - Rectal Changes (Absent) Example"
 * code = $sct#364636000 "Lesion observable (observable entity)"
 * subject = Reference(example-male-patient)
 * valueCodeableConcept = $sct#2667000 "Absent (qualifier value)"
-* bodyStructure = Reference(bodyStructureProstateRectumExample)
+* bodyStructure = Reference(bodyStructure-prostate-rectum-example)
 * note.text = "No rectal wall changes."
 
 

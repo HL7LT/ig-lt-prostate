@@ -14,7 +14,9 @@ Description: "ImComposition example summarizing prostate mpMRI findings for ADP 
 // Required extension linking to DiagnosticReport
 * extension[diagnosticreport-reference].valueReference = Reference(diagnosticReport-prostate-mpmri-report-example)
 // Required events
+* event[imagingstudy].detail.concept = http://dicom.nema.org/resources/ontology/DCM#MR "Magnetic Resonance"
 * event[imagingstudy].detail.reference = Reference(example-imagingstudy)
+* event[procedure].detail.concept = $sct#103693007 "Diagnostic procedure (procedure)"
 * event[procedure].detail.reference = Reference(procedure-prostate-mpmri-example)
 
 

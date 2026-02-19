@@ -3,6 +3,7 @@ Id: sequence-type-prostate-lt
 Title: "Prostate - mpMRI Sequence Type"
 Description: "Sequence/image types used in prostate mpMRI scoring (DICOM terminology)."
 * ^status = #active
+* ^experimental = false
 * ^publisher = "HL7 Lithuania"
 * include $dicom-dcm#110805 "T2 Weighted MR Signal Intensity"
 * include $dicom-dcm#113043 "Diffusion weighted"

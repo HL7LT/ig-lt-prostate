@@ -3,6 +3,7 @@ Id: prostate-isup-grade-group-prostate-lt
 Title: "Prostate - ISUP Grade Group"
 Description: "ISUP Grade Groups for prostate cancer histopathology, aligned with Gleason grading."
 * ^status = #active
+* ^experimental = false
 * ^publisher = "HL7 Lithuania"
 * $sct#1279715000 "ISUP Grade Group 1 (Gleason 3+3)"
 * $sct#1279714001 "ISUP Grade Group 2 (Gleason 3+4)"

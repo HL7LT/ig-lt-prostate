@@ -6,6 +6,8 @@ PI-RADS prostate sector locations based on the 39-sector PI-RADS map.
 Includes detailed SNOMED CT body structure codes for base/mid/apex,
 zone, side, and anterior/posterior subdivisions.
 """
+* ^status = #active
+* ^experimental = false
 // BASE (Sectors 1–14)
 * include $sct#716906001 "Structure of posterolateral basal part of peripheral zone of right half prostate"
 * include $sct#836428004 "Structure of posteromedial basal part of peripheral zone of right half of prostate"
