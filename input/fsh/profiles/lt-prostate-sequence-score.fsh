@@ -46,7 +46,7 @@ Anatomical localization is provided via the referenced prostate lesion.
 Instance: observation-prostate-dwi-score-lesion1-example2
 InstanceOf: SequenceScoreProstateLt
 Usage: #example
-Title: "Observation: Prostate - DWI Score (Lesion 1) Example"
+Title: "Observation: Prostate - DWI Score (Lesion 1) Example2"
 * status = #final
 * code = $dicom-dcm#113043 "Diffusion weighted"
 * subject = Reference(example-male-patient)

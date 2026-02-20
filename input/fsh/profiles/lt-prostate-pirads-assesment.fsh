@@ -87,7 +87,7 @@ sector-based prostate body structures (39-sector map).
 
 Instance: observation-prostate-pirads-lesion1-example2
 InstanceOf: PIRADSAssessmentProstateLt
-Title: "Observation: Prostate - PI-RADS Assessment (Lesion 1) Example"
+Title: "Observation: Prostate - PI-RADS Assessment (Lesion 1) Example2"
 Usage: #example
 * status = #final
 * code = $sct#350501000146102 "Prostate Imaging-Reporting and Data System score"

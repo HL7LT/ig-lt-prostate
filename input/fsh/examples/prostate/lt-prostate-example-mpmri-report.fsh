@@ -100,7 +100,7 @@ Title: "Observation: Prostate - PRECISE Longitudinal Assessment Example"
 Instance: observation-prostate-psa-example
 InstanceOf: LTBaseObservation
 Usage: #example
-Title: "Observation: Prostate - PSA Example"
+Title: "Observation: Prostate - PSA Example2"
 * status = #final
 * category = $observation-category#laboratory "Laboratory"
 * code = $loinc#2857-1 "Prostate Specific Ag [Mass/volume] in Serum or Plasma"
@@ -113,7 +113,7 @@ Title: "Observation: Prostate - PSA Example"
 Instance: observation-prostate-volume-example
 InstanceOf: LTBaseObservation
 Usage: #example
-Title: "Observation: Prostate - Volume Example"
+Title: "Observation: Prostate - Volume Example2"
 * status = #final
 * category = $observation-category#laboratory "Laboratory"
 * code = $loinc#15315-5 "Prostate Volume by derived by planimetry (US)"
@@ -126,7 +126,7 @@ Title: "Observation: Prostate - Volume Example"
 Instance: observation-prostate-psad-example
 InstanceOf: LTBaseObservation
 Usage: #example
-Title: "Observation: Prostate - PSA Density Example"
+Title: "Observation: Prostate - PSA Density Example2"
 * status = #final
 * category = $observation-category#laboratory "Laboratory"
 * code = $loinc#15325-4 "Prostate specific Ag/Prostate volume calculated"
@@ -267,7 +267,7 @@ Title: "Observation: Prostate - Urinary Bladder Wall Thickening Example"
 Instance: observation-prostate-rectum-changes-example
 InstanceOf: PelvicOrganChangesProstateLt
 Usage: #example
-Title: "Observation: Prostate - Rectal Changes (Absent) Example"
+Title: "Observation: Prostate - Rectum Changes (Absent) Example"
 * status = #final
 * category = $observation-category#exam
 * code = $sct#364636000 "Lesion observable (observable entity)"

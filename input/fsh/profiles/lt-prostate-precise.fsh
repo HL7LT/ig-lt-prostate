@@ -1,6 +1,6 @@
 CodeSystem: PreciseCategoryProstateLtCS
 Id: precise-category-prostate-lt
-Title: "Prostate - PRECISE Category"
+Title: "Prostate - PRECISE Category CS"
 Description: """
 PRECISE categories for longitudinal assessment of prostate MRI follow-up examinations.
 These categories describe overall change compared to a prior MRI examination.
@@ -18,7 +18,7 @@ These categories describe overall change compared to a prior MRI examination.
 
 ValueSet: PreciseCategoryProstateLt
 Id: precise-category-prostate-lt
-Title: "Prostate - PRECISE Category"
+Title: "Prostate - PRECISE Category VS"
 Description: "Allowed PRECISE categories for longitudinal prostate MRI assessment."
 * ^status = #active
 * ^experimental = false
@@ -28,7 +28,7 @@ Description: "Allowed PRECISE categories for longitudinal prostate MRI assessmen
 
 CodeSystem: PreciseChangePatternProstateLtCS
 Id: precise-change-pattern-prostate-lt
-Title: "Prostate - PRECISE Change Pattern"
+Title: "Prostate - PRECISE Change Pattern CS"
 Description: "Pattern of change on follow-up MRI."
 * #local "Local change"
 * #diffuse "Diffuse change"
@@ -38,7 +38,7 @@ Description: "Pattern of change on follow-up MRI."
 
 ValueSet: PreciseChangePatternProstateLt
 Id: precise-change-pattern-prostate-lt
-Title: "Prostate - PRECISE Change Pattern"
+Title: "Prostate - PRECISE Change Pattern VS"
 Description: "Pattern of change observed on follow-up prostate MRI examination (local, diffuse)."
 * ^status = #active
 * ^experimental = false
@@ -48,7 +48,7 @@ Description: "Pattern of change observed on follow-up prostate MRI examination (
 
 CodeSystem: PreciseComponentProstateLtCS
 Id: precise-component-prostate-lt
-Title: "Prostate - PRECISE Component"
+Title: "Prostate - PRECISE Component CS"
 Description: "Local codes for detailed PRECISE assessment components."
 * ^experimental = false
 * ^caseSensitive = true
@@ -61,7 +61,7 @@ Description: "Local codes for detailed PRECISE assessment components."
 
 ValueSet: PreciseComponentProstateLtVS
 Id: precise-component-prostate-lt
-Title: "Prostate - PRECISE Component"
+Title: "Prostate - PRECISE Component VS"
 Description: "Codes for detailed PRECISE assessment components used in longitudinal prostate MRI follow-up evaluation."
 * ^status = #active
 * ^experimental = false
@@ -126,7 +126,7 @@ patient/exam-level progression/regression category informed by lesion changes.
 Instance: observation-prostate-precise-followup-example2
 InstanceOf: PreciseAssessmentProstateLt
 Usage: #example
-Title: "Observation: Prostate - PRECISE Longitudinal Assessment Example"
+Title: "Observation: Prostate - PRECISE Longitudinal Assessment Example2"
 * status = #final
 * code = PreciseComponentProstateLtCS#precise-assessment "PRECISE longitudinal assessment"
 * subject = Reference(example-male-patient)

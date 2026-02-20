@@ -1,6 +1,6 @@
 CodeSystem: PiqualProstateLtCS
 Id: piqual-prostate-lt-cs
-Title: "Prostate - PI-QUAL"
+Title: "Prostate - PI-QUAL CS"
 Description: "Local code system for PI-QUAL image quality assessment."
 * ^experimental = false
 * ^caseSensitive = true
@@ -9,7 +9,7 @@ Description: "Local code system for PI-QUAL image quality assessment."
 
 ValueSet: PiqualProstateLtVS
 Id: piqual-prostate-lt-vs
-Title: "Prostate - PI-QUAL"
+Title: "Prostate - PI-QUAL VS"
 Description: "PI-QUAL (PI-Rads QUALity) score for prostate MRI image quality assessment."
 * ^status = #active
 * ^experimental = false

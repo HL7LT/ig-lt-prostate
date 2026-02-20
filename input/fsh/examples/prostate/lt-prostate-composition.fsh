@@ -9,7 +9,7 @@ Description: "ImComposition example summarizing prostate mpMRI findings for ADP 
 * date = "2024-05-27T10:30:00+02:00"
 * title = "Prostate Cancer Prevention Program – mpMRI Report"
 * subject = Reference(example-male-patient)
-* author = Reference(PractitionerRole/example-radiologist-role)
+* author[author] = Reference(PractitionerRole/example-radiologist-role)
 * custodian = Reference(example-organization)
 // Required extension linking to DiagnosticReport
 * extension[diagnosticreport-reference].valueReference = Reference(diagnosticReport-prostate-mpmri-report-example)
