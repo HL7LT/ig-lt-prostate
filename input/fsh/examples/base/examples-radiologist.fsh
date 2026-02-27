@@ -14,7 +14,7 @@ Description: "An example Practitioner representing a doctor."
   * use = #work
 
 Instance: example-radiologist-role
-InstanceOf: PractitionerRoleEu
+InstanceOf: $EuPractitionerRoleUrl
 Usage: #example
 Title: "Example Radiologist Role"
 * practitioner = Reference(example-doctor)

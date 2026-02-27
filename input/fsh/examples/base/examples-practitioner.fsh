@@ -14,6 +14,7 @@ Description: "Lithuanian Base Practitioner Role profile, used to define roles of
 * location MS
 * location only Reference(LTBaseLocation)
 * specialty MS
+
 Instance: example-practitioner
 InstanceOf: LTBasePractitioner
 Usage: #example

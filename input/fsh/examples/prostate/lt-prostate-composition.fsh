@@ -19,7 +19,6 @@ Description: "ImComposition example summarizing prostate mpMRI findings for ADP 
 * event[procedure].detail.concept = $sct#103693007 "Diagnostic procedure (procedure)"
 * event[procedure].detail.reference = Reference(procedure-prostate-mpmri-example)
 
-
 // -----------------
 // Sections
 
