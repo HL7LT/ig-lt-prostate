@@ -1,7 +1,7 @@
 // ValueSet: Damage and Change Status – Prostate LT
 ValueSet: DamageAndChangeStatusProstateLt
 Id: damage-and-change-status-prostate-lt
-Title: "ValueSet: Prostate - Damage and Change Status"
+Title: "Prostate - Damage and Change Status VS"
 Description: "Absent, suspected, or present damage and change status for prostate cancer staging."
 * ^status = #active
 * ^experimental = false
