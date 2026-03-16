@@ -1,29 +1,23 @@
-ValueSet: MRITypeProstateLt
-Id: mri-type-prostate-lt
-Title: "Prostate - MRI Examination Type"
-Description: "Type of prostate MRI examination, including bi-parametric and multi-parametric MRI."
-* ^status = #active
-* ^experimental = false
-* ^publisher = "HL7 Lithuania"
-* include $sct#75691003 "Magnetic resonance imaging of prostate (procedure)"
-* include $sct#719178004 "Multiparametric magnetic resonance imaging of prostate (procedure)"
-
-
-Profile: MpMRIReportProstateLt
+Profile: MpMRIReportLtProstate
 Parent: ImDiagnosticReport
-Id: mpmri-report-prostate-lt
+Id: mpmri-report-lt-prostate
 Title: "Diagnostic Report: Prostate mpMRI"
 Description: "Diagnostic report representing a prostate MRI examination (bi-parametric or multi-parametric) that serves as the clinical anchor for imaging-based prostate assessment."
+* ^url = $mpmri-report-lt-prostate-url
 * ^publisher = "HL7 Lithuania"
 * subject 1..1
-* subject only Reference(LTBasePatient)
+* subject only Reference(PatientLt)
 * encounter 0..1
-* encounter only Reference(LTBaseEncounter)
+* encounter only Reference(EncounterLt)
 * code 1..1
+<<<<<<< Updated upstream:input/fsh/profiles/lt-prostate-mri-report.fsh
 * code.coding 1..*
 * code.coding.system = "http://snomed.info/sct"
 * code.coding.code 1..1
 * code.coding.code from MRITypeProstateLt (required)
+=======
+* code from MRITypeLtProstate (required)
+>>>>>>> Stashed changes:input/fsh/profiles/mpmri-report-lt-prostate.fsh
 * effective[x] 1..1
 * effective[x] only dateTime
 * conclusion 1..1

@@ -1,24 +1,28 @@
-Profile: LTBasePractitionerRole
+Profile: PractitionerRoleLt
 Parent: PractitionerRoleEuCore
-Id: lt-practitioner-role
-Title: "LT Base Practitioner Role"
+Id: practitioner-role-lt
+Title: "Practitioner Role (LT Base)"
 Description: "Lithuanian Base Practitioner Role profile, used to define roles of the healthcare practitioner in the healthcare facilities"
 * ^experimental = true
 * ^status = #active
 * practitioner MS
-* practitioner only Reference(LTBasePractitioner)
+* practitioner only Reference(PractitionerEuCore)
 * organization MS
-* organization only Reference(LTBaseOrganization)
+* organization only Reference(OrganizationEuCore)
 * code MS
-//* code from PractitionerRoleCodeVS (required)
 * location MS
-* location only Reference(LTBaseLocation)
+* location only Reference(Location)
 * specialty MS
 
+<<<<<<< Updated upstream
 Instance: example-practitioner
 InstanceOf: LTBasePractitioner
+=======
+Instance: practitioner-eucore-example
+InstanceOf: PractitionerEuCore
+>>>>>>> Stashed changes
 Usage: #example
-Title: "Dr. Petras Kazlauskas - LT Base Practitioner Example"
+Title: "Practitioner: LT Base (example)"
 Description: "An example Practitioner conforming to the Lithuanian Base Profile."
 * language = #lt
 * identifier
@@ -35,12 +39,12 @@ Description: "An example Practitioner conforming to the Lithuanian Base Profile.
   * value = "+37061234567"
   * use = #work
 
-Instance: example-practitioner-role
-InstanceOf: LTBasePractitionerRole
+Instance: practitioner-role-lt-example
+InstanceOf: PractitionerRoleLt
 Usage: #example
-Title: "Dr. Petras Kazlauskas at Vilniaus miesto ligoninė - LT Base Practitioner Role Example"
+Title: "PractitionerRole: LT Base (example)"
 Description: "An example Practitioner Role conforming to the Lithuanian Base Profile."
-* practitioner = Reference(example-practitioner)
-* organization = Reference(example-organization)
+* practitioner = Reference(practitioner-eucore-example)
+* organization = Reference(organization-lt-example)
 * code[0] = http://terminology.hl7.org/CodeSystem/practitioner-role#doctor "Doctor"
 * active = true

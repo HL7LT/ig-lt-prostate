@@ -8,14 +8,14 @@ Description: "ImComposition example summarizing prostate mpMRI findings for ADP 
 * status = #final
 * date = "2024-05-27T10:30:00+02:00"
 * title = "Prostate Cancer Prevention Program – mpMRI Report"
-* subject = Reference(example-male-patient)
-* author[author] = Reference(PractitionerRole/example-radiologist-role)
-* custodian = Reference(example-organization)
+* subject = Reference(patient-male-example)
+* author[author] = Reference(PractitionerRole/practitioner-role-radiologist-example)
+* custodian = Reference(organization-lt-example)
 // Required extension linking to DiagnosticReport
 * extension[diagnosticreport-reference].valueReference = Reference(diagnosticReport-prostate-mpmri-report-example)
 // Required events
 * event[imagingstudy].detail.concept = http://dicom.nema.org/resources/ontology/DCM#MR "Magnetic Resonance"
-* event[imagingstudy].detail.reference = Reference(example-imagingstudy)
+* event[imagingstudy].detail.reference = Reference(imagingstudy-prostate-mpmri-example)
 * event[procedure].detail.concept = $sct#103693007 "Diagnostic procedure (procedure)"
 * event[procedure].detail.reference = Reference(procedure-prostate-mpmri-example)
 
@@ -26,7 +26,7 @@ Description: "ImComposition example summarizing prostate mpMRI findings for ADP 
 * section[imagingstudy].title = "Imaging Study"
 * section[imagingstudy].text.status = #generated
 * section[imagingstudy].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Multiparametric prostate MRI performed.</div>"
-* section[imagingstudy].entry[imagingstudy][+] = Reference(example-imagingstudy)
+* section[imagingstudy].entry[imagingstudy][+] = Reference(imagingstudy-prostate-mpmri-example)
 // Order (if you have it; otherwise leave emptyReason)
 * section[order].title = "Order"
 * section[order].text.status = #generated
@@ -46,7 +46,7 @@ Description: "ImComposition example summarizing prostate mpMRI findings for ADP 
 * section[comparison].title = "Comparison"
 * section[comparison].text.status = #generated
 * section[comparison].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Compared with prior prostate MRI.</div>"
-* section[comparison].entry[comparedstudy][+] = Reference(example-imagingstudy)
+* section[comparison].entry[comparedstudy][+] = Reference(imagingstudy-prostate-mpmri-example)
 // Findings
 * section[findings].title = "Findings"
 * section[findings].text.status = #generated

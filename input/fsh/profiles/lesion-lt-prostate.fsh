@@ -1,6 +1,6 @@
-Profile: LesionProstateLt
+Profile: LesionLtProstate
 Parent: $EuBodyStructureUrl
-Id: lesion-prostate-lt
+Id: lesion-lt-prostate
 Title: "BodyStructure: Prostate Lesion"
 Description: """
 An anatomical prostate lesion identified on MRI and localized using
@@ -9,12 +9,11 @@ Lesion location is encoded using specific SNOMED CT body structure
 concepts representing exact prostate sectors (base/mid/apex, zone,
 side and position).
 """
+* ^url = $lesion-lt-prostate-url
 * patient 1..1
-* patient only Reference(LTBasePatient)
+* patient only Reference(PatientLt)
 * includedStructure 1..1
 * includedStructure.structure 1..1
-* includedStructure.structure from PIRADSSectorProstateLt (required)
+* includedStructure.structure from PIRADSSectorLtProstate (required)
 * morphology 0..1
 * description 0..1
-
-

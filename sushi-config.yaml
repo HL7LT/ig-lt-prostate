@@ -21,36 +21,13 @@ publisher:
   email: info@medicinosnk.lt
 
 dependencies:
-  lt.hl7.fhir.base: current
+  lt.hl7.fhir.base: 0.3.0
+  lt.hl7.fhir.eu: 0.0.2
   hl7.fhir.eu.base-r5: 0.1.0
-  hl7.fhir.eu.extensions: current
-#  hl7.fhir.eu.imaging-r5: current
-  lt.hl7.fhir.vitalsigns: 0.0.1
-#  lt.hl7.fhir.laboratory: current
-  
-# hl7.fhir.eu.imaging-r5: 0.1.0  
-# HL7 Europe Imaging FHIR IG (https://build.fhir.org/ig/hl7-eu/imaging-r5) not published yeat :(
-# instead of that we use copy https://build.fhir.org/ig/oijauregui/ehdsimaging-r5/en
+#  lt.hl7.fhir.vitalsigns: 0.0.1
 
 
-# hl7.fhir.uv.dicom-r5: 4.0.0
-# hl7.fhir.uv.breast-r5: 4.0.0
-# hl7.fhir.uv.breast-radiology-r5: 4.0
 
-#  lt.hl7.fhir.vitalsigns: dev
-#  hl7.fhir.us.core: 8.0.0
-#  hl7.fhir.uv.ips.r5: 4.0.0  #FHIR IPS R5 base
-#   fhir.base.template: 0.8.1
-#   # while we don't strictly needs this, this helps resolve the DICOM supplement correctly until tx.fhir.org can do this
-#   fhir.dicom:
-#     id: fhir_dicom
-#     uri: http://fhir.org/packages/fhir.dicom/ImplementationGuide/fhir.dicom
-#     version: 2025.2.20250411
-
-# the following are for offline use only
-#  hl7.fhir.uv.tools.r5: 0.5.0
-#  hl7.terminology.r5: 6.4.0
-#  hl7.fhir.uv.extensions.r5: 5.2.0
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
@@ -84,7 +61,9 @@ pages:
 
 parameters:
   special-url-base: https://hl7.lt/fhir
-  special-url: https://terminology.hl7.lt/fhir
+  special-url:
+    - https://terminology.hl7.lt/fhir
+    - https://tx.hl7.lt/fhir
 
   excludettl: true
   shownav: true
@@ -186,25 +165,18 @@ menu:
 #
 groups:
   GroupA:
-    name: HL7 EU Imaging profiles
-    description: HL7 EU Imaging profiles
+    name: LT Prostate profiles
+    description: Lithuanian Prostate Diagnostics profiles
     resources:
-    - StructureDefinition/ImComposition
-    - StructureDefinition/ImWadoEndpoint
-    - StructureDefinition/ImImagingStudy
-    - StructureDefinition/ImKeyImageImagingSelection
-    - StructureDefinition/ImKeyImageDocumentReference
-    - StructureDefinition/ImImagingSelection
-    - StructureDefinition/ImProcedure
-    - StructureDefinition/ImOrder
-    - StructureDefinition/ImImagingDevice
-    - StructureDefinition/ImImageIidViewerEndpoint
-    - StructureDefinition/ImFinding
-    - StructureDefinition/ImDiagnosticReport
-    - StructureDefinition/instance-description
-    - StructureDefinition/im-composition-diagnosticReportReference
-    - StructureDefinition/im-study-instance-uid-identifier
-    - StructureDefinition/im-accession-number-identifier
+    - StructureDefinition/lesion-lt-prostate
+    - StructureDefinition/piqual-observation-lt-prostate
+    - StructureDefinition/precise-assessment-lt-prostate
+    - StructureDefinition/mpmri-report-lt-prostate
+    - StructureDefinition/neoplasm-invasion-lt-prostate
+    - StructureDefinition/pelvic-organ-changes-lt-prostate
+    - StructureDefinition/sequence-score-lt-prostate
+    - StructureDefinition/gleason-isup-observation-lt-prostate
+    - StructureDefinition/pirads-assessment-lt-prostate
 
 #   GroupB:
 #     name: Group B

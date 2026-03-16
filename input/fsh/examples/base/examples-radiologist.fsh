@@ -1,7 +1,7 @@
-Instance: example-doctor
+Instance: practitioner-doctor-example
 InstanceOf: Practitioner
 Usage: #example
-Title: "Dr. Example Doctor - Practitioner Example"
+Title: "Practitioner: Dr. Example Doctor (example)"
 Description: "An example Practitioner representing a doctor."
 * name
   * use = #official
@@ -13,10 +13,15 @@ Description: "An example Practitioner representing a doctor."
   * value = "+37065555555"
   * use = #work
 
+<<<<<<< Updated upstream
 Instance: example-radiologist-role
 InstanceOf: $EuPractitionerRoleUrl
+=======
+Instance: practitioner-role-radiologist-example
+InstanceOf: PractitionerRoleEu
+>>>>>>> Stashed changes
 Usage: #example
-Title: "Example Radiologist Role"
-* practitioner = Reference(example-doctor)
-* organization = Reference(example-organization)
+Title: "PractitionerRole: Radiologist (example)"
+* practitioner = Reference(practitioner-doctor-example)
+* organization = Reference(organization-lt-example)
 * code.text = "Radiologist"

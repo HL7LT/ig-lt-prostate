@@ -1,7 +1,8 @@
-Instance: example-organization
-InstanceOf: LTBaseOrganization
-Description: "Example of a healthcare organization"
+Instance: organization-lt-example
+InstanceOf: OrganizationLt
 Usage: #example
+Title: "Organization: LT (example)"
+Description: "Example of a healthcare organization"
 * language = #lt
 * identifier
   * use = #official

@@ -115,14 +115,14 @@ Alias: $EuCompositionUrl        = http://hl7.eu/fhir/imaging-r5/StructureDefinit
 Alias: $EuDocumentReference     = DocumentReferenceEu
 Alias: $EuDocumentReferenceUrl  = http://hl7.eu/fhir/imaging-r5/StructureDefinition/DocumentReferenceEu
 
-Alias: $EuQuantity              = QuantityEu
-Alias: $EuQuantityUrl           = http://hl7.eu/fhir/imaging-r5/StructureDefinition/quantity-eu
+//Alias: $EuQuantity              = QuantityEu
+//Alias: $EuQuantityUrl           = http://hl7.eu/fhir/laboratory/StructureDefinition/Quantity-eu-lab
 
 Alias: $EuRange                 = RangeEu
-Alias: $EuRangeUrl              = http://hl7.eu/fhir/imaging-r5/StructureDefinition/range-eu
+Alias: $EuRangeUrl              = http://hl7.org/fhir/uv/ips/StructureDefinition/Range-uv-ips
 
 Alias: $EuSimpleQuantity        = SimpleQuantityEu
-Alias: $EuSimpleQuantityUrl     = http://hl7.eu/fhir/imaging-r5/StructureDefinition/SimpleQuantityEu
+Alias: $EuSimpleQuantityUrl     = http://hl7.org/fhir/uv/ips/StructureDefinition/SimpleQuantity-uv-ips
 
 Alias: $CrossVersionMediaViewExtUrl = http://hl7.eu/fhir/imaging-r5/StructureDefinition/CrossVersionMediaViewExtension
 Alias: $InformationRecipientExtUrl = http://hl7.eu/fhir/StructureDefinition/information-recipient

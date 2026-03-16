@@ -1,11 +1,12 @@
-ValueSet:  PIRADSSectorProstateLt
-Id: pirads-sector-prostate-lt
+ValueSet: PIRADSSectorLtProstate
+Id: pirads-sector-lt-prostate
 Title: "Prostate - PI-RADS Sector (39-Sector Map)"
 Description: """
 PI-RADS prostate sector locations based on the 39-sector PI-RADS map.
 Includes detailed SNOMED CT body structure codes for base/mid/apex,
 zone, side, and anterior/posterior subdivisions.
 """
+* ^url = $pirads-sector-lt-prostate-url
 * ^status = #active
 * ^experimental = false
 // BASE (Sectors 1–14)
@@ -48,59 +49,3 @@ zone, side, and anterior/posterior subdivisions.
 * include $sct#277855007 "Structure of urethral sphincter"
 * include $sct#716934008 "Structure of apical part of peripheral zone of right half prostate"
 * include $sct#716935009 "Structure of apical part of peripheral zone of left half prostate"
-
-
-Profile: PIRADSAssessmentProstateLt
-Parent: LTBaseObservation
-Id: lpirads-assessment-prostate-lt
-Title: "Observation: PI-RADS Assessment"
-Description: """
-PI-RADS assessment (score 1–5) assigned to a specific prostate lesion
-based on mpMRI findings.
-The anatomical location is represented using detailed PI-RADS
-sector-based prostate body structures (39-sector map).
-"""
-* status 1..1
-* status = #final
-* code 1..1
-* code = $sct#350501000146102 "Prostate Imaging-Reporting and Data System score"
-* subject 1..1
-* subject only Reference(LTBasePatient)
-* encounter 0..1
-* encounter only Reference(LTBaseEncounter)
-* effective[x] 1..1
-* effective[x] only dateTime
-* value[x] 1..1
-* value[x] only integer
-* valueInteger obeys prostate-score-min-1 and prostate-score-max-5
-// PI-RADS is assigned to a specific lesion
-* focus 1..1
-* focus only Reference(LesionProstateLt)
-// Anatomical context using PI-RADS 39-sector map
-* bodySite 1..1
-* bodySite from PIRADSSectorProstateLt (required)
-// PI-RADS version
-* method 0..1
-* method.text ^short = "PI-RADS version (e.g., PI-RADS v2.1)"
-* note 0..*
-
-
-Instance: observation-prostate-pirads-lesion1-example2
-InstanceOf: PIRADSAssessmentProstateLt
-Title: "Observation: Prostate - PI-RADS Assessment (Lesion 1) Example2"
-Usage: #example
-* status = #final
-* code = $sct#350501000146102 "Prostate Imaging-Reporting and Data System score"
-* subject = Reference(example-male-patient)
-* encounter = Reference(example-encounter2)
-* effectiveDateTime = "2025-09-22T10:30:00Z"
-// Link to lesion
-* focus = Reference(bodyStructure-prostate-lesion1-example)
-// PI-RADS score
-* valueInteger = 4
-// Exact PI-RADS 39-sector location
-* bodySite = $sct#716906001 "Structure of posterolateral basal part of peripheral zone of right half prostate"
-// PI-RADS version
-* method.text = "PI-RADS v2.1"
-* note.text = "Lesion 1 in right posterolateral basal peripheral zone sector, high suspicion."
-

@@ -1,19 +1,19 @@
-Instance: example-encounter2
-InstanceOf: LTBaseEncounter
-Title: "Encounter: Prostate - Diagnostic Visit Example"
+Instance: encounter-prostate-diagnostic-example
+InstanceOf: EncounterLt
 Usage: #example
+Title: "Encounter: Prostate - Diagnostic Visit (example)"
 * status = #completed
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
-* subject = Reference(example-male-patient)
+* subject = Reference(patient-male-example)
 * participant
   * type = $v3-ParticipationType#ATND "attender"
-  * actor = Reference(Practitioner/example-practitioner)
+  * actor = Reference(Practitioner/practitioner-eucore-example)
 * actualPeriod
   * start = "2025-09-22T10:00:00Z"
   * end = "2025-09-22T11:00:00Z"   
 * type = $sct#20135006 "Screening procedure"
 * serviceType.concept = $sct#113011001 "Palpation (procedure)"
-* serviceProvider = Reference(Organization/example-organization)
+* serviceProvider = Reference(Organization/organization-lt-example)
 
 // Instance: ExampleBreastStep1Encounter
 // InstanceOf: LTBaseEncounter
@@ -27,9 +27,9 @@ Usage: #example
 //   * period
 //     * start = "2024-06-15T09:30:00+03:00"
 //     * end = "2024-06-15T10:00:00+03:00"
-//   * actor = Reference(example-practitioner)
+//   * actor = Reference(practitioner-eucore-example)
 // * actualPeriod
 //   * start = "2024-06-15T09:30:00+03:00"
 //   * end = "2024-06-15T10:00:00+03:00"
-// * serviceProvider = Reference(example-organization)
+// * serviceProvider = Reference(organization-lt-example)
 
