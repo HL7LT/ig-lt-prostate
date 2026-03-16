@@ -10,10 +10,6 @@ Description: "Diagnostic report representing a prostate MRI examination (bi-para
 * encounter 0..1
 * encounter only Reference(EncounterLt)
 * code 1..1
-// * code.coding 1..*
-// * code.coding.system = "http://snomed.info/sct"
-// * code.coding.code 1..1
-* code.coding.code from MRITypeProstateLt (required)
 * code from MRITypeLtProstate (required)
 * effective[x] 1..1
 * effective[x] only dateTime
