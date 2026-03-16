@@ -1,5 +1,21 @@
-Instance: practitioner-example
-InstanceOf: PractitionerLt
+Profile: PractitionerRoleLt
+Parent: PractitionerRoleEuCore
+Id: practitioner-role-lt
+Title: "Practitioner Role (LT Base)"
+Description: "Lithuanian Base Practitioner Role profile, used to define roles of the healthcare practitioner in the healthcare facilities"
+* ^experimental = true
+* ^status = #active
+* practitioner MS
+* practitioner only Reference(PractitionerEuCore)
+* organization MS
+* organization only Reference(OrganizationEuCore)
+* code MS
+* location MS
+* location only Reference(Location)
+* specialty MS
+
+Instance: practitioner-eucore-example
+InstanceOf: PractitionerEuCore
 Usage: #example
 Title: "Practitioner: LT Base (example)"
 Description: "An example Practitioner conforming to the Lithuanian Base Profile."
