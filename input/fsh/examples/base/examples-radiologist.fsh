@@ -13,13 +13,8 @@ Description: "An example Practitioner representing a doctor."
   * value = "+37065555555"
   * use = #work
 
-<<<<<<< Updated upstream
-Instance: example-radiologist-role
-InstanceOf: $EuPractitionerRoleUrl
-=======
 Instance: practitioner-role-radiologist-example
-InstanceOf: PractitionerRoleEu
->>>>>>> Stashed changes
+InstanceOf: PractitionerRoleLt
 Usage: #example
 Title: "PractitionerRole: Radiologist (example)"
 * practitioner = Reference(practitioner-doctor-example)
