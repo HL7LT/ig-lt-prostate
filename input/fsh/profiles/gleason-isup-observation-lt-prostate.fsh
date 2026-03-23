@@ -15,7 +15,7 @@ Description: "Histopathological grading of prostate cancer using Gleason score a
 * effective[x] only dateTime
 * value[x] 1..1
 * value[x] only CodeableConcept
-* valueCodeableConcept from ProstateIsupGradeGroupLtProstate (required)
+* valueCodeableConcept from ProstateIsupGradeGroup (required)
 * focus 0..1
 * focus only Reference(LesionLtProstate)
 * note 0..*

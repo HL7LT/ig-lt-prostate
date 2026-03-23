@@ -27,7 +27,7 @@ sector-based prostate body structures (39-sector map).
 * focus only Reference(LesionLtProstate)
 // Anatomical context using PI-RADS 39-sector map
 * bodySite 1..1
-* bodySite from PIRADSSectorLtProstate (required)
+* bodySite from $prostate-pirads-sector-url (required)
 // PI-RADS version
 * method 0..1
 * method.text ^short = "PI-RADS version (e.g., PI-RADS v2.1)"

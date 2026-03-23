@@ -17,7 +17,7 @@ with caution or may not be reliable.
 * status 1..1
 * status = #final
 * code 1..1
-* code from PiqualLtProstateVS (required)
+* code from $prostate-piqual-vs-url (required)
 * subject 1..1
 * subject only Reference(PatientLt)
 * encounter 0..1

@@ -14,9 +14,10 @@ Description: "Direct invasion of prostate-related structures by neoplasm."
 * subject 1..1
 * value[x] 1..1
 * value[x] only CodeableConcept
-* valueCodeableConcept from DamageAndChangeStatusLtProstate (required)
+* valueCodeableConcept from ProstateDamageAndChangeStatusLt (required)
 * bodySite 0..0
 * bodyStructure 1..1
+//REVIEW. Should change to Leason?
 * bodyStructure only Reference($EuBodyStructureUrl)
 * note 0..1
 * note.text 1..1

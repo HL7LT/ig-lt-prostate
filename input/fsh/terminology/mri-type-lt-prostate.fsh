@@ -1,8 +1,8 @@
-ValueSet: MRITypeLtProstate
-Id: mri-type-lt-prostate
+ValueSet: ProstateMRITypeLt
+Id: prostate-mri-type
 Title: "Prostate - MRI Examination Type"
 Description: "Type of prostate MRI examination, including bi-parametric and multi-parametric MRI."
-* ^url = $mri-type-lt-prostate-url
+* ^url = $prostate-mri-type-url
 * ^status = #active
 * ^experimental = false
 * ^publisher = "HL7 Lithuania"

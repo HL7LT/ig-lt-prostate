@@ -1,8 +1,8 @@
-ValueSet: DamageAndChangeStatusLtProstate
-Id: damage-and-change-status-lt-prostate
+ValueSet: ProstateDamageAndChangeStatusLt
+Id: prostate-damage-and-change-status
 Title: "ValueSet: Prostate - Damage and Change Status"
 Description: "Absent, suspected, or present damage and change status for prostate cancer staging."
-* ^url = $damage-and-change-status-lt-prostate-url
+* ^url = $prostate-damage-and-change-status-url
 * ^status = #active
 * ^experimental = false
 * ^publisher = "HL7 Lithuania"
@@ -10,11 +10,11 @@ Description: "Absent, suspected, or present damage and change status for prostat
 * $sct#415684004 "Suspected (qualifier value)"
 * $sct#52101004  "Present (qualifier value)"
 
-ValueSet: BodyStructuresLtProstate
-Id: body-structures-lt-prostate
-Title: "Prostate - Body Structures"
+ValueSet: BodyStructureProstate
+Id: body-structure-prostate
+Title: "Prostate - Body Structure"
 Description: "Body structures that may be affected by prostate cancer invasion or local organ changes."
-* ^url = $body-structures-lt-prostate-url
+* ^url = $body-structure-prostate-url
 * ^status = #active
 * ^experimental = false
 * ^publisher = "HL7 Lithuania"

@@ -1,8 +1,8 @@
-ValueSet: ProstateIsupGradeGroupLtProstate
-Id: prostate-isup-grade-group-lt-prostate
+ValueSet: ProstateIsupGradeGroup
+Id: prostate-isup-grade-group
 Title: "Prostate - ISUP Grade Group"
 Description: "ISUP Grade Groups for prostate cancer histopathology, aligned with Gleason grading."
-* ^url = $prostate-isup-grade-group-lt-prostate-url
+* ^url = $prostate-isup-grade-group-url
 * ^status = #active
 * ^experimental = false
 * ^publisher = "HL7 Lithuania"

@@ -103,6 +103,6 @@ Navigate the sections below to access the profiles, terminology bindings, and de
 
 | Name                                             | Role           | Organization                  |
 |--------------------------------------------------|----------------|-------------------------------|
-| [Igor Bossenko](https://about.askigor.eu)        | Primary Author | [HELEX](https://helex.health)|
-| [Kati Laidus](https://www.linkedin.com/in/kati-laidus/) | Co-Author | [HELEX](https://helex.health)|
+| [Igor Bossenko](https://about.askigor.eu)        | Primary Author | [HELEX Solution](https://helex.solution)|
+| [Kati Laidus](https://www.linkedin.com/in/kati-laidus/) | Co-Author | [HELEX Solution](https://helex.solution)|
 | Martynas Bieliauskas                             | Reviewer       | [LMB](https://lmb.lt)        |

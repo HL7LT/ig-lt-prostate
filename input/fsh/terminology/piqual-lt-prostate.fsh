@@ -1,17 +1,25 @@
-CodeSystem: PiqualLtProstateCS
-Id: piqual-lt-prostate
-Title: "Prostate - PI-QUAL CS"
-Description: "Local code system for PI-QUAL image quality assessment."
-* ^url = $piqual-lt-prostate-url
+CodeSystem: ProstatePiqualScaleLt
+Id: prostate-piqual
+Title: "Prostate PI-QUAL scale (v1, PRECISION trial, 2020)"
+Description: "Prostate Imaging Quality assessment scores."
+* ^url = $prostate-piqual-scale-url
 * ^experimental = false
 * ^caseSensitive = true
-* #piqual "PI-QUAL image quality score"
+* #1 "No mpMRI sequences are of diagnostic quality"
+* #2 "Some diagnostic quality, but insufficient"
+* #3 "Sufficient diagnostic quality"
+* #4 "Good diagnostic quality"
+* #5 "Optimal diagnostic quality (all sequences independently optimal)"
 
-ValueSet: PiqualLtProstateVS
-Id: piqual-vs-lt-prostate
-Title: "Prostate - PI-QUAL VS"
-Description: "PI-QUAL (PI-Rads QUALity) score for prostate MRI image quality assessment."
-* ^url = $piqual-vs-lt-prostate-url
+// 1 — Inadequate scan (T2‑WI or DWI scores ≤2)
+// 2 — Acceptable/adequate scan
+// 3 — Optimal scan (T2‑WI + DWI both scoring 4 in the internal subcriteria)
+
+ValueSet: ProstatePiquaLt
+Id: prostate-piqual
+Title: "Prostate - PI-QUA"
+Description: "Prostate Imaging Quality score for prostate MRI image quality assessment."
+* ^url = $prostate-piqual-vs-url
 * ^status = #active
 * ^experimental = false
-* include codes from system PiqualLtProstateCS
+* include codes from system ProstatePiqualScaleLt

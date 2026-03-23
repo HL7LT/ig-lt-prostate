@@ -14,6 +14,6 @@ side and position).
 * patient only Reference(PatientLt)
 * includedStructure 1..1
 * includedStructure.structure 1..1
-* includedStructure.structure from PIRADSSectorLtProstate (required)
+* includedStructure.structure from $prostate-pirads-sector-url (required)
 * morphology 0..1
 * description 0..1

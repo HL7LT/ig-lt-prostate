@@ -1,5 +1,5 @@
 Instance: composition-prostate-mpmri-report-adp-example
-InstanceOf: ImComposition
+InstanceOf: ImagingCompositionLt
 Usage: #example
 Title: "Composition: Prostate - mpMRI Report (ADP) Example"
 Description: "ImComposition example summarizing prostate mpMRI findings for ADP diagnostic process."

@@ -1,6 +1,6 @@
 Instance: composition-prostate-mpmri-example
 //InstanceOf: $CompositionEuImagingUrl
-InstanceOf: ImComposition
+InstanceOf: ImagingCompositionLt
 Usage: #example
 Title: "Composition: Prostate mpMRI (example)"
 * status = #final

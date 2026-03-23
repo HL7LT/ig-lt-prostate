@@ -1,5 +1,5 @@
 Instance: imagingstudy-prostate-mpmri-example
-InstanceOf: ImImagingStudy
+InstanceOf: ImagingStudyLt
 Usage: #example
 Title: "ImagingStudy: Prostate mpMRI (example)"
 Description: "Example multiparametric prostate MRI imaging study referenced by compositions and PRECISE observations."

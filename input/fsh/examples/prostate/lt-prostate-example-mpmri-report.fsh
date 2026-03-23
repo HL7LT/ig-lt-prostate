@@ -122,7 +122,7 @@ Title: "Observation: Prostate - PSA Density Example2"
 
 
 Instance: procedure-prostate-mpmri-example
-InstanceOf: $ProcedureEuImagingUrl
+InstanceOf: $procedure-lt-url
 Usage: #example
 Title: "Procedure: Prostate - mpMRI Example"
 * status = #completed
@@ -132,9 +132,9 @@ Title: "Procedure: Prostate - mpMRI Example"
 
 
 Instance: composition-prostate-mpmri-report-example
-InstanceOf: $CompositionEuImagingUrl
+InstanceOf: $imaging-composition-lt-url
 Usage: #example
-Title: "Composition: Prostate - mpMRI Report Example"
+Title: "Composition: Prostate - mpMRI Imaging Report Example"
 * status = #final
 * subject = Reference(patient-male-example)
 * date = "2024-05-27T10:30:00Z"

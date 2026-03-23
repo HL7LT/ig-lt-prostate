@@ -1,12 +1,12 @@
-ValueSet: PIRADSSectorLtProstate
-Id: pirads-sector-lt-prostate
+ValueSet: ProstatePiradsSectorLt
+Id: prostate-pirads-sector
 Title: "Prostate - PI-RADS Sector (39-Sector Map)"
 Description: """
 PI-RADS prostate sector locations based on the 39-sector PI-RADS map.
 Includes detailed SNOMED CT body structure codes for base/mid/apex,
 zone, side, and anterior/posterior subdivisions.
 """
-* ^url = $pirads-sector-lt-prostate-url
+* ^url = $prostate-pirads-sector-url
 * ^status = #active
 * ^experimental = false
 // BASE (Sectors 1–14)

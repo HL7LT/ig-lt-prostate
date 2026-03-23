@@ -14,9 +14,10 @@ Description: "Bladder, rectal, and bone changes in prostate cancer staging."
 * subject 1..1
 * value[x] 1..1
 * value[x] only CodeableConcept
-* valueCodeableConcept from DamageAndChangeStatusLtProstate (required)
+* valueCodeableConcept from ProstateDamageAndChangeStatusLt (required)
 * bodySite 0..0
 * bodyStructure 1..1
+//REVIEW. Change to leason?
 * bodyStructure only Reference($EuBodyStructureUrl)
 * note 0..1
 * note.text 1..1

@@ -21,7 +21,7 @@ publisher:
   email: info@medicinosnk.lt
 
 dependencies:
-  lt.hl7.fhir.base: 0.3.0
+  lt.hl7.fhir.base: current
   lt.hl7.fhir.eu: 0.0.2
   hl7.fhir.eu.base-r5: 0.1.0
 #  lt.hl7.fhir.vitalsigns: 0.0.1
@@ -64,6 +64,20 @@ parameters:
   special-url:
     - https://terminology.hl7.lt/fhir
     - https://tx.hl7.lt/fhir
+    - https://tx.hl7.lt/fhir/CodeSystem/prostate-piqual
+    - https://tx.hl7.lt/fhir/ValueSet/prostate-piqual
+    - https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-category
+    - https://tx.hl7.lt/fhir/ValueSet/prostate-precise-category
+    - https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-change-pattern
+    - https://tx.hl7.lt/fhir/ValueSet/prostate-precise-change-pattern
+    - https://tx.hl7.lt/fhir/CodeSystem/prostate-precise-component
+    - https://tx.hl7.lt/fhir/ValueSet/prostate-precise-component
+    - https://tx.hl7.lt/fhir/ValueSet/prostate-mri-type
+    - https://tx.hl7.lt/fhir/ValueSet/prostate-damage-and-change-status
+    - https://tx.hl7.lt/fhir/ValueSet/body-structure-prostate
+    - https://tx.hl7.lt/fhir/ValueSet/prostate-sequence-type
+    - https://tx.hl7.lt/fhir/ValueSet/prostate-isup-grade-group
+    - https://tx.hl7.lt/fhir/ValueSet/prostate-pirads-sector
 
   excludettl: true
   shownav: true
