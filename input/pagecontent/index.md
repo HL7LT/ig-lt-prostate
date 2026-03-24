@@ -94,6 +94,8 @@ By adopting this guide, implementers and healthcare institutions can:
 3. **Clinical Utility:** Support structured reporting, quality assurance, population-level monitoring, and future clinical decision support.
 4. **Longitudinal Care:** Enable linkage of screening, diagnostics, treatment, and follow-up across time and providers.
 
+Programme documentation in this IG includes the **[Workflow](workflow.html)** (clinical pathway), **[Prostate report](prostate-report.html)** (ImagingReport + Composition bundle), and **[Questionnaires](questionnaire.html)** (ESPBI-style forms).
+
 Navigate the sections below to access the profiles, terminology bindings, and detailed examples needed to implement the standard.
 
 ### IP Statements

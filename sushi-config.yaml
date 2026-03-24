@@ -22,6 +22,9 @@ publisher:
 
 dependencies:
   lt.hl7.fhir.base: current
+  lt.hl7.fhir.lab: current
+  lt.hl7.fhir.vitalsigns: current
+  lt.hl7.fhir.lifestyle: current
   lt.hl7.fhir.eu: 0.0.2
   hl7.fhir.eu.base-r5: 0.1.0
 #  lt.hl7.fhir.vitalsigns: 0.0.1
@@ -44,6 +47,12 @@ dependencies:
 pages:
   index.md:
     title: Home
+  workflow.md:
+    title: Workflow
+  prostate-report.md:
+    title: Prostate report
+  questionnaire.md:
+    title: Questionnaires
   prostate-mpmri-example.md:
     title: MRI Example
 
@@ -78,6 +87,12 @@ parameters:
     - https://tx.hl7.lt/fhir/ValueSet/prostate-sequence-type
     - https://tx.hl7.lt/fhir/ValueSet/prostate-isup-grade-group
     - https://tx.hl7.lt/fhir/ValueSet/prostate-pirads-sector
+    - https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options
+    - https://tx.hl7.lt/fhir/CodeSystem/prostate-fhir-mapping-target
+    - https://tx.hl7.lt/fhir/CodeSystem/prostate-adpp-questionnaire-item
+    - https://tx.hl7.lt/fhir/CodeSystem/prostate-pathology-questionnaire-item
+    - https://hl7.lt/fhir/prostate/ConceptMap/prostate-adpp-questionnaire-to-fhir
+    - https://hl7.lt/fhir/prostate/ConceptMap/prostate-pathology-questionnaire-to-fhir
 
   excludettl: true
   shownav: true
@@ -108,6 +123,9 @@ parameters:
 menu:
   Home: index.html
   Artifacts: artifacts.html
+  Workflow: workflow.html
+  Prostate report: prostate-report.html
+  Questionnaires: questionnaire.html
   MRI Example: prostate-mpmri-example.html
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
@@ -191,6 +209,18 @@ groups:
     - StructureDefinition/sequence-score-lt-prostate
     - StructureDefinition/gleason-isup-observation-lt-prostate
     - StructureDefinition/pirads-assessment-lt-prostate
+    - StructureDefinition/prostate-report-lt-prostate
+    - StructureDefinition/prostate-composition-lt-prostate
+
+  GroupQuestionnaireMapping:
+    name: Questionnaire mapping (CodeSystems & ConceptMaps)
+    description: LinkId vocabularies, FHIR mapping targets, and ConceptMaps from Questionnaire items to LT profiles
+    resources:
+    - CodeSystem/prostate-fhir-mapping-target-lt-prostate
+    - CodeSystem/prostate-adpp-questionnaire-item-lt-prostate
+    - CodeSystem/prostate-pathology-questionnaire-item-lt-prostate
+    - ConceptMap/conceptmap-prostate-adpp-questionnaire-to-fhir-lt-prostate
+    - ConceptMap/conceptmap-prostate-pathology-questionnaire-to-fhir-lt-prostate
 
 #   GroupB:
 #     name: Group B

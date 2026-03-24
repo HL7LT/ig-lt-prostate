@@ -12,6 +12,8 @@ Alias: $pelvic-organ-changes-lt-prostate-url = https://hl7.lt/fhir/prostate/Stru
 Alias: $sequence-score-lt-prostate-url = https://hl7.lt/fhir/prostate/StructureDefinition/sequence-score-lt-prostate
 Alias: $gleason-isup-observation-lt-prostate-url = https://hl7.lt/fhir/prostate/StructureDefinition/gleason-isup-observation-lt-prostate
 Alias: $pirads-assessment-lt-prostate-url = https://hl7.lt/fhir/prostate/StructureDefinition/pirads-assessment-lt-prostate
+Alias: $prostate-report-lt-prostate-url = https://hl7.lt/fhir/prostate/StructureDefinition/prostate-report-lt-prostate
+Alias: $prostate-composition-lt-prostate-url = https://hl7.lt/fhir/prostate/StructureDefinition/prostate-composition-lt-prostate
 
 // Terminology (tx.hl7.lt, no -lt-prostate in URL path)
 Alias: $prostate-piqual-scale-url = https://tx.hl7.lt/fhir/CodeSystem/prostate-piqual
@@ -28,3 +30,8 @@ Alias: $body-structure-prostate-url = https://tx.hl7.lt/fhir/ValueSet/body-struc
 Alias: $prostate-sequence-type-url = https://tx.hl7.lt/fhir/ValueSet/prostate-sequence-type
 Alias: $prostate-isup-grade-group-url = https://tx.hl7.lt/fhir/ValueSet/prostate-isup-grade-group
 Alias: $prostate-pirads-sector-url = https://tx.hl7.lt/fhir/ValueSet/prostate-pirads-sector
+Alias: $prostate-questionnaire-options-cs-url = https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options
+Alias: $prostate-questionnaire-options-cs = https://tx.hl7.lt/fhir/CodeSystem/prostate-questionnaire-options
+Alias: $prostate-fhir-mapping-target-cs-url = https://tx.hl7.lt/fhir/CodeSystem/prostate-fhir-mapping-target
+Alias: $prostate-adpp-questionnaire-item-cs-url = https://tx.hl7.lt/fhir/CodeSystem/prostate-adpp-questionnaire-item
+Alias: $prostate-pathology-questionnaire-item-cs-url = https://tx.hl7.lt/fhir/CodeSystem/prostate-pathology-questionnaire-item

@@ -1,148 +1,121 @@
 # Prostate cancer screening and diagnostic workflow
 
-The prostate cancer screening and diagnostic workflow is a structured, longitudinal clinical process that supports the early detection, risk stratification, diagnosis, and follow-up of prostate cancer. The workflow is driven by laboratory testing, diagnostic imaging, structured radiological assessment, and subsequent multidisciplinary clinical decision-making across radiology, urology, and pathology.
+This page describes the **clinical and programme pathway** for Lithuanian **prostate cancer prevention and early diagnosis** (ADPP / programme context), aligned with structured **laboratory**, **imaging**, **radiology assessment**, and **pathology** reporting. Earlier steps use **LT Base**, **LT VitalSigns**, **LT Lab**, and **LT Lifestyle** for demographics, vitals, labs, and behavioural data where applicable.
 
-The workflow combines population-based screening, lesion-level imaging assessment, and exam-level longitudinal monitoring into a coherent pathway that supports both initial diagnosis and active surveillance.
+FHIR resources from **this IG** focus on **prostate MRI interpretation** (PI-RADS, PI-QUAL, PRECISE, lesion modelling) and the **programme imaging document** (**ProstateReport** + **ProstateComposition**). **LT Lab** carries **pathology** documents; see the **[pathology workflow in LT Lab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/pathology-workflow.html)**.
 
-## Laboratory-based screening
+### Primary care assessment and referral
 
-The workflow typically begins with laboratory-based screening using **Prostate-Specific Antigen (PSA)** testing.
+The pathway starts with a **primary care or urology** visit (patient present): **PSA** testing, optional **digital rectal examination (DRE)**, and clinical context for referral. PSA and related labs are typically **Observation** resources (LT Lab / base patterns); anthropometrics and vitals may use **LT VitalSigns** profiles.
 
-A clinician or screening programme initiates PSA testing as part of routine screening or based on clinical indications. The PSA result is captured as a structured laboratory observation and represents the primary trigger for further diagnostic evaluation.
+### MRI acquisition (data acquisition)
 
-Based on PSA level, trends over time, age, and clinical context, the patient may be referred for prostate MRI as the next diagnostic step.
+If indicated, **bpMRI** or **mpMRI** of the prostate is performed. This step captures **ImagingStudy** and acquisition context; it does **not** by itself record radiological conclusions.
 
-## Imaging acquisition (prostate MRI)
+### Radiology evaluation and PI-RADS assessment
 
-If further evaluation is indicated, a prostate MRI examination is ordered. This may be a:
+The radiologist interprets sequences (T2, DWI, ADC, optional DCE), defines **lesions** (e.g. **LesionLtProstate** / body structures), assigns **sequence scores** (**SequenceScoreLtProstate**), **PI-RADS** (**PIRADSAssessmentLtProstate**), exam-level **PI-QUAL** (**PiqualObservationLtProstate**), and follow-up **PRECISE** (**PreciseAssessmentLtProstate**) where applicable.
 
-- biparametric MRI (bpMRI), or  
-- multiparametric MRI (mpMRI).
+### Clinical decision and biopsy indication
 
-During the imaging acquisition visit, a radiology technologist performs the MRI examination. The patient is physically present during this encounter.
+Decisions (surveillance, repeat imaging, **biopsy**) follow programme rules and PI-RADS; represent orders and procedures with **ServiceRequest** / **Procedure** patterns from Base or EU as appropriate.
 
-The imaging data are captured as structured imaging resources and represent the technical acquisition only. At this stage, no diagnostic interpretation is recorded.
+### Pathology examination and diagnosis (if biopsy)
 
-## Radiological evaluation and lesion identification
+Biopsy material is described in **LT Lab** (**PathologyReportLtLab**, **PathologyCompositionLtLab**). Gleason / ISUP may appear as **GleasonIsupObservationLtProstate** in imaging follow-up context when linked to pathology conclusions. Example pathology report: [DiagnosticReport: Pathology (example)](https://build.fhir.org/ig/HL7LT/ig-lt-lab/DiagnosticReport-diagnosticreport-pathology-report-example.html).
 
-After acquisition, the MRI examination is interpreted by a radiologist, usually in a separate evaluation context without the patient present.
+### Management planning and follow-up
 
-The radiologist reviews the MRI sequences (T2-weighted, DWI, ADC, and optionally DCE) and identifies one or more prostate lesions.
+Longitudinal care uses repeat **PSA**, **MRI**, and **PRECISE** tracking. **CarePlan** or programme-specific documentation may be added when profiled.
 
-Each lesion is represented as a structured anatomical entity, including:
+## Programme document bundle (Prostate report + composition)
 
-- precise anatomical localisation using the **PI-RADS 39-sector model**,  
-- zone, level (base, mid-gland, apex), side, and position,  
-- and relevant morphological descriptors.
+For a **single exchangeable imaging-class record** aligned with **LT Base** **ImagingReportLt**, this guide defines **[ProstateReportLtProstate](StructureDefinition-prostate-report-lt-prostate.html)** and **[ProstateCompositionLtProstate](StructureDefinition-prostate-composition-lt-prostate.html)**. The **DiagnosticReport** lists **Observation** results (PSA-related data may appear in **supportingInfo**; PI-RADS, PI-QUAL, PRECISE, etc. in **result**). The **Composition** uses the **imaging composition** section layout (study, order, history, procedure, comparison, findings, impression, recommendation). **Pathology DiagnosticReport** is **not** placed in `result` (see **DiagnosticReportLt**); link it via **LT Lab** bundles or encounter as in the **[prostate report](prostate-report.html)** page.
 
-These lesion structures form the anatomical anchors for all lesion-level radiological assessments.
+**Examples in this IG**
 
-## Lesion-level sequence scoring
+* [DiagnosticReport: Prostate programme report (example)](DiagnosticReport-diagnosticreport-prostate-programme-report-example.html)
+* [Composition: Prostate programme document (example)](Composition-composition-prostate-programme-example.html)
 
-For each identified lesion, the radiologist assigns individual sequence scores based on:
+**Specialised mpMRI profile:** **[MpMRIReportLtProstate](StructureDefinition-mpmri-report-lt-prostate.html)** remains the **EU ImDiagnosticReport**-aligned profile for detailed mpMRI exchange; use **ProstateReportLtProstate** when the **national ImagingReport** pattern is required.
 
-- T2-weighted imaging,  
-- Diffusion-weighted imaging (DWI),  
-- Apparent diffusion coefficient (ADC),  
-- and, when applicable, Dynamic contrast-enhanced imaging (DCE).
+## ESPBI electronic forms (Questionnaire)
 
-These sequence scores represent the component imaging assessments used to derive the overall PI-RADS score. They are recorded per lesion and per sequence and do not represent a final diagnostic conclusion on their own.
+National **ESPBI** forms (including pathology report fields aligned with programme spreadsheets) can be represented as **[Questionnaire](https://hl7.org/fhir/questionnaire.html)** / **[QuestionnaireResponse](https://hl7.org/fhir/questionnaireresponse.html)** — see **[Questionnaires](questionnaire.html)** for **coverage vs source spreadsheets**, **ConceptMap** mappings to LT profiles, and examples. They are **orthogonal** to **ProstateReport** / **Composition**.
 
-## PI-RADS lesion-level assessment
+## Cross-IG examples (CI Build)
 
-Using the lesion localisation and sequence-level findings, the radiologist assigns a **PI-RADS assessment** to each lesion.
+Illustrative published examples for measurements and behaviour often linked from programme assessment:
 
-PI-RADS is explicitly modelled as a **lesion-level risk stratification**, representing the likelihood that a specific lesion is clinically significant prostate cancer.
+* [Blood pressure (VitalSigns)](https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/Observation-observation-blood-pressure-example.html)
+* [Body height (VitalSigns)](https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/Observation-observation-body-height-example.html)
+* [Tobacco use (Lifestyle)](https://build.fhir.org/ig/HL7LT/ig-lt-lifestyle/Observation-observation-tobacco-use-current-smoker-example.html)
+* [Alcohol consumption (Lifestyle)](https://build.fhir.org/ig/HL7LT/ig-lt-lifestyle/Observation-observation-alcohol-consumption-no-example.html)
 
-Each lesion may have its own independent PI-RADS score. Multiple lesions within a single MRI examination may therefore have different PI-RADS categories.
+## Detailed clinical narrative (lesions, PI-RADS, PRECISE)
 
-PI-RADS represents the primary lesion-level diagnostic assessment used to guide clinical decision-making.
+The following sections expand **how** lesion-level and exam-level assessments are modelled in this IG (profiles and observations).
 
-## Image quality assessment (PI-QUAL)
+### Laboratory-based screening
 
-For each MRI examination, the radiologist assigns a **PI-QUAL score**, representing overall technical image quality.
+The workflow typically begins with **Prostate-Specific Antigen (PSA)** testing. The PSA result is captured as a structured laboratory **Observation** and often triggers further evaluation.
 
-PI-QUAL is an **exam-level assessment**, not tied to a specific lesion. It indicates whether image quality is sufficient for reliable interpretation and whether PI-RADS results should be interpreted with confidence or caution.
+### Imaging acquisition (prostate MRI)
 
-Low PI-QUAL scores indicate potential limitations in diagnostic reliability.
+If further evaluation is indicated, a prostate MRI examination is ordered (**bpMRI** or **mpMRI**). During acquisition, the patient is present; data represent technical acquisition only.
 
-## Compilation into MRI diagnostic report
+### Radiological evaluation and lesion identification
 
-All imaging findings and assessments are compiled into a structured prostate MRI diagnostic report.
+The radiologist reviews MRI sequences and identifies one or more prostate **lesions**, with localisation using the **PI-RADS 39-sector model**, zone, level, side, and position.
 
-The report acts as the clinical and temporal anchor for the examination and links together:
+### Lesion-level sequence scoring
 
-- lesion definitions and localisation,  
-- sequence-level scores,  
-- PI-RADS lesion assessments,  
-- PI-QUAL image quality assessment,  
-- and narrative radiologist conclusions.
+For each lesion, **SequenceScoreLtProstate** observations capture T2, DWI, ADC, and optionally DCE scores.
 
-The diagnostic report represents the authoritative radiological interpretation of the MRI examination.
+### PI-RADS lesion-level assessment
 
-## Clinical decision-making based on PI-RADS
+**PIRADSAssessmentLtProstate** gives a **lesion-level** PI-RADS category. Multiple lesions may have different scores.
 
-A central design principle of the workflow is the explicit separation between:
+### Image quality assessment (PI-QUAL)
 
-- clinical assessment (what is observed and classified), and  
-- workflow decision logic (what happens next as a result of that assessment).
+**PiqualObservationLtProstate** is an **exam-level** image quality score.
 
-PI-RADS lesion-level categories act as the primary triggers for further clinical actions, for example:
+### Compilation into MRI diagnostic report
 
-- Low PI-RADS scores → continued screening or routine follow-up,  
-- Intermediate PI-RADS scores → short-interval follow-up or further evaluation,  
-- High PI-RADS scores → referral to urology and consideration of prostate biopsy.
+Findings are compiled into a structured report. Use **[MpMRIReportLtProstate](StructureDefinition-mpmri-report-lt-prostate.html)** for EU-aligned mpMRI reports, or **[ProstateReportLtProstate](StructureDefinition-prostate-report-lt-prostate.html)** for the **ImagingReportLt** programme anchor.
 
-These decisions are represented as structured workflow actions such as referrals and procedure requests.
+### Clinical decision-making based on PI-RADS
 
-## Prostate biopsy and pathology
+Clinical assessment is separated from workflow decisions (referral, biopsy). PI-RADS drives actions such as surveillance vs biopsy referral.
 
-If biopsy is indicated, an image-guided prostate biopsy procedure is performed.
+### Prostate biopsy and pathology
 
-Biopsy samples are taken from targeted lesions and/or systematic prostate regions and documented as structured procedures, including anatomical localisation.
+Biopsy and **LT Lab** pathology reporting follow **[LT Lab pathology workflow](https://build.fhir.org/ig/HL7LT/ig-lt-lab/pathology-workflow.html)**.
 
-The collected tissue specimens are analysed by pathology. Pathological examination includes:
+### Longitudinal follow-up and PRECISE assessment
 
-- histological assessment,  
-- Gleason grading,  
-- tumour classification,  
-- and other relevant pathological findings.
+**PreciseAssessmentLtProstate** summarises change vs a prior MRI (regression, stability, progression).
 
-The pathology diagnostic report represents the definitive diagnostic conclusion and is linked back to the imaging and clinical context.
+### Communication and longitudinal care
 
-## Longitudinal follow-up and PRECISE assessment
+The structured model supports PSA trends, serial MRI, PRECISE, and integration with pathology for shared decision-making.
 
-For patients undergoing active surveillance or follow-up after initial diagnosis, repeat prostate MRI examinations may be performed.
+## Overview diagram
 
-In follow-up MRI, longitudinal change is assessed using the **PRECISE framework**.
+```mermaid
+flowchart LR
+  step1[PrimaryAssessment]
+  step2[MRIAcquisition]
+  step3[RadiologyPIRADS]
+  step4[BiopsyDecision]
+  step5[Pathology]
+  step6[ManagementFollowUp]
+  step1 --> step2
+  step2 --> step3
+  step3 --> step4
+  step4 --> step5
+  step5 --> step6
+  step6 --> step3
+```
 
-PRECISE is modelled as an **exam-level longitudinal assessment**, not as a lesion-level score. It represents overall disease change compared to a prior MRI examination, based on lesion evolution and imaging findings.
-
-PRECISE categories summarize whether the overall disease status shows:
-
-- regression,  
-- stability, or  
-- progression.
-
-PRECISE assessments are explicitly linked to prior MRI examinations, enabling standardized tracking of disease evolution across time.
-
-## Communication and longitudinal care
-
-Radiology, urology, and pathology findings are communicated across clinical systems and care teams.
-
-The structured longitudinal model enables:
-
-- tracking of PSA trends,  
-- linkage of lesions across time,  
-- comparison of serial MRI examinations,  
-- standardized assessment of progression using PRECISE,  
-- and integration of imaging and pathology for clinical decision-making.
-
-This workflow model reflects real clinical practice while ensuring a clear separation between:
-
-- data acquisition and interpretation,  
-- lesion-level assessment and exam-level longitudinal interpretation,  
-- clinical observations and workflow decisions,  
-- procedural steps and diagnostic conclusions.
-
-It provides a structured and interoperable representation of the prostate cancer screening and diagnostic pathway and supports standardized data exchange, reporting, programme monitoring, and longitudinal patient management within the national prostate cancer prevention and early diagnostic programme.
+The loop from **ManagementFollowUp** back to **RadiologyPIRADS** reflects **repeat MRI** and **surveillance** over time.
