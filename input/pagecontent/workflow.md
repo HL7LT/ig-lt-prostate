@@ -1,32 +1,74 @@
-# Prostate cancer screening and diagnostic workflow
+# Overview: The Longitudinal Care Pathway
 
-This page describes the **clinical and programme pathway** for Lithuanian **prostate cancer prevention and early diagnosis** (ADPP / programme context), aligned with structured **laboratory**, **imaging**, **radiology assessment**, and **pathology** reporting. Earlier steps use **LT Base**, **LT VitalSigns**, **LT Lab**, and **LT Lifestyle** for demographics, vitals, labs, and behavioural data where applicable.
+## Prostate cancer screening and diagnostic workflow
 
-FHIR resources from **this IG** focus on **prostate MRI interpretation** (PI-RADS, PI-QUAL, PRECISE, lesion modelling) and the **programme imaging document** (**ProstateReport** + **ProstateComposition**). **LT Lab** carries **pathology** documents; see the **[pathology workflow in LT Lab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/pathology-workflow.html)**.
+The prostate cancer workflow is a structured, longitudinal process supporting **early detection**, **risk stratification**, and **diagnosis**. It transitions from population-based laboratory screening to advanced lesion-level imaging, culminating in multidisciplinary clinical decisions (including **laboratory**, **imaging**, **radiology assessment**, and **pathology** reporting).
 
-### Primary care assessment and referral
+In the digital ecosystem, this is represented by a Prostate Programme Report, which pairs a structured DiagnosticReport (the data anchor) with a Composition (the human-readable narrative). Earlier steps use **LT Base**, **LT VitalSigns**, **LT Lab**, and **LT Lifestyle** for demographics, vitals, labs, [pathology workflows](https://build.fhir.org/ig/HL7LT/ig-lt-lab/pathology-workflow.html) and behavioural data where applicable.
 
-The pathway starts with a **primary care or urology** visit (patient present): **PSA** testing, optional **digital rectal examination (DRE)**, and clinical context for referral. PSA and related labs are typically **Observation** resources (LT Lab / base patterns); anthropometrics and vitals may use **LT VitalSigns** profiles.
+## Phase I: Screening & Laboratory Evaluation
 
-### MRI acquisition (data acquisition)
+* The process typically begins with a **primary care or urology** encounter, **Prostate-Specific Antigen (PSA)** testing, and optional **digital rectal examination (DRE)**.
+* Clinical Trigger: A clinician initiates PSA testing as part of routine screening or clinical indication.
+* Data Representation: PSA results are captured as structured Observation resources. These serve as the primary trigger for referral to imaging.
 
-If indicated, **bpMRI** or **mpMRI** of the prostate is performed. This step captures **ImagingStudy** and acquisition context; it does **not** by itself record radiological conclusions.
+Contextual Data: Supporting information such as age, trends over time, lifestyle factors (e.g., tobacco or alcohol use from **LT Lifestyle** profiles), and anthropometrics and vitals (use **LT VitalSigns** profiles) are linked to provide clinical context.
 
-### Radiology evaluation and PI-RADS assessment
+### Phase II: Imaging Acquisition & Quality (MRI)
 
-The radiologist interprets sequences (T2, DWI, ADC, optional DCE), defines **lesions** (e.g. **LesionLtProstate** / body structures), assigns **sequence scores** (**SequenceScoreLtProstate**), **PI-RADS** (**PIRADSAssessmentLtProstate**), exam-level **PI-QUAL** (**PiqualObservationLtProstate**), and follow-up **PRECISE** (**PreciseAssessmentLtProstate**) where applicable.
+If indicated by PSA levels or clinical risk, a prostate MRI—either **biparametric (bpMRI)** or **multiparametric (mpMRI)** — is performed.
 
-### Clinical decision and biopsy indication
+* **Imaging Acquisition:** Technical data is captured as imaging resources. At this stage, no interpretation is recorded.
+* **PI-QUAL Assessment:** The radiologist assigns a **PI-QUAL score** at the exam level. This indicates whether the image quality is sufficient for a reliable PI-RADS assessment.
+* **Technical Mapping:** Use MpMRIReportLtProstate for EU-aligned reporting or ProstateReportLtProstate for national-level compliance.
 
-Decisions (surveillance, repeat imaging, **biopsy**) follow programme rules and PI-RADS; represent orders and procedures with **ServiceRequest** / **Procedure** patterns from Base or EU as appropriate.
+### Phase III: Radiological Evaluation (Lesion-Level)
 
-### Pathology examination and diagnosis (if biopsy)
+Radiologists identify and score individual lesions using the PI-RADS framework.
 
-Biopsy material is described in **LT Lab** (**PathologyReportLtLab**, **PathologyCompositionLtLab**). Gleason / ISUP may appear as **GleasonIsupObservationLtProstate** in imaging follow-up context when linked to pathology conclusions. Example pathology report: [DiagnosticReport: Pathology (example)](https://build.fhir.org/ig/HL7LT/ig-lt-lab/DiagnosticReport-diagnosticreport-pathology-report-example.html).
+**Lesion Identification**
 
-### Management planning and follow-up
+Each lesion is treated as a structured anatomical entity using the PI-RADS 39-sector model, documenting:
+* Localization: Zone, level (base, mid-gland, apex), side, and position.
+* Morphology: Relevant descriptors and anatomical anchors.
 
-Longitudinal care uses repeat **PSA**, **MRI**, and **PRECISE** tracking. **CarePlan** or programme-specific documentation may be added when profiled.
+**Sequence & PI-RADS Scoring**
+
+For each identified lesion, individual sequence scores (T2W, DWI, ADC, and DCE) are assigned. These culminate in the **PI-RADS Assessment**, representing the likelihood of clinically significant cancer for _that specific lesion_.
+
+### Phase IV: The Structured Diagnostic Report
+
+All findings are compiled into a coherent programme record. This record consists of two primary technical components:
+
+| Component | Resource Type | Content |
+| --- | --- | --- |
+| Data Report | DiagnosticReport | Structured result list of Observations (PI-RADS, PI-QUAL, sequence scores, etc.) |
+| Narrative | Doc	Composition | Human-readable sections: Findings, Impression, and Recommendations. |
+
+Note: Pathology results (Gleason/ISUP) are linked via the Encounter or supportingInfo but remain mastered within the LT Lab pathology workflow to avoid data duplication.
+
+### Phase V: Biopsy & Pathological Conclusion
+
+If MRI reveals high-risk (PI-RADS 4-5) or concerning intermediate (PI-RADS 3) lesions, a biopsy is performed.
+
+* **Procedure:** Image-guided biopsy samples are taken from targeted and/or systematic regions.
+* **Pathology:** Tissue analysis provides the definitive diagnosis, including Gleason grading and tumour classification.
+* **Integration:** These results are linked back to the imaging context to enable a complete clinical picture.
+
+### Phase VI: Longitudinal Follow-up (PRECISE)
+
+For patients in Active Surveillance, repeat MRIs are monitored using the PRECISE framework.
+
+* **Exam-Level Assessment:** Unlike PI-RADS (lesion-specific), PRECISE evaluates the overall disease change (Regression, Stability, or Progression) compared to prior exams.
+* **Tracking:** The structured model enables the linkage of specific lesions across time, allowing for standardized tracking of disease evolution.
+
+### Clinical Decision Logic Summary
+
+The workflow maintains a strict separation between Assessment (the data) and Decision (the action).
+
+* **Low PI-RADS:** Continued screening or routine follow-up.
+* **Intermediate PI-RADS:** Short-interval follow-up or further evaluation.
+* **High PI-RADS:** Referral to urology for biopsy.
 
 ## Programme document bundle (Prostate report + composition)
 
