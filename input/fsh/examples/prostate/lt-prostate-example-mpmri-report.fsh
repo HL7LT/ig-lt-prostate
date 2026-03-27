@@ -138,19 +138,48 @@ Title: "Composition: Prostate - mpMRI Imaging Report Example"
 * status = #final
 * subject = Reference(patient-male-example)
 * date = "2024-05-27T10:30:00Z"
-* author[author] = Reference(practitioner-role-radiologist-example)
+* author[+] = Reference(practitioner-role-radiologist-example)
 * title = "Multiparametric prostate MRI report"
 * identifier.system = "https://hl7.lt/fhir/prostate/composition-id"
 * identifier.value = "mpmri-report-example2-0001"
 * extension[diagnosticreport-reference].url = $CompositionDiagnosticReportReferenceUrl
 * extension[diagnosticreport-reference].valueReference = Reference(diagnosticReport-prostate-mpmri-report-example)
-* event[imagingstudy].detail.concept = http://dicom.nema.org/resources/ontology/DCM#MR "Magnetic Resonance"
-* event[imagingstudy].detail.reference = Reference(imagingstudy-prostate-mpmri-example)
-* event[procedure].detail.concept = $sct#103693007 "Diagnostic procedure (procedure)"
-* event[procedure].detail.reference = Reference(procedure-prostate-mpmri-example)
-* section[imagingstudy].entry = Reference(imagingstudy-prostate-mpmri-example)
-* section.text.status = #generated
-* section.text.div = "<div><p>Multiparametric prostate MRI performed. PI-RADS 5 anterior transition zone lesion (~32 mm). PRECISE 3 stable disease.</p></div>"
+* event[+].detail[+].concept = http://dicom.nema.org/resources/ontology/DCM#MR "Magnetic Resonance"
+* event[=].detail[=].reference = Reference(imagingstudy-prostate-mpmri-example)
+* event[+].detail[+].concept = $sct#103693007 "Diagnostic procedure (procedure)"
+* event[=].detail[=].reference = Reference(procedure-prostate-mpmri-example)
+* section[imagingstudy].title = "Imaging Study"
+* section[imagingstudy].entry[+] = Reference(imagingstudy-prostate-mpmri-example)
+* section[imagingstudy].text.status = #generated
+* section[imagingstudy].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Multiparametric prostate MRI performed. PI-RADS 5 anterior transition zone lesion (~32 mm). PRECISE 3 stable disease.</div>"
+* section[order].title = "Order"
+* section[order].text.status = #generated
+* section[order].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Order information not specified.</p></div>"
+* section[order].emptyReason = $ImSectionEmptyReason#unknown "Unknown"
+* section[history].title = "History"
+* section[history].text.status = #generated
+* section[history].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Clinical history not documented.</p></div>"
+* section[history].emptyReason = $ImSectionEmptyReason#unknown "Unknown"
+* section[procedure].title = "Procedure"
+* section[procedure].text.status = #generated
+* section[procedure].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Procedure details not included.</p></div>"
+* section[procedure].emptyReason = $ImSectionEmptyReason#unknown "Unknown"
+* section[comparison].title = "Comparison"
+* section[comparison].text.status = #generated
+* section[comparison].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>No prior studies available.</p></div>"
+* section[comparison].emptyReason = $ImSectionEmptyReason#unknown "Unknown"
+* section[findings].title = "Findings"
+* section[findings].text.status = #generated
+* section[findings].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Anterior transition zone lesion with PI-RADS 5. No seminal vesicle or neurovascular bundle invasion. Possible capsular contact anteriorly.</div>"
+* section[findings].entry[+] = Reference(imfinding-prostate-lesion1-example)
+* section[impression].title = "Impression"
+* section[impression].text.status = #generated
+* section[impression].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>PI-RADS 5 lesion in the anterior transition zone (~32 mm), extending across midline. PRECISE 3 stable disease. Imaging features consistent with high-suspicion malignancy.</div>"
+* section[impression].entry[+] = Reference(imfinding-prostate-lesion1-example)
+* section[recommendation].title = "Recommendation"
+* section[recommendation].text.status = #generated
+* section[recommendation].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Recommendations pending clinical review.</p></div>"
+* section[recommendation].emptyReason = $ImSectionEmptyReason#unknown "Unknown"
 
 
 Instance: diagnosticReport-prostate-mpmri-report-example
@@ -165,6 +194,7 @@ Title: "DiagnosticReport: Prostate - mpMRI Report Example"
 * effectiveDateTime = "2024-05-27T10:30:00Z"
 * code = $sct#719178004 "Multiparametric magnetic resonance imaging of prostate (procedure)"
 * conclusion = "PI-RADS 5 lesion in the anterior transition zone (~32 mm), extending across midline. PRECISE 3 stable disease. No seminal vesicle invasion, no neurovascular bundle involvement, no regional lymphadenopathy. Possible capsular contact anteriorly."
+* result[+] = Reference(imfinding-prostate-lesion1-example)
 * result[+] = Reference(observation-prostate-pirads-lesion1-example)
 * result[+] = Reference(observation-prostate-t2-score-lesion1-example)
 * result[+] = Reference(observation-prostate-dwi-score-lesion1-example)

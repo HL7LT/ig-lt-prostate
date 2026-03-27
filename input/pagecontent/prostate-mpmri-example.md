@@ -25,7 +25,7 @@ The mpMRI report is represented using both a DiagnosticReport and an EU Imaging 
 The imaging examination is represented as a FHIR Procedure and ImagingStudy:
 
 - [Multiparametric prostate MRI procedure](Procedure-procedure-prostate-mpmri-example.html)  
-- [Imaging study](ImagingStudy-example-imagingstudy.html)
+- [Imaging study](ImagingStudy-imagingstudy-prostate-mpmri-example.html)
 
 ---
 
@@ -36,7 +36,7 @@ The imaging examination is represented as a FHIR Procedure and ImagingStudy:
 The main lesion in the anterior transition zone is represented as a BodyStructure and linked imaging observations:
 
 - [Prostate lesion (BodyStructure)](BodyStructure-bodyStructure-prostate-lesion1-example.html)  
-- [Lesion imaging finding (ImFinding)](ImFinding-imfinding-prostate-lesion1-example.html)  
+- [Lesion imaging finding (ImFinding)](Observation-imfinding-prostate-lesion1-example.html)  
 - [PI-RADS assessment](Observation-observation-prostate-pirads-lesion1-example.html)  
 - [T2 score](Observation-observation-prostate-t2-score-lesion1-example.html)  
 - [DWI score](Observation-observation-prostate-dwi-score-lesion1-example.html)  

@@ -178,7 +178,11 @@ menu:
 # The following are simple examples to demonstrate what this might
 # look like:
 #
-# resources:
+resources:
+  Procedure/procedure-prostate-mpmri-example:
+    name: "Procedure: Prostate mpMRI (example)"
+    description: "Example multiparametric prostate MRI procedure referenced by the mpMRI and programme compositions."
+    exampleBoolean: true
 #   Patient/my-example-patient:
 #     name: My Example Patient
 #     description: An example Patient

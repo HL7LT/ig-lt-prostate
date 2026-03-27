@@ -9,15 +9,13 @@ Description: "ImComposition example summarizing prostate mpMRI findings for ADP 
 * date = "2024-05-27T10:30:00+02:00"
 * title = "Prostate Cancer Prevention Program – mpMRI Report"
 * subject = Reference(patient-male-example)
-* author[author] = Reference(PractitionerRole/practitioner-role-radiologist-example)
+* author[+] = Reference(PractitionerRole/practitioner-role-radiologist-example)
 * custodian = Reference(organization-lt-example)
-// Required extension linking to DiagnosticReport
 * extension[diagnosticreport-reference].valueReference = Reference(diagnosticReport-prostate-mpmri-report-example)
-// Required events
-* event[imagingstudy].detail.concept = http://dicom.nema.org/resources/ontology/DCM#MR "Magnetic Resonance"
-* event[imagingstudy].detail.reference = Reference(imagingstudy-prostate-mpmri-example)
-* event[procedure].detail.concept = $sct#103693007 "Diagnostic procedure (procedure)"
-* event[procedure].detail.reference = Reference(procedure-prostate-mpmri-example)
+* event[+].detail[+].concept = http://dicom.nema.org/resources/ontology/DCM#MR "Magnetic Resonance"
+* event[=].detail[=].reference = Reference(imagingstudy-prostate-mpmri-example)
+* event[+].detail[+].concept = $sct#103693007 "Diagnostic procedure (procedure)"
+* event[=].detail[=].reference = Reference(procedure-prostate-mpmri-example)
 
 // -----------------
 // Sections
@@ -27,11 +25,10 @@ Description: "ImComposition example summarizing prostate mpMRI findings for ADP 
 * section[imagingstudy].text.status = #generated
 * section[imagingstudy].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Multiparametric prostate MRI performed.</div>"
 * section[imagingstudy].entry[imagingstudy][+] = Reference(imagingstudy-prostate-mpmri-example)
-// Order (if you have it; otherwise leave emptyReason)
+// Order
 * section[order].title = "Order"
 * section[order].text.status = #generated
 * section[order].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>mpMRI of prostate ordered as part of ADP diagnostic pathway.</div>"
-* section[order].emptyReason = $ImSectionEmptyReason#unknown "Unknown"
 // History
 * section[history].title = "Clinical History"
 * section[history].text.status = #generated
