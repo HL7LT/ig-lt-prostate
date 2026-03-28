@@ -2,7 +2,11 @@ Profile: PelvicOrganChangesLtProstate
 Parent: ObservationLt
 Id: pelvic-organ-changes-lt-prostate
 Title: "Observation: Pelvic Organ Changes"
-Description: "Bladder, rectal, and bone changes in prostate cancer staging."
+Description: """
+Rectal and other pelvic organ changes in prostate cancer staging.
+For bladder-specific changes use BladderChangesLtProstate (with change nature component).
+For bone metastasis use BoneMetastasisLtProstate.
+"""
 * ^url = $pelvic-organ-changes-lt-prostate-url
 * ^publisher = "HL7 Lithuania"
 * status 1..1
@@ -17,9 +21,6 @@ Description: "Bladder, rectal, and bone changes in prostate cancer staging."
 * valueCodeableConcept from ProstateDamageAndChangeStatusVS (required)
 * bodySite 0..0
 * bodyStructure 1..1
-//REVIEW. Change to leason?
 * bodyStructure only Reference($EuBodyStructureUrl)
 * note 0..1
 * note.text 1..1
-// TODO 2.4: Add change type categorization (tumor-related vs non-neoplastic vs benign) per Excel
-// TODO 2.8: Bone metastasis should use a separate profile — bone is not a pelvic organ

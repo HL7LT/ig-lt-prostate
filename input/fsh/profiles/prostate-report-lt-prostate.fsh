@@ -21,6 +21,8 @@ Description: "Anchor resource for the Lithuanian prostate cancer prevention and 
     GleasonIsupObservationLtProstate or
     NeoplasmInvasionLtProstate or
     PelvicOrganChangesLtProstate or
+    BladderChangesLtProstate or
+    BoneMetastasisLtProstate or
     ObservationLt
   )
 * conclusion MS

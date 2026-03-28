@@ -58,6 +58,23 @@ Description: "Local codes for detailed PRECISE assessment components."
 * #change-pattern "Change pattern"
 * #best-sequence "Best MRI sequence for change assessment"
 * #size-change-mm "Size change in millimeters"
+* #dimension-1-mm "Dimension 1 (mm, axial)"
+* #dimension-2-mm "Dimension 2 (mm, axial)"
+* #dimension-3-mm "Dimension 3 (mm, coronal/sagittal)"
+* #change-volume-cm3 "Change volume (cm³)"
+* #prior-tnm-stage "Prior TNM stage"
+
+ValueSet: ProstatePriorDamageStatusVS
+Id: prostate-prior-damage-status
+Title: "Prostate - Prior Damage Status"
+Description: "Status of previously detected damage (capsule, seminal vesicle) from prior investigation: present, absent, or unknown."
+* ^url = $prostate-prior-damage-status-vs-url
+* ^status = #active
+* ^experimental = false
+* ^publisher = "HL7 Lithuania"
+* $sct#52101004 "Present (qualifier value)"
+* $sct#2667000 "Absent (qualifier value)"
+* $sct#261665006 "Unknown (qualifier value)"
 
 ValueSet: ProstatePreciseComponentVS
 Id: prostate-precise-component

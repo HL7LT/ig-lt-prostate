@@ -11,6 +11,22 @@ Description: "Local codes extending SNOMED CT for prostate-related clinical find
 * #standard-prostate "Standard prostate (finding)" "Normal consistency on digital rectal examination."
 * #flexible-prostate "Flexible prostate (finding)" "Flexible/elastic consistency on digital rectal examination."
 * #inflexible-prostate "Inflexible prostate (finding)" "Inflexible/rigid consistency on digital rectal examination."
+// Change nature / etiology for pelvic organ findings
+* #change-neoplasm-related "Related to prostate neoplasm (finding)" "Change is related to the primary prostate neoplasm (invasion, compression, or direct extension)."
+* #change-benign "Benign change (finding)" "Benign, non-neoplastic change (e.g. hyperplasia, inflammation)."
+* #change-non-neoplastic "Non-neoplastic / incidental (finding)" "Change is not related to the prostate neoplasm (incidental or other etiology)."
+
+ValueSet: ProstateChangeNatureVS
+Id: prostate-change-nature
+Title: "Prostate - Change Nature / Etiology"
+Description: "Nature of observed change in pelvic organs: neoplasm-related, benign, or non-neoplastic/incidental."
+* ^url = $prostate-change-nature-vs-url
+* ^status = #active
+* ^experimental = false
+* ^publisher = "HL7 Lithuania"
+* SnomedProstateExtension#change-neoplasm-related "Related to prostate neoplasm"
+* SnomedProstateExtension#change-benign "Benign change"
+* SnomedProstateExtension#change-non-neoplastic "Non-neoplastic / incidental"
 
 ValueSet: DigitalRectalExaminationVS
 Id: digital-rectal-examination

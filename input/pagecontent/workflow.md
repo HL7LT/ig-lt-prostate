@@ -49,8 +49,8 @@ The programme uses the following ESPBI electronic forms for referrals:
 | Step | Form | Description | Questionnaire |
 |------|------|-------------|---------------|
 | T19 | **E027** | Referral to urologist | [ADPP Questionnaire](Questionnaire-questionnaire-prostate-adpp-primary-assessment.html) |
-| T22 | **E027** | Referral to radiologist for mpMRI | Radiologist Referral Questionnaire |
-| T26 | **E014** | Referral to pathologist (biopsy order) | Pathologist Referral Questionnaire |
+| T22 | **E027** | Referral to radiologist for mpMRI | [Radiologist Referral Questionnaire](Questionnaire-questionnaire-prostate-radiologist-referral.html) |
+| T26 | **E014** | Referral to pathologist (biopsy order) | [Pathologist Referral Questionnaire](Questionnaire-questionnaire-prostate-pathologist-referral.html) |
 | T29 | **E090/a** | First-time oncological diagnosis report | — |
 
 ### Phase II: Imaging Acquisition & Quality (MRI)
@@ -91,7 +91,7 @@ Note: Pathology results (Gleason/ISUP) are linked via the Encounter or supportin
 If MRI reveals high-risk (PI-RADS 4-5) or concerning intermediate (PI-RADS 3) lesions, a biopsy is performed.
 
 * **Procedure:** Image-guided biopsy samples are taken from targeted and/or systematic regions.
-* **Pathology:** Tissue analysis provides the definitive diagnosis, including Gleason grading and tumour classification.
+* **Pathology:** Tissue analysis provides the definitive diagnosis, including Gleason grading (**[GleasonIsupObservationLtProstate](StructureDefinition-gleason-isup-observation-lt-prostate.html)**) and tumour classification.
 * **Integration:** These results are linked back to the imaging context to enable a complete clinical picture.
 
 ### Phase VI: Longitudinal Follow-up (PRECISE)
@@ -151,15 +151,74 @@ The radiologist reviews MRI sequences and identifies one or more prostate **lesi
 
 ### Lesion-level sequence scoring
 
-For each lesion, **SequenceScoreLtProstate** observations capture T2, DWI, ADC, and optionally DCE scores.
+For each lesion, **[SequenceScoreLtProstate](StructureDefinition-sequence-score-lt-prostate.html)** observations capture T2, DWI, ADC, and optionally DCE scores.
 
 ### PI-RADS lesion-level assessment
 
-**PIRADSAssessmentLtProstate** gives a **lesion-level** PI-RADS category. Multiple lesions may have different scores.
+**[PIRADSAssessmentLtProstate](StructureDefinition-pirads-assessment-lt-prostate.html)** gives a **lesion-level** PI-RADS category. Multiple lesions may have different scores.
 
 ### Image quality assessment (PI-QUAL)
 
-**PiqualObservationLtProstate** is an **exam-level** image quality score.
+**[PiqualObservationLtProstate](StructureDefinition-piqual-observation-lt-prostate.html)** is an **exam-level** image quality score.
+
+### Extra-prostatic assessment: invasion and pelvic organ changes
+
+Beyond lesion scoring, the mpMRI report must assess whether the tumour extends beyond the prostate itself. Two profiles capture this:
+
+**[NeoplasmInvasionLtProstate](StructureDefinition-neoplasm-invasion-lt-prostate.html)** records direct invasion into peri-prostatic structures:
+
+| Structure | SNOMED | Laterality | Certainty |
+|-----------|--------|-----------|-----------|
+| Prostatic capsule | 60405008 | Right / Left | Expected (suspected) / Indisputable (present) |
+| Seminal vesicles | 64739004, 279669004 | Right / Left / Base | Expected / Indisputable |
+| Neurovascular bundles | 59820001 | Right / Left | Expected / Indisputable |
+| Regional lymph nodes | 312500006 | Right / Left | Present (+ free text for location and size) |
+
+**[BladderChangesLtProstate](StructureDefinition-bladder-changes-lt-prostate.html)** records bladder changes with two components:
+- **changeStatus** (required): Absent / Suspected / Present (from `ProstateDamageAndChangeStatusVS`)
+- **changeNature** (optional): neoplasm-related / benign / non-neoplastic (from `ProstateChangeNatureVS`)
+
+**[PelvicOrganChangesLtProstate](StructureDefinition-pelvic-organ-changes-lt-prostate.html)** records rectal and other pelvic organ changes:
+
+| Structure | SNOMED | Notes |
+|-----------|--------|-------|
+| Rectum | 34402009 | Tumour-related or other |
+
+**[BoneMetastasisLtProstate](StructureDefinition-bone-metastasis-lt-prostate.html)** records bone metastatic assessment separately (code: SNOMED 94222008 "Secondary malignant neoplasm of bone").
+
+Both profiles reference a **BodyStructure** instance (EU BodyStructure) using codes from **[BodyStructureProstateVS](ValueSet-body-structure-prostate.html)**. Each BodyStructure instance carries the anatomical structure code and optional **laterality**. The observation value uses **[ProstateDamageAndChangeStatusVS](ValueSet-prostate-damage-and-change-status.html)** (Absent / Suspected / Present).
+
+#### Laterality and certainty
+
+The Excel mpMRI requirements distinguish **laterality** (right, left, base for seminal vesicles) and **certainty** (Expected vs Indisputable) for each invaded structure. These are captured as follows:
+
+- **Laterality** is recorded on the **BodyStructure** instance using `includedStructure.laterality` (SNOMED 24028007 Right, 7771000 Left). For seminal vesicle base, a distinct SNOMED code (279669004) is used instead of laterality.
+- **Certainty** maps to `ProstateDamageAndChangeStatusVS`:
+  - *Expected* (suspected invasion) → **415684004 Suspected**
+  - *Indisputable* (confirmed invasion) → **52101004 Present**
+  - *No invasion* → **2667000 Absent**
+
+Each combination of structure + laterality + certainty produces a separate NeoplasmInvasionLtProstate observation referencing its own BodyStructure instance. For example, "Capsule — Expected: right" creates one observation with value=Suspected referencing a BodyStructure with capsule + right laterality.
+
+A separate BodyStructure profile is **not** defined for these structures — the EU BodyStructure profile with `BodyStructureProstateVS` binding is sufficient. This contrasts with **[LesionLtProstate](StructureDefinition-lesion-lt-prostate.html)**, which has its own profile because intra-prostatic lesions require the 39-sector PI-RADS map and morphology constraints.
+
+**Examples:**
+- Neoplasm invasion: [Capsular (present, right)](Observation-observation-prostatic-capsule-invasion-present-example.html), [Seminal vesicle (suspected, left)](Observation-observation-seminal-vesicle-invasion-suspected-l-example.html), [Lymph node (present)](Observation-observation-prostate-lymphnode-invasion-present-l-example.html)
+- Bladder: [Neoplasm-related (suspected)](Observation-observation-prostate-bladder-neoplasm-related-example.html), [Benign changes](Observation-observation-prostate-bladder-benign-example.html)
+- Rectum: [Rectal changes (absent)](Observation-observation-prostate-rectal-changes-absent-example.html)
+- Bone: [Metastasis (present)](Observation-observation-prostate-bone-metastasis-present-example.html), [Metastasis (absent)](Observation-observation-prostate-bone-metastasis-absent-example.html)
+
+### Incidental prostate conditions
+
+The mpMRI and PRECISE forms include an optional section for **other prostate conditions** observed alongside the primary assessment. These are incidental findings and do not require a dedicated profile — record them as plain **ObservationLt** instances with the appropriate SNOMED code:
+
+| Condition | SNOMED |
+|-----------|--------|
+| Nodular hyperplasia | 266569009 |
+| Prostatitis | 9713002 |
+| Fibrotic changes | (free text) |
+
+Include these in `ProstateReportLtProstate.result` (accepted via the `ObservationLt` reference type).
 
 ### Compilation into MRI diagnostic report
 
@@ -179,7 +238,7 @@ Full pathology workflow: **[LT Lab pathology workflow](https://build.fhir.org/ig
 
 ### Longitudinal follow-up and PRECISE assessment
 
-**PreciseAssessmentLtProstate** summarises change vs a prior MRI (regression, stability, progression).
+**[PreciseAssessmentLtProstate](StructureDefinition-precise-assessment-lt-prostate.html)** summarises change vs a prior MRI (regression, stability, progression).
 
 ### Communication and longitudinal care
 

@@ -50,7 +50,7 @@ The main lesion in the anterior transition zone is represented as a BodyStructur
 Diffuse enhancement in the peripheral zone without a focal lesion is captured as:
 
 - [Peripheral zone diffuse enhancement](Observation-observation-prostate-peripheral-zone-diffuse-enhancement-example.html)  
-- [Peripheral zone sector (PI-RADS map)](BodyStructure-bodystructure-prostate-peripheral-zone-mid-right-example.html)
+- [Peripheral zone sector (PI-RADS map)](BodyStructure-bodyStructure-prostate-peripheral-zone-mid-right-example.html)
 
 ---
 

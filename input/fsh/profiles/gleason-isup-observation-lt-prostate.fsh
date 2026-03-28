@@ -18,6 +18,18 @@ Description: "Histopathological grading of prostate cancer using Gleason score a
 * valueCodeableConcept from ProstateIsupGradeGroupVS (required)
 * focus 0..1
 * focus only Reference(LesionLtProstate)
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component contains
+    pattern4Percent 0..1 and
+    pattern5Percent 0..1
+* component[pattern4Percent].code = $sct#1286888005 "Percentage of Gleason pattern 4 in prostatic acinar adenocarcinoma (observable entity)"
+* component[pattern4Percent].value[x] 1..1
+* component[pattern4Percent].value[x] only integer
+* component[pattern4Percent] ^short = "Pattern 4 quantity as percentage (0-100). Applicable to GG2, GG3, GG4, GG5."
+* component[pattern5Percent].code = $sct#1286889002 "Percentage of Gleason pattern 5 in prostatic acinar adenocarcinoma (observable entity)"
+* component[pattern5Percent].value[x] 1..1
+* component[pattern5Percent].value[x] only integer
+* component[pattern5Percent] ^short = "Pattern 5 quantity as percentage (0-100). Applicable to GG4 and GG5."
 * note 0..*
-// TODO 2.6: Add sub-combination Gleason codes (3+5, 5+3, 4+5, 5+4, 5+5) to ValueSet
-//           Add Pattern 4/5 percentage band components per Excel pathology sheet

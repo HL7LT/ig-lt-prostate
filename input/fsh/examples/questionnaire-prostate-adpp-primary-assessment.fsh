@@ -22,9 +22,9 @@ Description: "Illustrative Questionnaire aligned with consultation / ADPP spread
 * item[0].item[1].linkId = "referral-reason"
 * item[0].item[1].text = "Reason for referral / programme entry"
 * item[0].item[1].type = #coding
-* item[0].item[1].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#referral-screening "Screening"
-* item[0].item[1].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#referral-elevated-psa "Elevated PSA"
-* item[0].item[1].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#referral-other "Other"
+* item[0].item[1].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#referral-screening "Referral for screening"
+* item[0].item[1].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#referral-elevated-psa "Referral for elevated PSA"
+* item[0].item[1].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#referral-other "Other referral reason"
 
 * item[1].linkId = "grp-clinical"
 * item[1].text = "Clinical findings (same visit)"
@@ -40,7 +40,7 @@ Description: "Illustrative Questionnaire aligned with consultation / ADPP spread
 * item[1].item[2].text = "Digital rectal examination (multiselect)"
 * item[1].item[2].type = #coding
 * item[1].item[2].repeats = true
-* item[1].item[2].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#dre-not-done "Not performed"
+* item[1].item[2].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#dre-not-done "DRE not performed"
 * item[1].item[2].answerOption[1].valueCoding = $snomed-prostate-extension-cs-url#standard-prostate "Standard"
 * item[1].item[2].answerOption[2].valueCoding = $sct#276387009 "Hard"
 * item[1].item[2].answerOption[3].valueCoding = $sct#276385001 "Soft"
@@ -167,7 +167,7 @@ Description: "Example answers for the expanded ADPP primary assessment Questionn
 * item[0].item[0].linkId = "assessment-datetime"
 * item[0].item[0].answer.valueDateTime = "2024-05-26T08:30:00Z"
 * item[0].item[1].linkId = "referral-reason"
-* item[0].item[1].answer.valueCoding = $prostate-questionnaire-options-cs#referral-elevated-psa "Elevated PSA"
+* item[0].item[1].answer.valueCoding = $prostate-questionnaire-options-cs#referral-elevated-psa "Referral for elevated PSA"
 
 * item[1].linkId = "grp-clinical"
 * item[1].item[0].linkId = "race"

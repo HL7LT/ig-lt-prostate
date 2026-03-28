@@ -27,6 +27,16 @@ Title: "Observation: Prostate - PRECISE Longitudinal Assessment Example2 (exampl
 * valueCodeableConcept = ProstatePreciseCategoryCS#4 "PRECISE 4 - Likely progression"
 * component[newLesion].valueBoolean = false
 * component[changePattern].valueCodeableConcept = ProstatePreciseChangePatternCS#local "Local change"
-* component[bestSequence].valueCodeableConcept = $dicom-dcm#113043 "Diffusion weighted"
+* component[bestSequence][0].valueCodeableConcept = $dicom-dcm#113043 "Diffusion weighted"
+* component[bestSequence][1].valueCodeableConcept = $dicom-dcm#113041 "Apparent Diffusion Coefficient"
 * component[sizeChangeMm].valueQuantity = 3 'mm'
+* component[dimension1].valueQuantity = 12 'mm'
+* component[dimension2].valueQuantity = 9 'mm'
+* component[dimension3].valueQuantity = 11 'mm'
+* component[changeVolume].valueQuantity = 0.6 'cm3'
+* component[likertScale].valueInteger = 4
+* component[priorPirads].valueInteger = 3
+* component[priorTnmStage].valueString = "cT2 N0 M0"
+* component[priorCapsuleDamage].valueCodeableConcept = $sct#2667000 "Absent (qualifier value)"
+* component[priorVesicleDamage].valueCodeableConcept = $sct#2667000 "Absent (qualifier value)"
 * note.text = "Follow-up MRI shows likely progression compared to prior study; progression driven by lesion growth and increased DWI restriction."

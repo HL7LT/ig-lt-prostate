@@ -3,7 +3,7 @@ InstanceOf: PIRADSAssessmentLtProstate
 Title: "Observation: Prostate - PI-RADS Assessment (Lesion 1) (example)"
 Usage: #example
 * status = #final
-* code = $sct#350501000146102 "Prostate Imaging-Reporting and Data System score"
+* code = $sct#1345044005 "Assessment using Prostate Imaging-Reporting and Data System (procedure)"
 * subject = Reference(patient-male-example)
 * encounter = Reference(encounter-prostate-diagnostic-example)
 * effectiveDateTime = "2025-09-22T10:30:00Z"

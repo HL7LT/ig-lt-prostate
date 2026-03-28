@@ -13,7 +13,7 @@ InstanceOf: PIRADSAssessmentLtProstate
 Usage: #example
 Title: "Observation: Prostate - PI-RADS Assessment (Lesion 1) Example"
 * status = #final
-* code = $sct#350501000146102 "Prostate Imaging-Reporting and Data System score"
+* code = $sct#1345044005 "Assessment using Prostate Imaging-Reporting and Data System (procedure)"
 * subject = Reference(patient-male-example)
 * encounter = Reference(encounter-prostate-diagnostic-example)
 * effectiveDateTime = "2024-05-27T10:30:00Z"
@@ -265,15 +265,16 @@ Title: "Observation: Prostate - Capsular Invasion (Suspected) Example"
 
 
 Instance: observation-prostate-urinary-bladder-changes-example
-InstanceOf: PelvicOrganChangesLtProstate    
+InstanceOf: BladderChangesLtProstate
 Usage: #example
 Title: "Observation: Prostate - Urinary Bladder Wall Thickening Example"
 * status = #final
 * category = $observation-category#exam
 * code = $sct#364636000 "Lesion observable (observable entity)"
 * subject = Reference(patient-male-example)
-* valueCodeableConcept = $sct#415684004 "Suspected (qualifier value)"
 * bodyStructure = Reference(bodyStructure-prostate-urinary-bladder-example)
+* component[changeStatus].code = $sct#260905004 "Condition (attribute)"
+* component[changeStatus].valueCodeableConcept = $sct#415684004 "Suspected (qualifier value)"
 * note.text = "Urinary bladder wall thickening noted."
 
 
@@ -301,7 +302,7 @@ Description: "Right mid-gland peripheral zone sector (PI-RADS 39-sector map)."
 
 
 Instance: observation-prostate-peripheral-zone-diffuse-enhancement-example
-InstanceOf: PelvicOrganChangesLtProstate
+InstanceOf: ObservationLt
 Usage: #example
 Title: "Observation: Prostate - Peripheral Zone Diffuse Enhancement (No Focal Lesion) Example"
 * status = #final

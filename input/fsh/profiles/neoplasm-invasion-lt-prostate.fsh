@@ -21,4 +21,4 @@ Description: "Direct invasion of prostate-related structures by neoplasm."
 * bodyStructure only Reference($EuBodyStructureUrl)
 * note 0..1
 * note.text 1..1
-// TODO 2.3: Add laterality (right/left) and certainty (expected/indisputable) per Excel requirements
+

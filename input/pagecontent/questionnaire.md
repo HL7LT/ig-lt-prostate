@@ -24,6 +24,23 @@ Mappings from **Questionnaire `linkId`** to **logical FHIR targets** (profiles, 
 | **[ConceptMap: ADPP Questionnaire → FHIR](ConceptMap-conceptmap-prostate-adpp-questionnaire-to-fhir-lt-prostate.html)** | [CodeSystem: prostate-adpp-questionnaire-item](CodeSystem-prostate-adpp-questionnaire-item.html) | [CodeSystem: prostate-fhir-mapping-target](CodeSystem-prostate-fhir-mapping-target.html) |
 | **[ConceptMap: Pathology Questionnaire → FHIR](ConceptMap-conceptmap-prostate-pathology-questionnaire-to-fhir-lt-prostate.html)** | [CodeSystem: prostate-pathology-questionnaire-item](CodeSystem-prostate-pathology-questionnaire-item.html) | [CodeSystem: prostate-fhir-mapping-target](CodeSystem-prostate-fhir-mapping-target.html) |
 
+**Note:** The radiologist and pathologist referral questionnaires do not yet have dedicated ConceptMaps. Their items map to the same target profiles described in the ADPP ConceptMap (family history, DRE, anthropometrics, PSA, prior imaging) plus Lab IG profiles for pathology orders and specimens.
+
+### Key FHIR mapping targets for prostate questionnaire items
+
+| Questionnaire item | Target profile / resource |
+|--------------------|--------------------------|
+| DRE findings | **[DreObservationLtProstate](StructureDefinition-dre-observation-lt-prostate.html)** |
+| Family history | **[FamilyMemberScreeningHistoryLtLifestyle](https://build.fhir.org/ig/HL7LT/ig-lt-lifestyle/StructureDefinition-family-member-screening-history-lt-lifestyle.html)** |
+| Height / Weight / BMI | **[BodyHeight](https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/StructureDefinition-body-height.html)** / **[BodyWeight](https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/StructureDefinition-body-weight.html)** / **[BMI](https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/StructureDefinition-bmi.html)** |
+| Anticoagulant use | **[MedicationStatementLtLifestyle](https://build.fhir.org/ig/HL7LT/ig-lt-lifestyle/StructureDefinition-medication-statement-lt-lifestyle.html)** |
+| ISUP Grade Group | **[GleasonIsupObservationLtProstate](StructureDefinition-gleason-isup-observation-lt-prostate.html)** |
+| Specimen quality | **[SpecimenAdequacyLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-specimen-adequacy-lt-lab.html)** |
+| Biopsy procedure | **[BiopsyProcedureLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-biopsy-procedure-lt-lab.html)** |
+| Pathology order | **[PathologyOrderLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-pathology-order-lt-lab.html)** |
+| Tumour observables | **[TumorObservableLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-tumor-observable-lt-lab.html)** |
+| Screening programme | **[ScreeningCarePlanLtProstate](StructureDefinition-screening-careplan-lt-prostate.html)** |
+
 Each **ConceptMap.group.element** has:
 
 * **`code`** — Questionnaire **linkId** (same as source CodeSystem code).

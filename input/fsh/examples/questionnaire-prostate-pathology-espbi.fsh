@@ -31,11 +31,11 @@ Description: "Illustrative FHIR Questionnaire aligned with dr-prostate spreadshe
 * item[1].item[0].linkId = "treatment-effect"
 * item[1].item[0].text = "Treatment effect on tumour"
 * item[1].item[0].type = #coding
-* item[1].item[0].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#treatment-unknown "Unknown"
-* item[1].item[0].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#treatment-unidentifiable "Unidentifiable"
+* item[1].item[0].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#treatment-unknown "Treatment effect unknown"
+* item[1].item[0].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#treatment-unidentifiable "Treatment effect unidentifiable"
 * item[1].item[0].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#treatment-radiotherapy "Observed radiotherapy effect"
 * item[1].item[0].answerOption[3].valueCoding = $prostate-questionnaire-options-cs#treatment-hormone "Observed hormone therapy effect"
-* item[1].item[0].answerOption[4].valueCoding = $prostate-questionnaire-options-cs#treatment-other "Other effect"
+* item[1].item[0].answerOption[4].valueCoding = $prostate-questionnaire-options-cs#treatment-other "Observed other therapy effect"
 
 * item[2].linkId = "grp-histology"
 * item[2].text = "Histological tumour type"
@@ -43,8 +43,8 @@ Description: "Illustrative FHIR Questionnaire aligned with dr-prostate spreadshe
 * item[2].item[0].linkId = "histological-type"
 * item[2].item[0].text = "Primary histological type"
 * item[2].item[0].type = #coding
-* item[2].item[0].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#hist-acinar "Acinar adenocarcinoma"
-* item[2].item[0].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#hist-other "Other (comment)"
+* item[2].item[0].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#hist-acinar "Acinar adenocarcinoma (conventional)"
+* item[2].item[0].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#hist-other "Other histological type (see comment)"
 * item[2].item[1].linkId = "histological-comment"
 * item[2].item[1].text = "Histological type comment"
 * item[2].item[1].type = #text
@@ -55,11 +55,11 @@ Description: "Illustrative FHIR Questionnaire aligned with dr-prostate spreadshe
 * item[3].item[0].linkId = "isup-grade-group"
 * item[3].item[0].text = "International Society of Urological Pathology grade group"
 * item[3].item[0].type = #coding
-* item[3].item[0].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#isup-gg1 "Grade Group 1"
-* item[3].item[0].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#isup-gg2 "Grade Group 2"
-* item[3].item[0].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#isup-gg3 "Grade Group 3"
-* item[3].item[0].answerOption[3].valueCoding = $prostate-questionnaire-options-cs#isup-gg4 "Grade Group 4"
-* item[3].item[0].answerOption[4].valueCoding = $prostate-questionnaire-options-cs#isup-gg5 "Grade Group 5"
+* item[3].item[0].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#isup-gg1 "ISUP Grade Group 1 (Gleason 3+3)"
+* item[3].item[0].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#isup-gg2 "ISUP Grade Group 2 (Gleason 3+4)"
+* item[3].item[0].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#isup-gg3 "ISUP Grade Group 3 (Gleason 4+3)"
+* item[3].item[0].answerOption[3].valueCoding = $prostate-questionnaire-options-cs#isup-gg4 "ISUP Grade Group 4 (Gleason 4+4 or equivalent)"
+* item[3].item[0].answerOption[4].valueCoding = $prostate-questionnaire-options-cs#isup-gg5 "ISUP Grade Group 5 (Gleason 4+5 / 5+4 / 5+5)"
 
 * item[4].linkId = "grp-idc-cribriform"
 * item[4].text = "IDC and cribriform"
@@ -67,14 +67,14 @@ Description: "Illustrative FHIR Questionnaire aligned with dr-prostate spreadshe
 * item[4].item[0].linkId = "idc-status"
 * item[4].item[0].text = "Intraductal carcinoma (IDC)"
 * item[4].item[0].type = #coding
-* item[4].item[0].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#idc-absent "Not identified"
-* item[4].item[0].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#idc-present "Identifiable"
+* item[4].item[0].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#idc-absent "Intraductal carcinoma not identified"
+* item[4].item[0].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#idc-present "Intraductal carcinoma identifiable"
 * item[4].item[1].linkId = "cribriform-status"
 * item[4].item[1].text = "Cribriform glands"
 * item[4].item[1].type = #coding
-* item[4].item[1].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#cribriform-na "Not applicable"
-* item[4].item[1].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#cribriform-unknown "Undefined"
-* item[4].item[1].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#cribriform-present "Identifiable"
+* item[4].item[1].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#cribriform-na "Cribriform not applicable"
+* item[4].item[1].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#cribriform-unknown "Cribriform undefined"
+* item[4].item[1].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#cribriform-present "Cribriform identifiable"
 
 * item[5].linkId = "grp-additional-grade-burden"
 * item[5].text = "Additional grade and tumour burden (subset)"
@@ -82,17 +82,17 @@ Description: "Illustrative FHIR Questionnaire aligned with dr-prostate spreadshe
 * item[5].item[0].linkId = "pattern4-pct-band"
 * item[5].item[0].text = "Quantity of Pattern 4 (percent band)"
 * item[5].item[0].type = #coding
-* item[5].item[0].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#pattern4-pct-na "Not applicable"
-* item[5].item[0].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#pattern4-pct-lte5 "≤5%"
-* item[5].item[0].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#pattern4-pct-6-10 "6–10%"
-* item[5].item[0].answerOption[3].valueCoding = $prostate-questionnaire-options-cs#pattern4-pct-gt40 ">40%"
+* item[5].item[0].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#pattern4-pct-na "Pattern 4 %: not applicable"
+* item[5].item[0].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#pattern4-pct-lte5 "Pattern 4 %: ≤5%"
+* item[5].item[0].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#pattern4-pct-6-10 "Pattern 4 %: 6–10%"
+* item[5].item[0].answerOption[3].valueCoding = $prostate-questionnaire-options-cs#pattern4-pct-gt40 "Pattern 4 %: >40%"
 * item[5].item[1].linkId = "tumor-percent-in-biopsy"
 * item[5].item[1].text = "Tumour percentage in biopsy tissue"
 * item[5].item[1].type = #coding
-* item[5].item[1].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#tumor-pct-lt1 "<1%"
-* item[5].item[1].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#tumor-pct-1-5 "1–5%"
-* item[5].item[1].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#tumor-pct-gt90 ">90%"
-* item[5].item[1].answerOption[3].valueCoding = $prostate-questionnaire-options-cs#tumor-pct-uneval "Cannot be evaluated"
+* item[5].item[1].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#tumor-pct-lt1 "Tumour % in biopsy: <1%"
+* item[5].item[1].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#tumor-pct-1-5 "Tumour % in biopsy: 1–5%"
+* item[5].item[1].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#tumor-pct-gt90 "Tumour % in biopsy: >90%"
+* item[5].item[1].answerOption[3].valueCoding = $prostate-questionnaire-options-cs#tumor-pct-uneval "Tumour %: cannot be evaluated"
 
 * item[6].linkId = "grp-invasion"
 * item[6].text = "Local invasion (subset)"
@@ -100,9 +100,9 @@ Description: "Illustrative FHIR Questionnaire aligned with dr-prostate spreadshe
 * item[6].item[0].linkId = "periprostatic-fat-invasion"
 * item[6].item[0].text = "Tumour infiltration in periprostatic adipose tissue"
 * item[6].item[0].type = #coding
-* item[6].item[0].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#periprostatic-unknown "Unidentifiable"
-* item[6].item[0].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#periprostatic-absent "Not identified"
-* item[6].item[0].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#periprostatic-present "Present"
+* item[6].item[0].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#periprostatic-unknown "Periprostatic fat invasion: unidentifiable"
+* item[6].item[0].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#periprostatic-absent "Periprostatic fat invasion: not identified"
+* item[6].item[0].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#periprostatic-present "Periprostatic fat invasion: present"
 
 
 Instance: questionnaireresponse-prostate-pathology-espbi-example
@@ -123,30 +123,30 @@ Description: "Example answers using **valueCoding** for choice questions."
 
 * item[1].linkId = "grp-treatment-effect"
 * item[1].item[0].linkId = "treatment-effect"
-* item[1].item[0].answer.valueCoding = $prostate-questionnaire-options-cs#treatment-unknown "Unknown"
+* item[1].item[0].answer.valueCoding = $prostate-questionnaire-options-cs#treatment-unknown "Treatment effect unknown"
 
 * item[2].linkId = "grp-histology"
 * item[2].item[0].linkId = "histological-type"
-* item[2].item[0].answer.valueCoding = $prostate-questionnaire-options-cs#hist-acinar "Acinar adenocarcinoma"
+* item[2].item[0].answer.valueCoding = $prostate-questionnaire-options-cs#hist-acinar "Acinar adenocarcinoma (conventional)"
 * item[2].item[1].linkId = "histological-comment"
 * item[2].item[1].answer.valueString = "Acinar pattern; correlate with MRI."
 
 * item[3].linkId = "grp-grade"
 * item[3].item[0].linkId = "isup-grade-group"
-* item[3].item[0].answer.valueCoding = $prostate-questionnaire-options-cs#isup-gg1 "Grade Group 1"
+* item[3].item[0].answer.valueCoding = $prostate-questionnaire-options-cs#isup-gg1 "ISUP Grade Group 1 (Gleason 3+3)"
 
 * item[4].linkId = "grp-idc-cribriform"
 * item[4].item[0].linkId = "idc-status"
-* item[4].item[0].answer.valueCoding = $prostate-questionnaire-options-cs#idc-absent "Not identified"
+* item[4].item[0].answer.valueCoding = $prostate-questionnaire-options-cs#idc-absent "Intraductal carcinoma not identified"
 * item[4].item[1].linkId = "cribriform-status"
-* item[4].item[1].answer.valueCoding = $prostate-questionnaire-options-cs#cribriform-na "Not applicable"
+* item[4].item[1].answer.valueCoding = $prostate-questionnaire-options-cs#cribriform-na "Cribriform not applicable"
 
 * item[5].linkId = "grp-additional-grade-burden"
 * item[5].item[0].linkId = "pattern4-pct-band"
-* item[5].item[0].answer.valueCoding = $prostate-questionnaire-options-cs#pattern4-pct-lte5 "≤5%"
+* item[5].item[0].answer.valueCoding = $prostate-questionnaire-options-cs#pattern4-pct-lte5 "Pattern 4 %: ≤5%"
 * item[5].item[1].linkId = "tumor-percent-in-biopsy"
-* item[5].item[1].answer.valueCoding = $prostate-questionnaire-options-cs#tumor-pct-1-5 "1–5%"
+* item[5].item[1].answer.valueCoding = $prostate-questionnaire-options-cs#tumor-pct-1-5 "Tumour % in biopsy: 1–5%"
 
 * item[6].linkId = "grp-invasion"
 * item[6].item[0].linkId = "periprostatic-fat-invasion"
-* item[6].item[0].answer.valueCoding = $prostate-questionnaire-options-cs#periprostatic-absent "Not identified"
+* item[6].item[0].answer.valueCoding = $prostate-questionnaire-options-cs#periprostatic-absent "Periprostatic fat invasion: not identified"

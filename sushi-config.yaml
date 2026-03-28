@@ -93,6 +93,8 @@ parameters:
     - https://tx.hl7.lt/fhir/CodeSystem/prostate-pathology-questionnaire-item
     - https://tx.hl7.lt/fhir/CodeSystem/snomed-prostate-extension
     - https://tx.hl7.lt/fhir/ValueSet/digital-rectal-examination
+    - https://tx.hl7.lt/fhir/ValueSet/prostate-change-nature
+    - https://tx.hl7.lt/fhir/ValueSet/prostate-prior-damage-status
     - https://hl7.lt/fhir/prostate/ConceptMap/prostate-adpp-questionnaire-to-fhir
     - https://hl7.lt/fhir/prostate/ConceptMap/prostate-pathology-questionnaire-to-fhir
 
@@ -219,6 +221,8 @@ groups:
     - StructureDefinition/prostate-composition-lt-prostate
     - StructureDefinition/dre-observation-lt-prostate
     - StructureDefinition/screening-careplan-lt-prostate
+    - StructureDefinition/bladder-changes-lt-prostate
+    - StructureDefinition/bone-metastasis-lt-prostate
 
   GroupQuestionnaireMapping:
     name: Questionnaire mapping (CodeSystems & ConceptMaps)

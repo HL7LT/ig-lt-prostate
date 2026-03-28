@@ -12,7 +12,7 @@ sector-based prostate body structures (39-sector map).
 * status 1..1
 * status = #final
 * code 1..1
-* code = $sct#350501000146102 "Prostate Imaging-Reporting and Data System score"
+* code = $sct#1345044005 "Assessment using Prostate Imaging-Reporting and Data System (procedure)"
 * subject 1..1
 * subject only Reference(PatientLt)
 * encounter 0..1
@@ -32,4 +32,3 @@ sector-based prostate body structures (39-sector map).
 * method 0..1
 * method.text ^short = "PI-RADS version (e.g., PI-RADS v2.1)"
 * note 0..*
-// TODO 2.1: Add zone-level PI-RADS assessment (TZ/PZ summary) per Excel mpMRI requirements
