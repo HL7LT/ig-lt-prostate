@@ -1,5 +1,5 @@
-CodeSystem: ProstateFhirMappingTargetLtProstate
-Id: prostate-fhir-mapping-target-lt-prostate
+CodeSystem: ProstateFhirMappingTarget
+Id: prostate-fhir-mapping-target
 Title: "Prostate questionnaire → FHIR mapping target (illustrative)"
 Description: "Target **codes** for **ConceptMap** entries: each code denotes a logical FHIR mapping destination (profile or element path). Used with **prostate-adpp-questionnaire-item** and **prostate-pathology-questionnaire-item** source codes."
 * ^url = $prostate-fhir-mapping-target-cs-url
@@ -33,7 +33,7 @@ Description: "Target **codes** for **ConceptMap** entries: each code denotes a l
 * #specimen-adequacy-finding "Observation: specimen adequacy (LT Lab)"
 * #observation-tumor-treatment-effect "Observation: tumor treatment effect (TumorObservableLtLab)"
 * #condition-morphology-prostate "Condition / morphology (ProstateConditionLtLab, ICD-O)"
-* #observation-gleason-isup-prostate "GleasonIsupObservationLtProstate + ProstateIsupGradeGroup"
+* #observation-gleason-isup-prostate "GleasonIsupObservationLtProstate + ProstateIsupGradeGroupVS"
 * #observation-tumor-microscopic-idc "TumorObservableLtLab / morphology for IDC"
 * #observation-tumor-microscopic-cribriform "TumorObservableLtLab / morphology for cribriform"
 * #observation-pattern4-percent "Observation: Pattern 4 percent band (lab tumour measurement patterns)"

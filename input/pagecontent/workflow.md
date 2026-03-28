@@ -6,13 +6,52 @@ The prostate cancer workflow is a structured, longitudinal process supporting **
 
 In the digital ecosystem, this is represented by a Prostate Programme Report, which pairs a structured DiagnosticReport (the data anchor) with a Composition (the human-readable narrative). Earlier steps use **LT Base**, **LT VitalSigns**, **LT Lab**, and **LT Lifestyle** for demographics, vitals, labs, [pathology workflows](https://build.fhir.org/ig/HL7LT/ig-lt-lab/pathology-workflow.html) and behavioural data where applicable.
 
+## Programme Enrollment & Eligibility
+
+The ADPP (Early Diagnosis and Prevention Programme) tracks participants via **[ScreeningCarePlanLtProstate](StructureDefinition-screening-careplan-lt-prostate.html)**, which captures enrolment status, risk group, and scheduled activities.
+
+### Target population criteria
+
+| Criteria | Standard group | Increased risk group |
+|----------|---------------|---------------------|
+| **Sex** | Male | Male |
+| **Age** | 50–69 years (inclusive) | 45–49 years (inclusive) |
+| **Family history** | — | Father or brother diagnosed with prostate cancer |
+| **Periodicity** | PSA every 2 years | PSA every 2 years |
+
+**Special rules:**
+- Men up to 59 years with PSA < 1 ng/ml: service no more than once every 5 years
+- Men 60–69 years with PSA < 1 ng/ml: no longer invited to participate
+
+Family history is captured using **[FamilyMemberScreeningHistoryLtLifestyle](https://build.fhir.org/ig/HL7LT/ig-lt-lifestyle/StructureDefinition-family-member-screening-history-lt-lifestyle.html)** from **LT Lifestyle** with SNOMED situation codes (414205003 prostate, 429740004 breast, 2301000119106 ovarian, 312824007 colon cancer).
+
 ## Phase I: Screening & Laboratory Evaluation
 
-* The process typically begins with a **primary care or urology** encounter, **Prostate-Specific Antigen (PSA)** testing, and optional **digital rectal examination (DRE)**.
+* The process typically begins with a **primary care or urology** encounter, **Prostate-Specific Antigen (PSA)** testing, and **[digital rectal examination (DRE)](StructureDefinition-dre-observation-lt-prostate.html)**.
 * Clinical Trigger: A clinician initiates PSA testing as part of routine screening or clinical indication.
 * Data Representation: PSA results are captured as structured Observation resources. These serve as the primary trigger for referral to imaging.
 
-Contextual Data: Supporting information such as age, trends over time, lifestyle factors (e.g., tobacco or alcohol use from **LT Lifestyle** profiles), and anthropometrics and vitals (use **LT VitalSigns** profiles) are linked to provide clinical context.
+### PSA threshold decision rules
+
+| PSA result | Age | Action |
+|-----------|-----|--------|
+| PSA < 1 ng/ml | up to 59 years | Re-invite after **5 years** (T16) |
+| PSA 1–3 ng/ml | up to 69 years | Re-invite after **2 years** (T17) |
+| PSA < 1 ng/ml | 60–69 years | **Exit programme** — no longer invited (T18) |
+| PSA > 3 ng/ml | any | **Referral to urologist** (T19, form E027) |
+
+Contextual Data: Supporting information such as age, trends over time, lifestyle factors (e.g., tobacco or alcohol use from **LT Lifestyle** profiles), and anthropometrics and vitals (use **LT VitalSigns** profiles — [BodyHeight](https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/StructureDefinition-body-height.html), [BodyWeight](https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/StructureDefinition-body-weight.html), [BMI](https://build.fhir.org/ig/HL7LT/ig-lt-vitalsigns/StructureDefinition-bmi.html)) are linked to provide clinical context. Anticoagulant use is captured via **[MedicationStatementLtLifestyle](https://build.fhir.org/ig/HL7LT/ig-lt-lifestyle/StructureDefinition-medication-statement-lt-lifestyle.html)**.
+
+### Referral forms (ESPBI)
+
+The programme uses the following ESPBI electronic forms for referrals:
+
+| Step | Form | Description | Questionnaire |
+|------|------|-------------|---------------|
+| T19 | **E027** | Referral to urologist | [ADPP Questionnaire](Questionnaire-questionnaire-prostate-adpp-primary-assessment.html) |
+| T22 | **E027** | Referral to radiologist for mpMRI | Radiologist Referral Questionnaire |
+| T26 | **E014** | Referral to pathologist (biopsy order) | Pathologist Referral Questionnaire |
+| T29 | **E090/a** | First-time oncological diagnosis report | — |
 
 ### Phase II: Imaging Acquisition & Quality (MRI)
 
@@ -132,7 +171,11 @@ Clinical assessment is separated from workflow decisions (referral, biopsy). PI-
 
 ### Prostate biopsy and pathology
 
-Biopsy and **LT Lab** pathology reporting follow **[LT Lab pathology workflow](https://build.fhir.org/ig/HL7LT/ig-lt-lab/pathology-workflow.html)**.
+Biopsy is performed using **[BiopsyProcedureLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-biopsy-procedure-lt-lab.html)** from **LT Lab**. Biopsy orders follow **[PathologyOrderLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-pathology-order-lt-lab.html)**. Specimens are tracked via **[SpecimenLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-specimen-lt-lab.html)** and **[SpecimenBlockLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-specimen-block-lt-lab.html)**. Pathology results are structured in **[PathologyReportLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-pathology-report-lt-lab.html)** with **[PathologyCompositionLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-pathology-composition-lt-lab.html)**. TNM staging uses **[ProstateConditionLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-prostate-condition-lt-lab.html)**.
+
+Additional lab observations: **[SpecimenAdequacyLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-specimen-adequacy-lt-lab.html)** (specimen quality), **[SpecimenMeasurementLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-specimen-measurement-lt-lab.html)** (bioptate length), **[TumorObservableLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-tumor-observable-lt-lab.html)** (tumour characteristics).
+
+Full pathology workflow: **[LT Lab pathology workflow](https://build.fhir.org/ig/HL7LT/ig-lt-lab/pathology-workflow.html)**.
 
 ### Longitudinal follow-up and PRECISE assessment
 

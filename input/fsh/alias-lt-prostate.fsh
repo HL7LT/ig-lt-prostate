@@ -14,6 +14,8 @@ Alias: $gleason-isup-observation-lt-prostate-url = https://hl7.lt/fhir/prostate/
 Alias: $pirads-assessment-lt-prostate-url = https://hl7.lt/fhir/prostate/StructureDefinition/pirads-assessment-lt-prostate
 Alias: $prostate-report-lt-prostate-url = https://hl7.lt/fhir/prostate/StructureDefinition/prostate-report-lt-prostate
 Alias: $prostate-composition-lt-prostate-url = https://hl7.lt/fhir/prostate/StructureDefinition/prostate-composition-lt-prostate
+Alias: $dre-observation-lt-prostate-url = https://hl7.lt/fhir/prostate/StructureDefinition/dre-observation-lt-prostate
+Alias: $screening-careplan-lt-prostate-url = https://hl7.lt/fhir/prostate/StructureDefinition/screening-careplan-lt-prostate
 
 // Terminology (tx.hl7.lt, no -lt-prostate in URL path)
 Alias: $prostate-piqual-scale-url = https://tx.hl7.lt/fhir/CodeSystem/prostate-piqual
@@ -35,3 +37,5 @@ Alias: $prostate-questionnaire-options-cs = https://tx.hl7.lt/fhir/CodeSystem/pr
 Alias: $prostate-fhir-mapping-target-cs-url = https://tx.hl7.lt/fhir/CodeSystem/prostate-fhir-mapping-target
 Alias: $prostate-adpp-questionnaire-item-cs-url = https://tx.hl7.lt/fhir/CodeSystem/prostate-adpp-questionnaire-item
 Alias: $prostate-pathology-questionnaire-item-cs-url = https://tx.hl7.lt/fhir/CodeSystem/prostate-pathology-questionnaire-item
+Alias: $snomed-prostate-extension-cs-url = https://tx.hl7.lt/fhir/CodeSystem/snomed-prostate-extension
+Alias: $digital-rectal-examination-vs-url = https://tx.hl7.lt/fhir/ValueSet/digital-rectal-examination

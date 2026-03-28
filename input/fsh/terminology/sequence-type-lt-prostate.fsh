@@ -1,4 +1,4 @@
-ValueSet: ProstateSequenceType
+ValueSet: ProstateSequenceTypeVS
 Id: prostate-sequence-type
 Title: "Prostate - mpMRI Sequence Type"
 Description: "Sequence/image types used in prostate mpMRI scoring (DICOM terminology)."

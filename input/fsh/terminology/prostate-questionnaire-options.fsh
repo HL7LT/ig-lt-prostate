@@ -1,5 +1,5 @@
-CodeSystem: ProstateQuestionnaireOptionsLtProstate
-Id: prostate-questionnaire-options-lt-prostate
+CodeSystem: ProstateQuestionnaireOptions
+Id: prostate-questionnaire-options
 Title: "Prostate questionnaire answer options (illustrative)"
 Description: "Illustrative codes for **Questionnaire** answer options for prostate ESPBI-style forms in this IG. Register or replace with national coded values in production."
 * ^url = $prostate-questionnaire-options-cs-url
@@ -52,3 +52,19 @@ Description: "Illustrative codes for **Questionnaire** answer options for prosta
 * #periprostatic-unknown "Periprostatic fat invasion: unidentifiable"
 * #periprostatic-absent "Periprostatic fat invasion: not identified"
 * #periprostatic-present "Periprostatic fat invasion: present"
+* #biopsy-initial "Initial biopsy"
+* #biopsy-repeat "Repeat biopsy"
+* #fixative-buffered-formalin "10% buffered formalin"
+* #fixative-unfixed "Unfixed (no fixative)"
+* #dx-n40-gph "N40 Glandular prostatic hyperplasia"
+* #dx-c61 "C61 Malignant neoplasm of prostate"
+* #ct-1c "cT1c"
+* #ct-2 "cT2"
+* #ct-3a "cT3a"
+* #ct-3b "cT3b"
+* #op-transperineal "Transperineal biopsy"
+* #op-transrectal "Transrectal biopsy"
+* #proc-systematic "Systematic biopsy"
+* #proc-adaptive "Adaptive biopsy"
+* #proc-systematic-targeted "Systematic + targeted biopsy"
+* #proc-applicative-perifocal "Applicative + perifocal biopsy"

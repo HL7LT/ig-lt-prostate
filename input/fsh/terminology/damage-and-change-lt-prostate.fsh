@@ -1,4 +1,4 @@
-ValueSet: ProstateDamageAndChangeStatusLt
+ValueSet: ProstateDamageAndChangeStatusVS
 Id: prostate-damage-and-change-status
 Title: "ValueSet: Prostate - Damage and Change Status"
 Description: "Absent, suspected, or present damage and change status for prostate cancer staging."
@@ -10,7 +10,7 @@ Description: "Absent, suspected, or present damage and change status for prostat
 * $sct#415684004 "Suspected (qualifier value)"
 * $sct#52101004  "Present (qualifier value)"
 
-ValueSet: BodyStructureProstate
+ValueSet: BodyStructureProstateVS
 Id: body-structure-prostate
 Title: "Prostate - Body Structure"
 Description: "Body structures that may be affected by prostate cancer invasion or local organ changes."

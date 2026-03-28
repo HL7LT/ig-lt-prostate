@@ -19,7 +19,7 @@ They align with the **[workflow](workflow.html)** and reuse the same patient and
 
 ## Relation to MpMRIReportLtProstate
 
-**[MpMRIReportLtProstate](StructureDefinition-mpmri-report-lt-prostate.html)** specialises **EU** **ImDiagnosticReport** for **mpMRI** with **ProstateMRITypeLt** and **Composition** references to **EU** imaging composition. Use it for **EU imaging R5**-aligned mpMRI reporting. Use **ProstateReportLtProstate** when the **national** **ImagingReportLt** / **ImagingCompositionLt** stack is required.
+**[MpMRIReportLtProstate](StructureDefinition-mpmri-report-lt-prostate.html)** specialises **EU** **ImDiagnosticReport** for **mpMRI** with **ProstateMriTypeVS** and **Composition** references to **EU** imaging composition. Use it for **EU imaging R5**-aligned mpMRI reporting. Use **ProstateReportLtProstate** when the **national** **ImagingReportLt** / **ImagingCompositionLt** stack is required.
 
 ## Cross-IG measurements (published CI Build)
 

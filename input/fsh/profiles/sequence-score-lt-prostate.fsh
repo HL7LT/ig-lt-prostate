@@ -15,7 +15,7 @@ Anatomical localization is provided via the referenced prostate lesion.
 * status 1..1
 * status = #final
 * code 1..1
-* code from ProstateSequenceType (required)
+* code from ProstateSequenceTypeVS (required)
 * subject 1..1
 * subject only Reference(PatientLt)
 * encounter 0..1

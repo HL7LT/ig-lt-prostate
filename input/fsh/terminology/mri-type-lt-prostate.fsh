@@ -1,4 +1,4 @@
-ValueSet: ProstateMRITypeLt
+ValueSet: ProstateMriTypeVS
 Id: prostate-mri-type
 Title: "Prostate - MRI Examination Type"
 Description: "Type of prostate MRI examination, including bi-parametric and multi-parametric MRI."

@@ -37,7 +37,7 @@ Description: "Pattern of change on follow-up MRI."
 * ^caseSensitive = true
 
 ValueSet: ProstatePreciseChangePatternVS
-Id: precise-change-pattern-vs-lt-prostate
+Id: precise-change-pattern
 Title: "Prostate - PRECISE Change Pattern VS"
 Description: "Pattern of change observed on follow-up prostate MRI examination (local, diffuse)."
 * ^url = $prostate-precise-change-pattern-vs-url

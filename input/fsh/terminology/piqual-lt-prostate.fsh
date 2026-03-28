@@ -1,4 +1,4 @@
-CodeSystem: ProstatePiqualScaleLt
+CodeSystem: ProstatePiqualScale
 Id: prostate-piqual
 Title: "Prostate PI-QUAL scale (v1, PRECISION trial, 2020)"
 Description: "Prostate Imaging Quality assessment scores."
@@ -15,11 +15,11 @@ Description: "Prostate Imaging Quality assessment scores."
 // 2 — Acceptable/adequate scan
 // 3 — Optimal scan (T2‑WI + DWI both scoring 4 in the internal subcriteria)
 
-ValueSet: ProstatePiquaLt
+ValueSet: ProstatePiqualVS
 Id: prostate-piqual
-Title: "Prostate - PI-QUA"
+Title: "Prostate - PI-QUAL"
 Description: "Prostate Imaging Quality score for prostate MRI image quality assessment."
 * ^url = $prostate-piqual-vs-url
 * ^status = #active
 * ^experimental = false
-* include codes from system ProstatePiqualScaleLt
+* include codes from system ProstatePiqualScale

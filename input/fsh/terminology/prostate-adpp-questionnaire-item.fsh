@@ -1,5 +1,5 @@
-CodeSystem: ProstateAdppQuestionnaireItemLtProstate
-Id: prostate-adpp-questionnaire-item-lt-prostate
+CodeSystem: ProstateAdppQuestionnaireItem
+Id: prostate-adpp-questionnaire-item
 Title: "ADPP primary assessment Questionnaire item (linkId)"
 Description: "Codes equal to **linkId** values on **Questionnaire/prostate-adpp-primary-assessment**. Used as **ConceptMap.group.source**."
 * ^url = $prostate-adpp-questionnaire-item-cs-url
@@ -30,3 +30,6 @@ Description: "Codes equal to **linkId** values on **Questionnaire/prostate-adpp-
 * #anticoagulant-use "Anticoagulant use"
 * #complaints-anamnesis "Complaints / anamnesis (free text)"
 * #specialist-additional-info "Additional information for specialist (free text)"
+* #race "Race"
+* #systemic-diseases "Systemic diseases (free text)"
+* #systemic-diseases-date "Systemic diseases diagnosis date"

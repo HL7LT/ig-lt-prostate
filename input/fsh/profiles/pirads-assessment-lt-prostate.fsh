@@ -32,3 +32,4 @@ sector-based prostate body structures (39-sector map).
 * method 0..1
 * method.text ^short = "PI-RADS version (e.g., PI-RADS v2.1)"
 * note 0..*
+// TODO 2.1: Add zone-level PI-RADS assessment (TZ/PZ summary) per Excel mpMRI requirements

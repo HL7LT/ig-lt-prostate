@@ -1,5 +1,5 @@
-CodeSystem: ProstatePathologyQuestionnaireItemLtProstate
-Id: prostate-pathology-questionnaire-item-lt-prostate
+CodeSystem: ProstatePathologyQuestionnaireItem
+Id: prostate-pathology-questionnaire-item
 Title: "Prostate pathology ESPBI Questionnaire item (linkId)"
 Description: "Codes equal to **linkId** values on **Questionnaire/prostate-pathology-espbi**. Used as **ConceptMap.group.source**."
 * ^url = $prostate-pathology-questionnaire-item-cs-url

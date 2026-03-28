@@ -10,8 +10,10 @@ The Questionnaires in this IG do not reproduce every field from the source files
 
 | Form | Questionnaire | Example response | Coverage |
 |------|---------------|------------------|----------|
-| ADPP primary assessment | [Questionnaire](Questionnaire-questionnaire-prostate-adpp-primary-assessment.html) `https://hl7.lt/fhir/prostate/Questionnaire/prostate-adpp-primary-assessment` | [QuestionnaireResponse](QuestionnaireResponse-questionnaireresponse-prostate-adpp-primary-assessment-example.html) | aligns with the main clinical blocks, family history, vital signs, PSA history, prior mpMRI PI-RADS, prior treatment, programme flags; patient identity and demographics fields are omitted (use **PatientLt**). **Prior therapy dates** and **full DRE multiselect** (every SNOMED from sheet) are only **partially** or **summarised** in this Questionnaire.|
-| Pathology ESPBI (dr-prostate subset) | [Questionnaire](Questionnaire-questionnaire-prostate-pathology-espbi.html) `https://hl7.lt/fhir/prostate/Questionnaire/prostate-pathology-espbi` | [QuestionnaireResponse](QuestionnaireResponse-questionnaireresponse-prostate-pathology-espbi-example.html) | covers a **subset** (specimen, treatment effect, histology, ISUP, IDC, cribriform, plus a few burden/invasion items). **Missing** from the Questionnaire (non-exhaustive): **repeatable per-biopsy-core** structure, **full** Pattern 4/5 percentage steps, **seminal vesicle / lymphovascular** rows, **sending form** metadata (sheet8), and many SNOMED-specific option rows.|
+| ADPP primary assessment (E025/E027) | [Questionnaire](Questionnaire-questionnaire-prostate-adpp-primary-assessment.html) | [QuestionnaireResponse](QuestionnaireResponse-questionnaireresponse-prostate-adpp-primary-assessment-example.html) | Clinical blocks, family history, vital signs, PSA history, prior mpMRI, prior treatment, programme flags, race, DRE (multiselect with SNOMED codes), systemic diseases. Demographics from **PatientLt**. |
+| Radiologist referral (E027) | [Questionnaire](Questionnaire-questionnaire-prostate-radiologist-referral.html) | — | Referral to radiologist for mpMRI. Diagnosis with optional Grade Group, screening flag, clinical/family history, DRE, anthropometrics, PSA, prior imaging/treatments, anticoagulants. |
+| Pathologist referral (E014) | [Questionnaire](Questionnaire-questionnaire-prostate-pathologist-referral.html) | — | Referral to pathologist for biopsy (form 014-1-1/a). Biopsy type, tissue fixing, clinical diagnosis with staging, procedure type, specimen counts per location, PSA/PSAT/volume, PI-RADS. |
+| Pathology ESPBI (dr-prostate subset) | [Questionnaire](Questionnaire-questionnaire-prostate-pathology-espbi.html) | [QuestionnaireResponse](QuestionnaireResponse-questionnaireresponse-prostate-pathology-espbi-example.html) | Specimen, treatment effect, histology, ISUP, IDC, cribriform, burden/invasion items. **Missing** (non-exhaustive): repeatable per-biopsy-core structure, full Pattern 4/5 percentage steps, seminal vesicle / lymphovascular rows. |
 
 ## FHIR mapping (ConceptMap, not embedded tables)
 
@@ -19,8 +21,8 @@ Mappings from **Questionnaire `linkId`** to **logical FHIR targets** (profiles, 
 
 | ConceptMap | Source codes (`linkId`) | Target codes (logical mapping) |
 |------------|-------------------------|--------------------------------|
-| **[ConceptMap: ADPP Questionnaire → FHIR](ConceptMap-conceptmap-prostate-adpp-questionnaire-to-fhir-lt-prostate.html)** | [CodeSystem: prostate-adpp-questionnaire-item](CodeSystem-prostate-adpp-questionnaire-item-lt-prostate.html) | [CodeSystem: prostate-fhir-mapping-target](CodeSystem-prostate-fhir-mapping-target-lt-prostate.html) |
-| **[ConceptMap: Pathology Questionnaire → FHIR](ConceptMap-conceptmap-prostate-pathology-questionnaire-to-fhir-lt-prostate.html)** | [CodeSystem: prostate-pathology-questionnaire-item](CodeSystem-prostate-pathology-questionnaire-item-lt-prostate.html) | [CodeSystem: prostate-fhir-mapping-target](CodeSystem-prostate-fhir-mapping-target-lt-prostate.html) |
+| **[ConceptMap: ADPP Questionnaire → FHIR](ConceptMap-conceptmap-prostate-adpp-questionnaire-to-fhir-lt-prostate.html)** | [CodeSystem: prostate-adpp-questionnaire-item](CodeSystem-prostate-adpp-questionnaire-item.html) | [CodeSystem: prostate-fhir-mapping-target](CodeSystem-prostate-fhir-mapping-target.html) |
+| **[ConceptMap: Pathology Questionnaire → FHIR](ConceptMap-conceptmap-prostate-pathology-questionnaire-to-fhir-lt-prostate.html)** | [CodeSystem: prostate-pathology-questionnaire-item](CodeSystem-prostate-pathology-questionnaire-item.html) | [CodeSystem: prostate-fhir-mapping-target](CodeSystem-prostate-fhir-mapping-target.html) |
 
 Each **ConceptMap.group.element** has:
 

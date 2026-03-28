@@ -14,10 +14,12 @@ Description: "Bladder, rectal, and bone changes in prostate cancer staging."
 * subject 1..1
 * value[x] 1..1
 * value[x] only CodeableConcept
-* valueCodeableConcept from ProstateDamageAndChangeStatusLt (required)
+* valueCodeableConcept from ProstateDamageAndChangeStatusVS (required)
 * bodySite 0..0
 * bodyStructure 1..1
 //REVIEW. Change to leason?
 * bodyStructure only Reference($EuBodyStructureUrl)
 * note 0..1
 * note.text 1..1
+// TODO 2.4: Add change type categorization (tumor-related vs non-neoplastic vs benign) per Excel
+// TODO 2.8: Bone metastasis should use a separate profile — bone is not a pelvic organ

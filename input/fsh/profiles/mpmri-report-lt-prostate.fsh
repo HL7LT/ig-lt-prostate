@@ -10,7 +10,7 @@ Description: "Diagnostic report representing a prostate MRI examination (bi-para
 * encounter 0..1
 * encounter only Reference(EncounterLt)
 * code 1..1
-* code from ProstateMRITypeLt (required)
+* code from ProstateMriTypeVS (required)
 * effective[x] 1..1
 * effective[x] only dateTime
 * conclusion 1..1

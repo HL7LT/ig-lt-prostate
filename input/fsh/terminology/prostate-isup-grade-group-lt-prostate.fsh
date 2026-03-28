@@ -1,4 +1,4 @@
-ValueSet: ProstateIsupGradeGroup
+ValueSet: ProstateIsupGradeGroupVS
 Id: prostate-isup-grade-group
 Title: "Prostate - ISUP Grade Group"
 Description: "ISUP Grade Groups for prostate cancer histopathology, aligned with Gleason grading."

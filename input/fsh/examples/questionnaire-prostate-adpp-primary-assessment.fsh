@@ -29,15 +29,24 @@ Description: "Illustrative Questionnaire aligned with consultation / ADPP spread
 * item[1].linkId = "grp-clinical"
 * item[1].text = "Clinical findings (same visit)"
 * item[1].type = #group
-* item[1].item[0].linkId = "psa-recorded"
-* item[1].item[0].text = "PSA measured at this visit"
-* item[1].item[0].type = #boolean
-* item[1].item[1].linkId = "dre-result"
-* item[1].item[1].text = "Digital rectal examination (summary)"
-* item[1].item[1].type = #coding
-* item[1].item[1].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#dre-not-done "Not performed"
-* item[1].item[1].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#dre-normal "Normal"
-* item[1].item[1].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#dre-suspicious "Suspicious"
+* item[1].item[0].linkId = "race"
+* item[1].item[0].text = "Race"
+* item[1].item[0].type = #string
+* item[1].item[0].required = true
+* item[1].item[1].linkId = "psa-recorded"
+* item[1].item[1].text = "PSA measured at this visit"
+* item[1].item[1].type = #boolean
+* item[1].item[2].linkId = "dre-result"
+* item[1].item[2].text = "Digital rectal examination (multiselect)"
+* item[1].item[2].type = #coding
+* item[1].item[2].repeats = true
+* item[1].item[2].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#dre-not-done "Not performed"
+* item[1].item[2].answerOption[1].valueCoding = $snomed-prostate-extension-cs-url#standard-prostate "Standard"
+* item[1].item[2].answerOption[2].valueCoding = $sct#276387009 "Hard"
+* item[1].item[2].answerOption[3].valueCoding = $sct#276385001 "Soft"
+* item[1].item[2].answerOption[4].valueCoding = $snomed-prostate-extension-cs-url#flexible-prostate "Flexible"
+* item[1].item[2].answerOption[5].valueCoding = $snomed-prostate-extension-cs-url#inflexible-prostate "Inflexible"
+* item[1].item[2].answerOption[6].valueCoding = $sct#443607001 "Palpable mass"
 
 * item[2].linkId = "grp-family-history"
 * item[2].text = "Family oncological history (first-degree)"
@@ -123,15 +132,25 @@ Description: "Illustrative Questionnaire aligned with consultation / ADPP spread
 * item[6].item[2].text = "Anticoagulant use"
 * item[6].item[2].type = #boolean
 
-* item[7].linkId = "grp-narrative"
-* item[7].text = "Narrative"
+* item[7].linkId = "grp-systemic"
+* item[7].text = "Systemic diseases"
 * item[7].type = #group
-* item[7].item[0].linkId = "complaints-anamnesis"
-* item[7].item[0].text = "Complaints, anamnesis"
+* item[7].item[0].linkId = "systemic-diseases"
+* item[7].item[0].text = "Systemic diseases (e.g. RA, myeloma, immunosuppression)"
 * item[7].item[0].type = #text
-* item[7].item[1].linkId = "specialist-additional-info"
-* item[7].item[1].text = "Additional description for specialist"
-* item[7].item[1].type = #text
+* item[7].item[1].linkId = "systemic-diseases-date"
+* item[7].item[1].text = "Diagnosis date (year-month)"
+* item[7].item[1].type = #date
+
+* item[8].linkId = "grp-narrative"
+* item[8].text = "Narrative"
+* item[8].type = #group
+* item[8].item[0].linkId = "complaints-anamnesis"
+* item[8].item[0].text = "Complaints, anamnesis"
+* item[8].item[0].type = #text
+* item[8].item[1].linkId = "specialist-additional-info"
+* item[8].item[1].text = "Additional description for specialist"
+* item[8].item[1].type = #text
 
 
 Instance: questionnaireresponse-prostate-adpp-primary-assessment-example
@@ -151,10 +170,12 @@ Description: "Example answers for the expanded ADPP primary assessment Questionn
 * item[0].item[1].answer.valueCoding = $prostate-questionnaire-options-cs#referral-elevated-psa "Elevated PSA"
 
 * item[1].linkId = "grp-clinical"
-* item[1].item[0].linkId = "psa-recorded"
-* item[1].item[0].answer.valueBoolean = true
-* item[1].item[1].linkId = "dre-result"
-* item[1].item[1].answer.valueCoding = $prostate-questionnaire-options-cs#dre-suspicious "Suspicious"
+* item[1].item[0].linkId = "race"
+* item[1].item[0].answer.valueString = "Caucasian"
+* item[1].item[1].linkId = "psa-recorded"
+* item[1].item[1].answer.valueBoolean = true
+* item[1].item[2].linkId = "dre-result"
+* item[1].item[2].answer.valueCoding = $sct#276387009 "Hard"
 
 * item[2].linkId = "grp-family-history"
 * item[2].item[0].linkId = "family-hx-prostate"
@@ -198,8 +219,12 @@ Description: "Example answers for the expanded ADPP primary assessment Questionn
 * item[6].item[2].linkId = "anticoagulant-use"
 * item[6].item[2].answer.valueBoolean = false
 
-* item[7].linkId = "grp-narrative"
-* item[7].item[0].linkId = "complaints-anamnesis"
-* item[7].item[0].answer.valueString = "Elevated PSA on screening; no urinary retention."
-* item[7].item[1].linkId = "specialist-additional-info"
-* item[7].item[1].answer.valueString = "Refer for mpMRI per programme pathway."
+* item[7].linkId = "grp-systemic"
+* item[7].item[0].linkId = "systemic-diseases"
+* item[7].item[0].answer.valueString = "No known systemic diseases"
+
+* item[8].linkId = "grp-narrative"
+* item[8].item[0].linkId = "complaints-anamnesis"
+* item[8].item[0].answer.valueString = "Elevated PSA on screening; no urinary retention."
+* item[8].item[1].linkId = "specialist-additional-info"
+* item[8].item[1].answer.valueString = "Refer for mpMRI per programme pathway."

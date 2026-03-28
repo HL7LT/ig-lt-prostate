@@ -15,5 +15,6 @@ side and position).
 * includedStructure 1..1
 * includedStructure.structure 1..1
 * includedStructure.structure from $prostate-pirads-sector-url (required)
+// TODO 2.2: Add lesion size/dimensions (mm) per Excel mpMRI requirements
 * morphology 0..1
 * description 0..1

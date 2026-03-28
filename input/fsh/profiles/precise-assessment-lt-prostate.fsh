@@ -45,9 +45,11 @@ patient/exam-level progression/regression category informed by lesion changes.
 * component[bestSequence].code = ProstatePreciseComponentCS#best-sequence "Best MRI sequence for change assessment"
 * component[bestSequence].value[x] 1..1
 * component[bestSequence].value[x] only CodeableConcept
-* component[bestSequence].valueCodeableConcept from ProstateSequenceType (extensible)
+* component[bestSequence].valueCodeableConcept from ProstateSequenceTypeVS (extensible)
 * component[sizeChangeMm].code = ProstatePreciseComponentCS#size-change-mm "Size change in millimeters"
 * component[sizeChangeMm].value[x] 1..1
 * component[sizeChangeMm].valueQuantity only Quantity
 * component[sizeChangeMm].valueQuantity.system = "http://unitsofmeasure.org"
 * component[sizeChangeMm].valueQuantity.code = #mm
+// TODO 2.5: Add components: D1/D2/D3 dimensions, volume (cm3), Likert scale (1-5),
+//           prior PI-RADS, prior TNM stage, prior capsule/vesicle damage status per Excel PRECISE sheet

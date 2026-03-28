@@ -91,6 +91,8 @@ parameters:
     - https://tx.hl7.lt/fhir/CodeSystem/prostate-fhir-mapping-target
     - https://tx.hl7.lt/fhir/CodeSystem/prostate-adpp-questionnaire-item
     - https://tx.hl7.lt/fhir/CodeSystem/prostate-pathology-questionnaire-item
+    - https://tx.hl7.lt/fhir/CodeSystem/snomed-prostate-extension
+    - https://tx.hl7.lt/fhir/ValueSet/digital-rectal-examination
     - https://hl7.lt/fhir/prostate/ConceptMap/prostate-adpp-questionnaire-to-fhir
     - https://hl7.lt/fhir/prostate/ConceptMap/prostate-pathology-questionnaire-to-fhir
 
@@ -215,14 +217,16 @@ groups:
     - StructureDefinition/pirads-assessment-lt-prostate
     - StructureDefinition/prostate-report-lt-prostate
     - StructureDefinition/prostate-composition-lt-prostate
+    - StructureDefinition/dre-observation-lt-prostate
+    - StructureDefinition/screening-careplan-lt-prostate
 
   GroupQuestionnaireMapping:
     name: Questionnaire mapping (CodeSystems & ConceptMaps)
     description: LinkId vocabularies, FHIR mapping targets, and ConceptMaps from Questionnaire items to LT profiles
     resources:
-    - CodeSystem/prostate-fhir-mapping-target-lt-prostate
-    - CodeSystem/prostate-adpp-questionnaire-item-lt-prostate
-    - CodeSystem/prostate-pathology-questionnaire-item-lt-prostate
+    - CodeSystem/prostate-fhir-mapping-target
+    - CodeSystem/prostate-adpp-questionnaire-item
+    - CodeSystem/prostate-pathology-questionnaire-item
     - ConceptMap/conceptmap-prostate-adpp-questionnaire-to-fhir-lt-prostate
     - ConceptMap/conceptmap-prostate-pathology-questionnaire-to-fhir-lt-prostate
 

@@ -1,4 +1,4 @@
-ValueSet: ProstatePiradsSectorLt
+ValueSet: ProstatePiradsSectorVS
 Id: prostate-pirads-sector
 Title: "Prostate - PI-RADS Sector (39-Sector Map)"
 Description: """
