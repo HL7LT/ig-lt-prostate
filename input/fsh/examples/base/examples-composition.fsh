@@ -3,6 +3,7 @@ Instance: composition-prostate-mpmri-example
 InstanceOf: ImagingCompositionLt
 Usage: #example
 Title: "Composition: Prostate mpMRI (example)"
+Description: "Base imaging composition for prostate mpMRI report."
 * status = #final
 * subject = Reference(patient-male-example)
 * date = "2025-09-22T10:30:00Z"

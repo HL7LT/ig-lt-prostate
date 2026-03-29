@@ -1,7 +1,8 @@
 Instance: observation-prostate-precise-followup-example
 InstanceOf: PreciseAssessmentLtProstate
 Usage: #example
-Title: "Observation: Prostate - PRECISE Longitudinal Assessment (example)"
+Title: "Observation: PRECISE assessment, stable (example)"
+Description: "PRECISE category 3 (stable disease) longitudinal follow-up assessment."
 * status = #final
 * code = ProstatePreciseComponentCS#precise-assessment "PRECISE longitudinal assessment"
 * subject = Reference(patient-male-example)
@@ -17,7 +18,8 @@ Title: "Observation: Prostate - PRECISE Longitudinal Assessment (example)"
 Instance: observation-prostate-precise-followup-example2
 InstanceOf: PreciseAssessmentLtProstate
 Usage: #example
-Title: "Observation: Prostate - PRECISE Longitudinal Assessment Example2 (example)"
+Title: "Observation: PRECISE assessment, likely progression (example)"
+Description: "PRECISE category 4 (likely progression) with dimensions, volume, Likert, and prior study context."
 * status = #final
 * code = ProstatePreciseComponentCS#precise-assessment "PRECISE longitudinal assessment"
 * subject = Reference(patient-male-example)

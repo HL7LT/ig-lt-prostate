@@ -17,6 +17,7 @@ Instance: practitioner-role-radiologist-example
 InstanceOf: PractitionerRoleEu
 Usage: #example
 Title: "PractitionerRole: Radiologist (example)"
+Description: "Radiologist practitioner role for prostate mpMRI reporting."
 * practitioner = Reference(practitioner-doctor-example)
 * organization = Reference(organization-lt-example)
 * code.text = "Radiologist"

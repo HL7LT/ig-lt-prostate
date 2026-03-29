@@ -1,7 +1,8 @@
 Instance: encounter-prostate-diagnostic-example
 InstanceOf: EncounterLt
 Usage: #example
-Title: "Encounter: Prostate - Diagnostic Visit (example)"
+Title: "Encounter: Prostate diagnostic visit (example)"
+Description: "Ambulatory prostate cancer screening encounter."
 * status = #completed
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
 * subject = Reference(patient-male-example)

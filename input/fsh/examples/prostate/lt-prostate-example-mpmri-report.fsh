@@ -1,7 +1,8 @@
 Instance: bodyStructure-prostate-lesion1-example
 InstanceOf: LesionLtProstate
 Usage: #example
-Title: "BodyStructure: Prostate - Lesion (Anterior Mid Transition Zone, crosses midline) Example"
+Title: "BodyStructure: Prostate – Lesion, anterior mid transition zone (example)"
+Description: "Prostate lesion in the anterior mid transition zone, crossing midline, identified on mpMRI."
 * patient = Reference(patient-male-example)
 * includedStructure.structure = $sct#716913001 "Structure of anterior middle regional part of transition zone of right half prostate"
 * morphology = $sct#49755003 "Morphologically abnormal structure"
@@ -11,7 +12,8 @@ Title: "BodyStructure: Prostate - Lesion (Anterior Mid Transition Zone, crosses 
 Instance: observation-prostate-pirads-lesion1-example
 InstanceOf: PIRADSAssessmentLtProstate
 Usage: #example
-Title: "Observation: Prostate - PI-RADS Assessment (Lesion 1) Example"
+Title: "Observation: PI-RADS Assessment, Lesion 1 (example)"
+Description: "PI-RADS 5 assessment for anterior transition zone lesion."
 * status = #final
 * code = $sct#1345044005 "Assessment using Prostate Imaging-Reporting and Data System (procedure)"
 * subject = Reference(patient-male-example)
@@ -27,7 +29,8 @@ Title: "Observation: Prostate - PI-RADS Assessment (Lesion 1) Example"
 Instance: observation-prostate-t2-score-lesion1-example
 InstanceOf: SequenceScoreLtProstate
 Usage: #example         
-Title: "Observation: Prostate - T2 Score (Lesion 1) Example"
+Title: "Observation: T2 Score, Lesion 1 (example)"
+Description: "T2-weighted MRI sequence score for prostate lesion 1."
 * status = #final
 * code = $dicom-dcm#110805 "T2 Weighted MR Signal Intensity"
 * subject = Reference(patient-male-example)
@@ -41,7 +44,8 @@ Title: "Observation: Prostate - T2 Score (Lesion 1) Example"
 Instance: observation-prostate-dwi-score-lesion1-example
 InstanceOf: SequenceScoreLtProstate
 Usage: #example
-Title: "Observation: Prostate - DWI Score (Lesion 1) Example"
+Title: "Observation: DWI Score, Lesion 1 (example)"
+Description: "DWI sequence score for prostate lesion 1."
 * status = #final
 * code = $dicom-dcm#113043 "Diffusion weighted"
 * subject = Reference(patient-male-example)
@@ -55,7 +59,8 @@ Title: "Observation: Prostate - DWI Score (Lesion 1) Example"
 Instance: observation-prostate-adc-score-lesion1-example
 InstanceOf: SequenceScoreLtProstate
 Usage: #example
-Title: "Observation: Prostate - ADC Score (Lesion 1) Example"
+Title: "Observation: ADC Score, Lesion 1 (example)"
+Description: "ADC sequence score for prostate lesion 1."
 * status = #final
 * code = $dicom-dcm#113041 "Apparent Diffusion Coefficient"
 * subject = Reference(patient-male-example)
@@ -69,7 +74,8 @@ Title: "Observation: Prostate - ADC Score (Lesion 1) Example"
 Instance: observation-prostate-dce-score-lesion1-example
 InstanceOf: SequenceScoreLtProstate
 Usage: #example
-Title: "Observation: Prostate - DCE (Lesion 1, Positive) Example"
+Title: "Observation: DCE Score, Lesion 1, positive (example)"
+Description: "Dynamic contrast enhanced MRI score for prostate lesion 1."
 * status = #final
 * code = $dicom-dcm#110816 "T1 Weighted Dynamic Contrast Enhanced MR Signal Intensity"
 * subject = Reference(patient-male-example)
@@ -83,7 +89,8 @@ Title: "Observation: Prostate - DCE (Lesion 1, Positive) Example"
 Instance: observation-prostate-psa-example
 InstanceOf: ObservationLt
 Usage: #example
-Title: "Observation: Prostate - PSA Example2"
+Title: "Observation: PSA (example)"
+Description: "Prostate-specific antigen (PSA) serum level."
 * status = #final
 * category = $observation-category#laboratory "Laboratory"
 * code = $loinc#2857-1 "Prostate Specific Ag [Mass/volume] in Serum or Plasma"
@@ -96,7 +103,8 @@ Title: "Observation: Prostate - PSA Example2"
 Instance: observation-prostate-volume-example
 InstanceOf: ObservationLt
 Usage: #example
-Title: "Observation: Prostate - Volume Example2"
+Title: "Observation: Prostate Volume (example)"
+Description: "Prostate volume measurement derived from MRI."
 * status = #final
 * category = $observation-category#laboratory "Laboratory"
 * code = $loinc#15315-5 "Prostate Volume by derived by planimetry (US)"
@@ -109,7 +117,8 @@ Title: "Observation: Prostate - Volume Example2"
 Instance: observation-prostate-psad-example
 InstanceOf: ObservationLt
 Usage: #example
-Title: "Observation: Prostate - PSA Density Example2"
+Title: "Observation: PSA Density (example)"
+Description: "PSA density (PSAD) calculated from PSA and prostate volume."
 * status = #final
 * category = $observation-category#laboratory "Laboratory"
 * code = $loinc#15325-4 "Prostate specific Ag/Prostate volume calculated"
@@ -124,7 +133,8 @@ Title: "Observation: Prostate - PSA Density Example2"
 Instance: procedure-prostate-mpmri-example
 InstanceOf: $procedure-lt-url
 Usage: #example
-Title: "Procedure: Prostate - mpMRI Example"
+Title: "Procedure: Prostate mpMRI (example)"
+Description: "Multiparametric prostate MRI procedure."
 * status = #completed
 * code = $sct#719178004 "Multiparametric magnetic resonance imaging of prostate"
 * subject = Reference(patient-male-example)
@@ -134,7 +144,8 @@ Title: "Procedure: Prostate - mpMRI Example"
 Instance: composition-prostate-mpmri-report-example
 InstanceOf: $imaging-composition-lt-url
 Usage: #example
-Title: "Composition: Prostate - mpMRI Imaging Report Example"
+Title: "Composition: Prostate mpMRI imaging report (example)"
+Description: "EU Imaging Composition for prostate mpMRI with structured sections."
 * status = #final
 * subject = Reference(patient-male-example)
 * date = "2024-05-27T10:30:00Z"
@@ -185,7 +196,8 @@ Title: "Composition: Prostate - mpMRI Imaging Report Example"
 Instance: diagnosticReport-prostate-mpmri-report-example
 InstanceOf: MpMRIReportLtProstate
 Usage: #example
-Title: "DiagnosticReport: Prostate - mpMRI Report Example"
+Title: "DiagnosticReport: Prostate mpMRI report (example)"
+Description: "Multiparametric prostate MRI diagnostic report with structured results."
 * status = #final
 * subject = Reference(patient-male-example)
 * encounter = Reference(encounter-prostate-diagnostic-example)
@@ -215,7 +227,8 @@ Title: "DiagnosticReport: Prostate - mpMRI Report Example"
 Instance: observation-prostate-seminal-vesicle-invasion-example
 InstanceOf: NeoplasmInvasionLtProstate
 Usage: #example
-Title: "Observation: Prostate - Seminal Vesicle Invasion (Absent) Example"
+Title: "Observation: Seminal vesicle invasion, absent (example)"
+Description: "No seminal vesicle invasion identified on mpMRI."
 * status = #final
 * category = $observation-category#exam
 * code = $sct#371487005 "Presence of direct invasion by neoplasm (observable entity)"
@@ -228,7 +241,8 @@ Title: "Observation: Prostate - Seminal Vesicle Invasion (Absent) Example"
 Instance: observation-prostate-neurovascular-bundle-invasion-example
 InstanceOf: NeoplasmInvasionLtProstate
 Usage: #example
-Title: "Observation: Prostate - Neurovascular Bundle Invasion (Absent) Example"
+Title: "Observation: Neurovascular bundle invasion, absent (example)"
+Description: "No neurovascular bundle involvement on mpMRI."
 * status = #final
 * category = $observation-category#exam
 * code = $sct#371487005 "Presence of direct invasion by neoplasm (observable entity)"
@@ -241,7 +255,8 @@ Title: "Observation: Prostate - Neurovascular Bundle Invasion (Absent) Example"
 Instance: observation-prostate-regional-lymph-node-invasion-example
 InstanceOf: NeoplasmInvasionLtProstate
 Usage: #example
-Title: "Observation: Prostate - Regional Lymph Node Involvement (Absent) Example"
+Title: "Observation: Regional lymph node involvement, absent (example)"
+Description: "No regional lymphadenopathy on mpMRI."
 * status = #final
 * category = $observation-category#exam
 * code = $sct#371487005 "Presence of direct invasion by neoplasm (observable entity)"
@@ -254,7 +269,8 @@ Title: "Observation: Prostate - Regional Lymph Node Involvement (Absent) Example
 Instance: observation-prostate-capsule-invasion-suspected-example
 InstanceOf: NeoplasmInvasionLtProstate
 Usage: #example
-Title: "Observation: Prostate - Capsular Invasion (Suspected) Example"
+Title: "Observation: Capsular invasion, suspected (example)"
+Description: "Suspected capsular involvement with long tumour contact anteriorly."
 * status = #final
 * category = $observation-category#exam
 * code = $sct#371487005 "Presence of direct invasion by neoplasm (observable entity)"
@@ -267,7 +283,8 @@ Title: "Observation: Prostate - Capsular Invasion (Suspected) Example"
 Instance: observation-prostate-urinary-bladder-changes-example
 InstanceOf: BladderChangesLtProstate
 Usage: #example
-Title: "Observation: Prostate - Urinary Bladder Wall Thickening Example"
+Title: "Observation: Bladder wall thickening, suspected (example)"
+Description: "Suspected urinary bladder wall thickening on mpMRI."
 * status = #final
 * category = $observation-category#exam
 * code = $sct#364636000 "Lesion observable (observable entity)"
@@ -281,7 +298,8 @@ Title: "Observation: Prostate - Urinary Bladder Wall Thickening Example"
 Instance: observation-prostate-rectum-changes-example
 InstanceOf: PelvicOrganChangesLtProstate
 Usage: #example
-Title: "Observation: Prostate - Rectum Changes (Absent) Example"
+Title: "Observation: Rectal changes, absent (example)"
+Description: "No rectal wall changes on mpMRI."
 * status = #final
 * category = $observation-category#exam
 * code = $sct#364636000 "Lesion observable (observable entity)"
@@ -293,7 +311,8 @@ Title: "Observation: Prostate - Rectum Changes (Absent) Example"
 
 Instance: bodyStructure-prostate-peripheral-zone-mid-right-example
 InstanceOf: $EuBodyStructure
-Title: "BodyStructure: Prostate Peripheral Zone Mid-Gland Right (PI-RADS sector)"
+Usage: #example
+Title: "BodyStructure: Peripheral zone, mid-gland right (example)"
 Description: "Right mid-gland peripheral zone sector (PI-RADS 39-sector map)."
 * active = true
 * patient = Reference(patient-male-example)
@@ -304,7 +323,8 @@ Description: "Right mid-gland peripheral zone sector (PI-RADS 39-sector map)."
 Instance: observation-prostate-peripheral-zone-diffuse-enhancement-example
 InstanceOf: ObservationLt
 Usage: #example
-Title: "Observation: Prostate - Peripheral Zone Diffuse Enhancement (No Focal Lesion) Example"
+Title: "Observation: Peripheral zone diffuse enhancement (example)"
+Description: "Diffuse contrast enhancement in the peripheral zone without focal lesion."
 * status = #final
 * category = $observation-category#exam
 * code = $sct#364636000 "Lesion observable (observable entity)"
@@ -317,7 +337,8 @@ Title: "Observation: Prostate - Peripheral Zone Diffuse Enhancement (No Focal Le
 Instance: observation-prostate-gleason-gradegroup-example
 InstanceOf: GleasonIsupObservationLtProstate
 Usage: #example
-Title: "Observation: Prostate - Gleason / ISUP Grade Group Example"
+Title: "Observation: Gleason / ISUP Grade Group 1 (example)"
+Description: "Histopathological grading: ISUP Grade Group 1 (Gleason 3+3)."
 * status = #final
 * code = $sct#372278000 "Gleason score (observable entity)"
 * subject = Reference(patient-male-example)
@@ -330,7 +351,7 @@ Title: "Observation: Prostate - Gleason / ISUP Grade Group Example"
 Instance: imfinding-prostate-lesion1-example
 InstanceOf: ImFinding
 Usage: #example
-Title: "ImagingFinding: Prostate - Lesion 1 Example"
+Title: "ImagingFinding: Prostate Lesion 1 (example)"
 Description: "Imaging finding representing a prostate lesion identified on mpMRI."
 * status = #final
 * code = $sct#49755003 "Morphologically abnormal structure"
