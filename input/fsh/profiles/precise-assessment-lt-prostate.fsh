@@ -101,9 +101,9 @@ patient/exam-level progression/regression category informed by lesion changes.
 * component[priorCapsuleDamage].code = $sct#60405008 "Structure of capsule of prostate (body structure)"
 * component[priorCapsuleDamage].value[x] 1..1
 * component[priorCapsuleDamage].value[x] only CodeableConcept
-* component[priorCapsuleDamage].valueCodeableConcept from ProstatePriorDamageStatusVS (required)
+* component[priorCapsuleDamage].valueCodeableConcept from ProstateDamageStatusVS (required)
 * component[priorVesicleDamage] ^short = "Prior seminal vesicle damage"
 * component[priorVesicleDamage].code = $sct#64739004 "Seminal vesicle structure (body structure)"
 * component[priorVesicleDamage].value[x] 1..1
 * component[priorVesicleDamage].value[x] only CodeableConcept
-* component[priorVesicleDamage].valueCodeableConcept from ProstatePriorDamageStatusVS (required)
+* component[priorVesicleDamage].valueCodeableConcept from ProstateDamageStatusVS (required)

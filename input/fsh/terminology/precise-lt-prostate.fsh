@@ -64,11 +64,11 @@ Description: "Local codes for detailed PRECISE assessment components."
 * #change-volume-cm3 "Change volume (cm³)"
 * #prior-tnm-stage "Prior TNM stage"
 
-ValueSet: ProstatePriorDamageStatusVS
-Id: prostate-prior-damage-status
-Title: "Prostate - Prior Damage Status"
+ValueSet: ProstateDamageStatusVS
+Id: prostate-damage-status
+Title: "Prostate - Damage Status"
 Description: "Status of previously detected damage (capsule, seminal vesicle) from prior investigation: present, absent, or unknown."
-* ^url = $prostate-prior-damage-status-vs-url
+* ^url = $prostate-damage-status-vs-url
 * ^status = #active
 * ^experimental = false
 * ^publisher = "HL7 Lithuania"

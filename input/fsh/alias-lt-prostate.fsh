@@ -40,6 +40,6 @@ Alias: $prostate-pathology-questionnaire-item-cs-url = https://tx.hl7.lt/fhir/Co
 Alias: $snomed-prostate-extension-cs-url = https://tx.hl7.lt/fhir/CodeSystem/snomed-prostate-extension
 Alias: $digital-rectal-examination-vs-url = https://tx.hl7.lt/fhir/ValueSet/digital-rectal-examination
 Alias: $prostate-change-nature-vs-url = https://tx.hl7.lt/fhir/ValueSet/prostate-change-nature
-Alias: $prostate-prior-damage-status-vs-url = https://tx.hl7.lt/fhir/ValueSet/prostate-prior-damage-status
+Alias: $prostate-damage-status-vs-url = https://tx.hl7.lt/fhir/ValueSet/prostate-damage-status
 Alias: $bladder-changes-lt-prostate-url = https://hl7.lt/fhir/prostate/StructureDefinition/bladder-changes-lt-prostate
 Alias: $bone-metastasis-lt-prostate-url = https://hl7.lt/fhir/prostate/StructureDefinition/bone-metastasis-lt-prostate
