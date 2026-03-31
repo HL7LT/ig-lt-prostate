@@ -19,3 +19,5 @@ Description: "Codes equal to **linkId** values on **Questionnaire/prostate-patho
 * #pattern4-pct-band "Pattern 4 quantity (percent band)"
 * #tumor-percent-in-biopsy "Tumour percentage in prostate biopsy tissue"
 * #periprostatic-fat-invasion "Tumour infiltration in periprostatic adipose tissue"
+* #perineural-invasion "Perineural invasion"
+* #lymphovascular-invasion "Lymphatic and/or vascular tumour invasion"

@@ -39,5 +39,7 @@ Description: "Target **codes** for **ConceptMap** entries: each code denotes a l
 * #observation-pattern4-percent "Observation: Pattern 4 percent band (lab tumour measurement patterns)"
 * #observation-tumor-burden-percent "Observation: tumour percentage in biopsy tissue"
 * #observation-periprostatic-invasion "Observation: periprostatic fat / seminal vesicle invasion (LT Lab tumour findings)"
+* #observation-perineural-invasion "Observation: perineural invasion finding (LT Lab tumour findings)"
+* #observation-lymphovascular-invasion "Observation: lymphovascular invasion finding (LT Lab tumour findings)"
 * #diagnosticreport-pathology-lab "PathologyReportLtLab"
 * #composition-pathology-lab "PathologyCompositionLtLab"

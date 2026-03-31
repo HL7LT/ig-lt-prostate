@@ -210,15 +210,15 @@ A separate BodyStructure profile is **not** defined for these structures — the
 
 ### Incidental prostate conditions
 
-The mpMRI and PRECISE forms include an optional section for **other prostate conditions** observed alongside the primary assessment. These are incidental findings and do not require a dedicated profile — record them as plain **ObservationLt** instances with the appropriate SNOMED code:
+The mpMRI and PRECISE forms include an optional section for **other prostate conditions** observed alongside the primary assessment. Use **[ProstateOtherConditionsLtProstate](StructureDefinition-prostate-other-conditions-lt-prostate.html)** to record these incidental findings with structured SNOMED codes from **[ProstateOtherConditionsVS](ValueSet-prostate-other-conditions.html)**:
 
 | Condition | SNOMED |
 |-----------|--------|
 | Nodular hyperplasia | 266569009 |
 | Prostatitis | 9713002 |
-| Fibrotic changes | (free text) |
+| Fibrotic changes | 263756000 |
 
-Include these in `ProstateReportLtProstate.result` (accepted via the `ObservationLt` reference type).
+The binding is **extensible**, so free-text descriptions can be provided via `valueCodeableConcept.text` when no standard code applies. Include these in `ProstateReportLtProstate.result`.
 
 ### Compilation into MRI diagnostic report
 
@@ -233,6 +233,8 @@ Clinical assessment is separated from workflow decisions (referral, biopsy). PI-
 Biopsy is performed using **[BiopsyProcedureLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-biopsy-procedure-lt-lab.html)** from **LT Lab**. Biopsy orders follow **[PathologyOrderLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-pathology-order-lt-lab.html)**. Specimens are tracked via **[SpecimenLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-specimen-lt-lab.html)** and **[SpecimenBlockLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-specimen-block-lt-lab.html)**. Pathology results are structured in **[PathologyReportLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-pathology-report-lt-lab.html)** with **[PathologyCompositionLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-pathology-composition-lt-lab.html)**. TNM staging uses **[ProstateConditionLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-prostate-condition-lt-lab.html)**.
 
 Additional lab observations: **[SpecimenAdequacyLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-specimen-adequacy-lt-lab.html)** (specimen quality), **[SpecimenMeasurementLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-specimen-measurement-lt-lab.html)** (bioptate length), **[TumorObservableLtLab](https://build.fhir.org/ig/HL7LT/ig-lt-lab/StructureDefinition-tumor-observable-lt-lab.html)** (tumour characteristics).
+
+**Perineural and lymphovascular invasion** are captured as structured items in the [pathology Questionnaire](Questionnaire-questionnaire-prostate-pathology-espbi.html) with coded answer options (present / not identified / ambiguous / cannot evaluate) and optional free-text notes. The [pathology ConceptMap](ConceptMap-conceptmap-prostate-pathology-questionnaire-to-fhir-lt-prostate.html) maps these items to LT Lab tumour finding Observations (SNOMED 369731000 perineural present, 370051000 absent; 385414009 lymphovascular invasion).
 
 Full pathology workflow: **[LT Lab pathology workflow](https://build.fhir.org/ig/HL7LT/ig-lt-lab/pathology-workflow.html)**.
 

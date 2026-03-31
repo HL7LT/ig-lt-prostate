@@ -80,3 +80,15 @@ Description: "Maps each **linkId** in **CodeSystem/prostate-pathology-questionna
 * group.element[10].target[0].code = #observation-periprostatic-invasion
 * group.element[10].target[0].relationship = #related-to
 * group.element[10].target[0].comment = "NeoplasmInvasionLtProstate (imaging) vs microscopic finding in pathology Observation; use LT Lab tumour findings for biopsy."
+
+* group.element[11].code = #perineural-invasion
+* group.element[11].display = "Perineural invasion"
+* group.element[11].target[0].code = #observation-perineural-invasion
+* group.element[11].target[0].relationship = #related-to
+* group.element[11].target[0].comment = "SNOMED 369731000 (present), 370051000 (absent), 385001000 (not identified), 396393005 (indeterminate); use LT Lab tumour findings."
+
+* group.element[12].code = #lymphovascular-invasion
+* group.element[12].display = "Lymphatic and/or vascular tumour invasion"
+* group.element[12].target[0].code = #observation-lymphovascular-invasion
+* group.element[12].target[0].relationship = #related-to
+* group.element[12].target[0].comment = "SNOMED 385414009 Lymphatic (small vessel) tumor invasion finding; use LT Lab tumour findings for biopsy microscopic assessment."

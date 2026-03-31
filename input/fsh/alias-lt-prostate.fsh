@@ -43,3 +43,5 @@ Alias: $prostate-change-nature-vs-url = https://tx.hl7.lt/fhir/ValueSet/prostate
 Alias: $prostate-damage-status-vs-url = https://tx.hl7.lt/fhir/ValueSet/prostate-damage-status
 Alias: $bladder-changes-lt-prostate-url = https://hl7.lt/fhir/prostate/StructureDefinition/bladder-changes-lt-prostate
 Alias: $bone-metastasis-lt-prostate-url = https://hl7.lt/fhir/prostate/StructureDefinition/bone-metastasis-lt-prostate
+Alias: $prostate-other-conditions-lt-prostate-url = https://hl7.lt/fhir/prostate/StructureDefinition/prostate-other-conditions-lt-prostate
+Alias: $prostate-other-conditions-vs-url = https://tx.hl7.lt/fhir/ValueSet/prostate-other-conditions

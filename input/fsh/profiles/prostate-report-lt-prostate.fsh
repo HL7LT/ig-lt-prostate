@@ -23,6 +23,7 @@ Description: "Anchor resource for the Lithuanian prostate cancer prevention and 
     PelvicOrganChangesLtProstate or
     BladderChangesLtProstate or
     BoneMetastasisLtProstate or
+    ProstateOtherConditionsLtProstate or
     ObservationLt
   )
 * conclusion MS

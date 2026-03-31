@@ -44,7 +44,21 @@ Description: "Illustrative FHIR Questionnaire aligned with dr-prostate spreadshe
 * item[2].item[0].text = "Primary histological type"
 * item[2].item[0].type = #coding
 * item[2].item[0].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#hist-acinar "Acinar adenocarcinoma (conventional)"
-* item[2].item[0].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#hist-other "Other histological type (see comment)"
+* item[2].item[0].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#hist-acinar-signet-ring "Acinar adenocarcinoma, signet-ring cell-like"
+* item[2].item[0].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#hist-acinar-pleomorphic "Acinar adenocarcinoma, pleomorphic giant cell"
+* item[2].item[0].answerOption[3].valueCoding = $prostate-questionnaire-options-cs#hist-acinar-sarcomatoid "Acinar adenocarcinoma, sarcomatoid"
+* item[2].item[0].answerOption[4].valueCoding = $prostate-questionnaire-options-cs#hist-acinar-pin-like "Acinar adenocarcinoma, PIN-like"
+* item[2].item[0].answerOption[5].valueCoding = $prostate-questionnaire-options-cs#hist-idc-isolated "Isolated intraductal carcinoma"
+* item[2].item[0].answerOption[6].valueCoding = $prostate-questionnaire-options-cs#hist-ductal "Ductal adenocarcinoma"
+* item[2].item[0].answerOption[7].valueCoding = $prostate-questionnaire-options-cs#hist-adenosquamous "Adenosquamous carcinoma"
+* item[2].item[0].answerOption[8].valueCoding = $prostate-questionnaire-options-cs#hist-squamous "Squamous cell carcinoma"
+* item[2].item[0].answerOption[9].valueCoding = $prostate-questionnaire-options-cs#hist-basal-cell "Basal cell (adenoid cystic) carcinoma"
+* item[2].item[0].answerOption[10].valueCoding = $prostate-questionnaire-options-cs#hist-neuro-adeno "Adenocarcinoma with neuroendocrine differentiation"
+* item[2].item[0].answerOption[11].valueCoding = $prostate-questionnaire-options-cs#hist-neuro-well-diff "Well-differentiated neuroendocrine tumor"
+* item[2].item[0].answerOption[12].valueCoding = $prostate-questionnaire-options-cs#hist-neuro-small-cell "Small cell neuroendocrine carcinoma"
+* item[2].item[0].answerOption[13].valueCoding = $prostate-questionnaire-options-cs#hist-neuro-large-cell "Large cell neuroendocrine carcinoma"
+* item[2].item[0].answerOption[14].valueCoding = $prostate-questionnaire-options-cs#hist-unassessable "Carcinoma, type unassessable"
+* item[2].item[0].answerOption[15].valueCoding = $prostate-questionnaire-options-cs#hist-other "Other histological type (see comment)"
 * item[2].item[1].linkId = "histological-comment"
 * item[2].item[1].text = "Histological type comment"
 * item[2].item[1].type = #text
@@ -104,6 +118,28 @@ Description: "Illustrative FHIR Questionnaire aligned with dr-prostate spreadshe
 * item[6].item[0].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#periprostatic-absent "Periprostatic fat invasion: not identified"
 * item[6].item[0].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#periprostatic-present "Periprostatic fat invasion: present"
 
+* item[6].item[1].linkId = "perineural-invasion"
+* item[6].item[1].text = "Perineural invasion"
+* item[6].item[1].type = #coding
+* item[6].item[1].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#perineural-absent "Perineural invasion not identified"
+* item[6].item[1].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#perineural-present "Perineural invasion present"
+* item[6].item[1].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#perineural-ambiguous "Perineural invasion ambiguous"
+* item[6].item[1].answerOption[3].valueCoding = $prostate-questionnaire-options-cs#perineural-uneval "Perineural invasion cannot be evaluated"
+* item[6].item[2].linkId = "perineural-invasion-notes"
+* item[6].item[2].text = "Perineural invasion notes"
+* item[6].item[2].type = #text
+
+* item[6].item[3].linkId = "lymphovascular-invasion"
+* item[6].item[3].text = "Lymphatic and/or vascular tumour invasion"
+* item[6].item[3].type = #coding
+* item[6].item[3].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#lymphovascular-absent "Lymphovascular invasion unidentifiable / not available"
+* item[6].item[3].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#lymphovascular-present "Lymphovascular invasion identifiable"
+* item[6].item[3].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#lymphovascular-ambiguous "Lymphovascular invasion ambiguous"
+* item[6].item[3].answerOption[3].valueCoding = $prostate-questionnaire-options-cs#lymphovascular-uneval "Lymphovascular invasion cannot be evaluated"
+* item[6].item[4].linkId = "lymphovascular-invasion-notes"
+* item[6].item[4].text = "Lymphovascular invasion notes"
+* item[6].item[4].type = #text
+
 
 Instance: questionnaireresponse-prostate-pathology-espbi-example
 InstanceOf: QuestionnaireResponse
@@ -150,3 +186,7 @@ Description: "Example answers using **valueCoding** for choice questions."
 * item[6].linkId = "grp-invasion"
 * item[6].item[0].linkId = "periprostatic-fat-invasion"
 * item[6].item[0].answer.valueCoding = $prostate-questionnaire-options-cs#periprostatic-absent "Periprostatic fat invasion: not identified"
+* item[6].item[1].linkId = "perineural-invasion"
+* item[6].item[1].answer.valueCoding = $prostate-questionnaire-options-cs#perineural-absent "Perineural invasion not identified"
+* item[6].item[2].linkId = "lymphovascular-invasion"
+* item[6].item[2].answer.valueCoding = $prostate-questionnaire-options-cs#lymphovascular-absent "Lymphovascular invasion unidentifiable / not available"
