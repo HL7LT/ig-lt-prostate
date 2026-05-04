@@ -74,7 +74,7 @@ Description: "Questionnaire for the Referral to a pathologist form (E014, form 0
 * item[3].item[0].text = "Clinical diagnosis"
 * item[3].item[0].type = #coding
 * item[3].item[0].required = true
-* item[3].item[0].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#dx-n40-gph "N40 Glandular prostatic hyperplasia"
+* item[3].item[0].answerOption[0].valueCoding = $sct#266569009 "Benign prostatic hyperplasia (disorder)"
 * item[3].item[0].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#dx-c61 "C61 Malignant neoplasm of prostate"
 * item[3].item[1].linkId = "clinical-t-stage"
 * item[3].item[1].text = "Clinical T stage (if C61)"
@@ -151,3 +151,4 @@ Description: "Questionnaire for the Referral to a pathologist form (E014, form 0
 * item[7].item[0].linkId = "additional-info"
 * item[7].item[0].text = "Additional information"
 * item[7].item[0].type = #text
+                           
