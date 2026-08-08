@@ -50,8 +50,8 @@ Description: "Questionnaire for the referral to a radiologist (form E027) in the
 * item[0].item[4].text = "Screening programme participant"
 * item[0].item[4].type = #coding
 * item[0].item[4].required = true
-* item[0].item[4].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#ynk-yes "Yes"
-* item[0].item[4].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#ynk-no "No"
+* item[0].item[4].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
+* item[0].item[4].answerOption[1].valueCoding = $sct#373067005 "No (qualifier value)"
 
 // ── 1  Clinical ────────────────────────────────────────────────────────
 * item[1].linkId = "grp-clinical"
@@ -76,30 +76,30 @@ Description: "Questionnaire for the referral to a radiologist (form E027) in the
 * item[2].item[0].linkId = "family-hx-prostate"
 * item[2].item[0].text = "Prostate cancer"
 * item[2].item[0].type = #coding
-* item[2].item[0].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#ynk-yes "Yes"
-* item[2].item[0].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#ynk-no "No"
-* item[2].item[0].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#ynk-unknown "Unknown"
+* item[2].item[0].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
+* item[2].item[0].answerOption[1].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[2].item[0].answerOption[2].valueCoding = $sct#261665006 "Unknown (qualifier value)"
 
 * item[2].item[1].linkId = "family-hx-breast"
 * item[2].item[1].text = "Breast cancer"
 * item[2].item[1].type = #coding
-* item[2].item[1].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#ynk-yes "Yes"
-* item[2].item[1].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#ynk-no "No"
-* item[2].item[1].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#ynk-unknown "Unknown"
+* item[2].item[1].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
+* item[2].item[1].answerOption[1].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[2].item[1].answerOption[2].valueCoding = $sct#261665006 "Unknown (qualifier value)"
 
 * item[2].item[2].linkId = "family-hx-ovarian"
 * item[2].item[2].text = "Ovarian cancer"
 * item[2].item[2].type = #coding
-* item[2].item[2].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#ynk-yes "Yes"
-* item[2].item[2].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#ynk-no "No"
-* item[2].item[2].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#ynk-unknown "Unknown"
+* item[2].item[2].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
+* item[2].item[2].answerOption[1].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[2].item[2].answerOption[2].valueCoding = $sct#261665006 "Unknown (qualifier value)"
 
 * item[2].item[3].linkId = "family-hx-colon"
 * item[2].item[3].text = "Colorectal cancer"
 * item[2].item[3].type = #coding
-* item[2].item[3].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#ynk-yes "Yes"
-* item[2].item[3].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#ynk-no "No"
-* item[2].item[3].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#ynk-unknown "Unknown"
+* item[2].item[3].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
+* item[2].item[3].answerOption[1].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[2].item[3].answerOption[2].valueCoding = $sct#261665006 "Unknown (qualifier value)"
 
 // ── 3  DRE ─────────────────────────────────────────────────────────────
 * item[3].linkId = "grp-dre"
@@ -212,3 +212,4 @@ Description: "Questionnaire for the referral to a radiologist (form E027) in the
 * item[9].item[0].linkId = "specialist-additional-info"
 * item[9].item[0].text = "Additional description for specialist"
 * item[9].item[0].type = #text
+                                                                                                                                                       
