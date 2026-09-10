@@ -4,6 +4,7 @@ Usage: #definition
 Title: "ConceptMap: Prostate pathology Questionnaire → FHIR mapping"
 Description: "Maps each **linkId** in **CodeSystem/prostate-pathology-questionnaire-item** to a **prostate-fhir-mapping-target** code. **Source Questionnaire**: `https://hl7.lt/fhir/prostate/Questionnaire/prostate-pathology-espbi`."
 * url = "https://hl7.lt/fhir/prostate/ConceptMap/prostate-pathology-questionnaire-to-fhir"
+* sourceScopeUri = "https://hl7.lt/fhir/prostate/Questionnaire/prostate-pathology-espbi"
 * version = "0.1.0"
 * name = "ProstatePathologyQuestionnaireToFhir"
 * title = "Prostate pathology Questionnaire items to FHIR mapping"
@@ -17,7 +18,7 @@ Description: "Maps each **linkId** in **CodeSystem/prostate-pathology-questionna
 
 * group.element[0].code = #bioptate-length-mm
 * group.element[0].display = "Bioptate length (mm)"
-* group.element[0].target[0].code = #specimen-dimension-or-measurement
+* group.element[0].target[0].code = #tumor-measurement-lt-lab
 * group.element[0].target[0].relationship = #related-to
 * group.element[0].target[0].comment = "Specimen dimension or Observation-observation-specimen-measurement-example (LT Lab)."
 
@@ -29,37 +30,37 @@ Description: "Maps each **linkId** in **CodeSystem/prostate-pathology-questionna
 
 * group.element[2].code = #treatment-effect
 * group.element[2].display = "Treatment effect on tumour"
-* group.element[2].target[0].code = #observation-tumor-treatment-effect
+* group.element[2].target[0].code = #tumor-observable-lt-lab
 * group.element[2].target[0].relationship = #related-to
 * group.element[2].target[0].comment = "TumorObservableLtLab or narrative in DiagnosticReport; map radiotherapy/hormone SNOMED from spreadsheet."
 
 * group.element[3].code = #histological-type
 * group.element[3].display = "Primary histological type"
-* group.element[3].target[0].code = #condition-morphology-prostate
+* group.element[3].target[0].code = #prostate-condition-lt-lab
 * group.element[3].target[0].relationship = #related-to
 * group.element[3].target[0].comment = "Condition.code / morphology; Condition-condition-prostate-cancer-example (LT Lab) for integrated staging."
 
 * group.element[4].code = #histological-comment
 * group.element[4].display = "Histological type comment"
-* group.element[4].target[0].code = #condition-morphology-prostate
+* group.element[4].target[0].code = #prostate-condition-lt-lab
 * group.element[4].target[0].relationship = #related-to
 * group.element[4].target[0].comment = "Condition.note or Observation.note; complements histological-type."
 
 * group.element[5].code = #isup-grade-group
 * group.element[5].display = "ISUP grade group"
-* group.element[5].target[0].code = #observation-gleason-isup-prostate
+* group.element[5].target[0].code = #gleason-isup-observation-lt-prostate
 * group.element[5].target[0].relationship = #related-to
 * group.element[5].target[0].comment = "GleasonIsupObservationLtProstate + ValueSet prostate-isup-grade-group. Example: Observation-observation-prostate-gleason-gradegroup-example."
 
 * group.element[6].code = #idc-status
 * group.element[6].display = "Intraductal carcinoma (IDC)"
-* group.element[6].target[0].code = #observation-tumor-microscopic-idc
+* group.element[6].target[0].code = #tumor-observable-lt-lab
 * group.element[6].target[0].relationship = #related-to
 * group.element[6].target[0].comment = "TumorObservableLtLab / morphology Observation; national form has additional IDC sub-questions."
 
 * group.element[7].code = #cribriform-status
 * group.element[7].display = "Cribriform glands"
-* group.element[7].target[0].code = #observation-tumor-microscopic-cribriform
+* group.element[7].target[0].code = #tumor-observable-lt-lab
 * group.element[7].target[0].relationship = #related-to
 * group.element[7].target[0].comment = "TumorObservableLtLab or structured finding Observation."
 

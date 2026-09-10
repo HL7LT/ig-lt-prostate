@@ -4,6 +4,7 @@ Usage: #definition
 Title: "ConceptMap: ADPP Questionnaire → FHIR mapping"
 Description: "Maps each **linkId** in **CodeSystem/prostate-adpp-questionnaire-item** to a **prostate-fhir-mapping-target** code. Use **target.comment** for implementation notes. **Source Questionnaire**: `https://hl7.lt/fhir/prostate/Questionnaire/prostate-adpp-primary-assessment`."
 * url = "https://hl7.lt/fhir/prostate/ConceptMap/prostate-adpp-questionnaire-to-fhir"
+* sourceScopeUri = "https://hl7.lt/fhir/prostate/Questionnaire/prostate-adpp-primary-assessment"
 * version = "0.1.0"
 * name = "ProstateAdppQuestionnaireToFhir"
 * title = "ADPP Questionnaire items to FHIR mapping"
@@ -31,14 +32,14 @@ Description: "Maps each **linkId** in **CodeSystem/prostate-adpp-questionnaire-i
 
 * group.element[2].code = #psa-recorded
 * group.element[2].display = "PSA measured at this visit (flag)"
-* group.element[2].target[0].code = #observation-psa-serum
+* group.element[2].target[0].code = #observation-lt
 * group.element[2].target[0].display = "Observation: PSA LOINC 2857-1"
 * group.element[2].target[0].relationship = #related-to
 * group.element[2].target[0].comment = "Boolean flag; actual value is ObservationLt with LOINC 2857-1. Example: Observation-observation-prostate-psa-example."
 
 * group.element[3].code = #dre-result
 * group.element[3].display = "Digital rectal examination (summary)"
-* group.element[3].target[0].code = #observation-dre-finding
+* group.element[3].target[0].code = #observation-lt
 * group.element[3].target[0].display = "Observation: DRE finding"
 * group.element[3].target[0].relationship = #related-to
 * group.element[3].target[0].comment = "No dedicated DRE profile in LT Prostate; use ObservationLt (exam) with SNOMED or national codes. National spreadsheets add texture options (e.g. 276385001 Soft prostate) — extend answerOption and map to valueCodeableConcept."
@@ -70,19 +71,19 @@ Description: "Maps each **linkId** in **CodeSystem/prostate-adpp-questionnaire-i
 
 * group.element[8].code = #height-cm
 * group.element[8].display = "Height (cm)"
-* group.element[8].target[0].code = #observation-body-height
+* group.element[8].target[0].code = #body-height
 * group.element[8].target[0].relationship = #related-to
 * group.element[8].target[0].comment = "LT VitalSigns body height Observation. CI: Observation-observation-body-height-example."
 
 * group.element[9].code = #weight-kg
 * group.element[9].display = "Weight (kg)"
-* group.element[9].target[0].code = #observation-body-weight
+* group.element[9].target[0].code = #body-weight
 * group.element[9].target[0].relationship = #related-to
 * group.element[9].target[0].comment = "LT VitalSigns body weight Observation."
 
 * group.element[10].code = #bmi-kg-m2
 * group.element[10].display = "BMI (kg/m²)"
-* group.element[10].target[0].code = #observation-bmi
+* group.element[10].target[0].code = #bmi
 * group.element[10].target[0].relationship = #related-to
 * group.element[10].target[0].comment = "BMI Observation (LOINC 39156-5 or SNOMED 60621009). May be derived from height/weight."
 
