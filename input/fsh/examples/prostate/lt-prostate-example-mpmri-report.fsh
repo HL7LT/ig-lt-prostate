@@ -343,7 +343,7 @@ Description: "Histopathological grading: ISUP Grade Group 1 (Gleason 3+3)."
 * code = $sct#372278000 "Gleason score (observable entity)"
 * subject = Reference(patient-male-example)
 * effectiveDateTime = "2024-05-27T09:00:00Z"
-* valueCodeableConcept = $sct#1279715000 "ISUP Grade Group 1 (Gleason 3+3)"
+* valueCodeableConcept = $sct#1279715000 "ISUP (International Society of Urological Pathology) grade group 1 (Gleason score 3 + 3 = 6)"
 * focus = Reference(bodyStructure-prostate-lesion1-example)
 * note.text = "Histopathology shows Gleason score 3+3. Patient managed with active surveillance."
 

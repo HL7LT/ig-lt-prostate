@@ -42,8 +42,8 @@ Description: "Illustrative Questionnaire aligned with consultation / ADPP spread
 * item[1].item[2].repeats = true
 * item[1].item[2].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#dre-not-done "DRE not performed"
 * item[1].item[2].answerOption[1].valueCoding = $snomed-prostate-extension-cs-url#standard-prostate "Standard"
-* item[1].item[2].answerOption[2].valueCoding = $sct#276387009 "Hard"
-* item[1].item[2].answerOption[3].valueCoding = $sct#276385001 "Soft"
+* item[1].item[2].answerOption[2].valueCoding = $sct#276387009 "Hard prostate (finding)"
+* item[1].item[2].answerOption[3].valueCoding = $sct#276385001 "Soft prostate (finding)"
 * item[1].item[2].answerOption[4].valueCoding = $snomed-prostate-extension-cs-url#flexible-prostate "Flexible"
 * item[1].item[2].answerOption[5].valueCoding = $snomed-prostate-extension-cs-url#inflexible-prostate "Inflexible"
 * item[1].item[2].answerOption[6].valueCoding = $sct#443607001 "Palpable mass"
@@ -175,7 +175,7 @@ Description: "Example answers for the expanded ADPP primary assessment Questionn
 * item[1].item[1].linkId = "psa-recorded"
 * item[1].item[1].answer.valueBoolean = true
 * item[1].item[2].linkId = "dre-result"
-* item[1].item[2].answer.valueCoding = $sct#276387009 "Hard"
+* item[1].item[2].answer.valueCoding = $sct#276387009 "Hard prostate (finding)"
 
 * item[2].linkId = "grp-family-history"
 * item[2].item[0].linkId = "family-hx-prostate"

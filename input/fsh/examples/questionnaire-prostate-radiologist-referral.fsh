@@ -28,11 +28,11 @@ Description: "Questionnaire for the referral to a radiologist (form E027) in the
 * item[0].item[1].text = "Grade group (if C61)"
 * item[0].item[1].type = #coding
 * item[0].item[1].required = false
-* item[0].item[1].answerOption[0].valueCoding = $sct#1279715000 "ISUP Grade Group 1 (Gleason 3+3)"
-* item[0].item[1].answerOption[1].valueCoding = $sct#1279714001 "ISUP Grade Group 2 (Gleason 3+4)"
-* item[0].item[1].answerOption[2].valueCoding = $sct#1279716004 "ISUP Grade Group 3 (Gleason 4+3)"
-* item[0].item[1].answerOption[3].valueCoding = $sct#1279717008 "ISUP Grade Group 4 (Gleason 8)"
-* item[0].item[1].answerOption[4].valueCoding = $sct#1279720000 "ISUP Grade Group 5 (Gleason 9-10)"
+* item[0].item[1].answerOption[0].valueCoding = $sct#1279715000 "ISUP (International Society of Urological Pathology) grade group 1 (Gleason score 3 + 3 = 6)"
+* item[0].item[1].answerOption[1].valueCoding = $sct#1279714001 "ISUP (International Society of Urological Pathology) grade group 2 (Gleason score 3 + 4 = 7)"
+* item[0].item[1].answerOption[2].valueCoding = $sct#1279716004 "ISUP (International Society of Urological Pathology) grade group 3 (Gleason score 4 + 3 = 7)"
+* item[0].item[1].answerOption[3].valueCoding = $sct#1279717008 "ISUP (International Society of Urological Pathology) grade group 4 (Gleason score 4 + 4 = 8)"
+* item[0].item[1].answerOption[4].valueCoding = $sct#1279720000 "ISUP (International Society of Urological Pathology) grade group 5 (Gleason score 4 + 5 = 9)"
 
 * item[0].item[2].linkId = "specialist-qualification"
 * item[0].item[2].text = "Specialist qualification"
