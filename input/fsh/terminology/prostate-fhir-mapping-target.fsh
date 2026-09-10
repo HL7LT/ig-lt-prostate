@@ -13,11 +13,11 @@ Description: "Target **codes** for **ConceptMap** entries: each code denotes a l
 * #encounter-reason "Encounter.reasonCode"
 * #servicerequest-reason "ServiceRequest.reasonCode"
 // Observations — laboratory & exam
-* #observation-psa-serum "Observation: LOINC 2857-1 PSA (ObservationLt)"
-* #observation-body-height "Observation: body height (LT VitalSigns patterns)"
-* #observation-body-weight "Observation: body weight (LT VitalSigns patterns)"
-* #observation-bmi "Observation: BMI (derived or LOINC)"
-* #observation-dre-finding "Observation: digital rectal examination finding (ObservationLt, exam)"
+* #observation-lt "ObservationLt (LT Base) — LOINC 2857-1 PSA"
+* #body-height "BodyHeight (Vital Signs)"
+* #body-weight "BodyWeight (Vital Signs)"
+* #bmi "BMI (Vital Signs)"
+
 * #observation-prior-psa "Observation: prior PSA value with effective time"
 * #observation-mpmri-history "Observation or Procedure: prior mpMRI / PI-RADS summary"
 // Family history
@@ -29,17 +29,16 @@ Description: "Target **codes** for **ConceptMap** entries: each code denotes a l
 // Narrative / assessment
 * #clinical-impression-or-note "Encounter / DocumentReference / ClinicalImpression for free-text programme notes"
 // Pathology — LT Lab
-* #specimen-dimension-or-measurement "Specimen / Observation specimen measurement (TumorMeasurementLtLab, gross)"
+* #tumor-measurement-lt-lab "TumorMeasurementLtLab (LT Pathology)"
 * #specimen-adequacy-finding "Observation: specimen adequacy (LT Lab)"
-* #observation-tumor-treatment-effect "Observation: tumor treatment effect (TumorObservableLtLab)"
-* #condition-morphology-prostate "Condition / morphology (ProstateConditionLtLab, ICD-O)"
-* #observation-gleason-isup-prostate "GleasonIsupObservationLtProstate + ProstateIsupGradeGroupVS"
-* #observation-tumor-microscopic-idc "TumorObservableLtLab / morphology for IDC"
-* #observation-tumor-microscopic-cribriform "TumorObservableLtLab / morphology for cribriform"
+* #tumor-observable-lt-lab "TumorObservableLtLab (LT Pathology) — treatment effect"
+* #prostate-condition-lt-lab "ProstateConditionLtLab (LT Pathology)"
+* #gleason-isup-observation-lt-prostate "GleasonIsupObservationLtProstate"
+
 * #observation-pattern4-percent "Observation: Pattern 4 percent band (lab tumour measurement patterns)"
 * #observation-tumor-burden-percent "Observation: tumour percentage in biopsy tissue"
 * #observation-periprostatic-invasion "Observation: periprostatic fat / seminal vesicle invasion (LT Lab tumour findings)"
 * #observation-perineural-invasion "Observation: perineural invasion finding (LT Lab tumour findings)"
 * #observation-lymphovascular-invasion "Observation: lymphovascular invasion finding (LT Lab tumour findings)"
-* #diagnosticreport-pathology-lab "PathologyReportLtLab"
-* #composition-pathology-lab "PathologyCompositionLtLab"
+* #pathology-report-lt-lab "PathologyReportLtLab (LT Pathology)"
+* #pathology-composition-lt-lab "PathologyCompositionLtLab (LT Pathology)"
