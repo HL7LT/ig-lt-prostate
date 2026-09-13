@@ -184,7 +184,7 @@ Beyond lesion scoring, the mpMRI report must assess whether the tumour extends b
 |-----------|--------|-------|
 | Rectum | 34402009 | Tumour-related or other |
 
-**[BoneMetastasisLtProstate](StructureDefinition-bone-metastasis-lt-prostate.html)** records bone metastatic assessment separately (code: SNOMED 94222008 "Secondary malignant neoplasm of bone").
+**[BoneMetastasisLtProstate](StructureDefinition-bone-metastasis-lt-prostate.html)** records bone metastatic assessment separately (code: SNOMED 94222008 "Metastatic malignant neoplasm to bone").
 
 Both profiles reference a **BodyStructure** instance (EU BodyStructure) using codes from **[BodyStructureProstateVS](ValueSet-body-structure-prostate.html)**. Each BodyStructure instance carries the anatomical structure code and optional **laterality**. The observation value uses **[ProstateDamageAndChangeStatusVS](ValueSet-prostate-damage-and-change-status.html)** (Absent / Suspected / Present).
 

@@ -34,7 +34,7 @@ Title: "Observation: Prostate - Bone Changes (Present) (example)"
 Description: "Shows present bone metastatic changes with narrative text."
 * status = #final
 * category = $observation-category#exam
-* code = $sct#94222008 "Secondary malignant neoplasm of bone (disorder)"
+* code = $sct#94222008 "Metastatic malignant neoplasm to bone (disorder)"
 * subject = Reference(patient-male-example)
 * valueCodeableConcept = $sct#52101004 "Present (qualifier value)"
 * bodyStructure = Reference(bodyStructure-prostate-bone-example)

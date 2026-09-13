@@ -15,7 +15,7 @@ or unclear/requiring further investigation.
 * category 1..1
 * category = $observation-category#exam
 * code 1..1
-* code = $sct#94222008 "Secondary malignant neoplasm of bone (disorder)"
+* code = $sct#94222008 "Metastatic malignant neoplasm to bone (disorder)"
 * subject 1..1
 * value[x] 1..1
 * value[x] only CodeableConcept
