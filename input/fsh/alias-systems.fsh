@@ -68,3 +68,6 @@ Alias: $media-view = http://hl7.eu/fhir/imaging-r5/ValueSet/media-view
 Alias: $ImImagingReportTypesEuVS = http://hl7.eu/fhir/imaging-r5/ValueSet/ImImagingReportTypesEuVS
 Alias: $valueset-procedure-reason.html = https://www.hl7.org/fhir/valueset-procedure-reason.html
 Alias: $ImSectionEmptyReason = http://hl7.eu/fhir/imaging-r5/ValueSet/ImSectionEmptyReason
+// Composition.section.emptyReason is a Coding, so its system must be a CodeSystem.
+// The alias above names a ValueSet and cannot be used as a system.
+Alias: $list-empty-reason = http://terminology.hl7.org/CodeSystem/list-empty-reason

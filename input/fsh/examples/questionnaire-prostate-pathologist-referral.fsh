@@ -3,7 +3,7 @@ InstanceOf: Questionnaire
 Usage: #example
 Title: "Questionnaire: Referral to pathologist (E014)"
 Description: "Questionnaire for the Referral to a pathologist form (E014, form 014-1-1/a) in the Lithuanian prostate cancer screening programme. Patient demographics omitted (sourced from PatientLt)."
-* url = "https://hl7.lt/fhir/prostate/Questionnaire/prostate-pathologist-referral"
+* url = "https://hl7.lt/fhir/prostate/Questionnaire/questionnaire-prostate-pathologist-referral"
 * version = "0.1.0"
 * name = "ProstatePathologistReferral"
 * title = "Referral to pathologist (E014, form 014-1-1/a)"
@@ -139,7 +139,7 @@ Description: "Questionnaire for the Referral to a pathologist form (E014, form 0
 * item[6].item[3].linkId = "mpmri-pirads"
 * item[6].item[3].text = "mpMRI PI-RADS assessment"
 * item[6].item[3].type = #coding
-* item[6].item[3].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#pirads-cat-1-2 "PI-RADS 1-2"
+* item[6].item[3].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#pirads-cat-1-2 "PI-RADS 1–2"
 * item[6].item[3].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#pirads-cat-3 "PI-RADS 3"
 * item[6].item[3].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#pirads-cat-4 "PI-RADS 4"
 * item[6].item[3].answerOption[3].valueCoding = $prostate-questionnaire-options-cs#pirads-cat-5 "PI-RADS 5"

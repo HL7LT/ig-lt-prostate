@@ -3,7 +3,7 @@ InstanceOf: Questionnaire
 Usage: #example
 Title: "Questionnaire: Prostate pathology report (ESPBI / dr-prostate subset)"
 Description: "Illustrative FHIR Questionnaire aligned with dr-prostate spreadsheet (subset). Full coverage gaps and FHIR mapping: IG page Questionnaires and ConceptMap prostate-pathology-questionnaire-to-fhir."
-* url = "https://hl7.lt/fhir/prostate/Questionnaire/prostate-pathology-espbi"
+* url = "https://hl7.lt/fhir/prostate/Questionnaire/questionnaire-prostate-pathology-espbi"
 * version = "0.1.0"
 * name = "ProstatePathologyEspbi"
 * title = "Prostate pathology structured report"
@@ -146,7 +146,7 @@ InstanceOf: QuestionnaireResponse
 Usage: #example
 Title: "QuestionnaireResponse: Prostate pathology ESPBI (example)"
 Description: "Example answers using **valueCoding** for choice questions."
-* questionnaire = "https://hl7.lt/fhir/prostate/Questionnaire/prostate-pathology-espbi"
+* questionnaire = "https://hl7.lt/fhir/prostate/Questionnaire/questionnaire-prostate-pathology-espbi"
 * status = #completed
 * subject = Reference(patient-male-example)
 * authored = "2024-05-28T14:00:00Z"

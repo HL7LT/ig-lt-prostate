@@ -3,7 +3,7 @@ InstanceOf: Questionnaire
 Usage: #example
 Title: "Questionnaire: ADPP primary assessment (expanded illustrative)"
 Description: "Illustrative Questionnaire aligned with consultation / ADPP spreadsheet blocks (Patient demographics omitted). Coverage and FHIR mapping: IG page Questionnaires and ConceptMap prostate-adpp-questionnaire-to-fhir."
-* url = "https://hl7.lt/fhir/prostate/Questionnaire/prostate-adpp-primary-assessment"
+* url = "https://hl7.lt/fhir/prostate/Questionnaire/questionnaire-prostate-adpp-primary-assessment"
 * version = "0.2.0"
 * name = "ProstateAdppPrimaryAssessment"
 * title = "Prostate cancer prevention — primary assessment"
@@ -41,11 +41,11 @@ Description: "Illustrative Questionnaire aligned with consultation / ADPP spread
 * item[1].item[2].type = #coding
 * item[1].item[2].repeats = true
 * item[1].item[2].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#dre-not-done "DRE not performed"
-* item[1].item[2].answerOption[1].valueCoding = $snomed-prostate-extension-cs-url#standard-prostate "Standard"
+* item[1].item[2].answerOption[1].valueCoding = $snomed-prostate-extension-cs-url#standard-prostate "Standard prostate (finding)"
 * item[1].item[2].answerOption[2].valueCoding = $sct#276387009 "Hard prostate (finding)"
 * item[1].item[2].answerOption[3].valueCoding = $sct#276385001 "Soft prostate (finding)"
-* item[1].item[2].answerOption[4].valueCoding = $snomed-prostate-extension-cs-url#flexible-prostate "Flexible"
-* item[1].item[2].answerOption[5].valueCoding = $snomed-prostate-extension-cs-url#inflexible-prostate "Inflexible"
+* item[1].item[2].answerOption[4].valueCoding = $snomed-prostate-extension-cs-url#flexible-prostate "Flexible prostate (finding)"
+* item[1].item[2].answerOption[5].valueCoding = $snomed-prostate-extension-cs-url#inflexible-prostate "Inflexible prostate (finding)"
 * item[1].item[2].answerOption[6].valueCoding = $sct#443607001 "Palpable mass"
 
 * item[2].linkId = "grp-family-history"
@@ -158,7 +158,7 @@ InstanceOf: QuestionnaireResponse
 Usage: #example
 Title: "QuestionnaireResponse: ADPP primary assessment (example)"
 Description: "Example answers for the expanded ADPP primary assessment Questionnaire."
-* questionnaire = "https://hl7.lt/fhir/prostate/Questionnaire/prostate-adpp-primary-assessment"
+* questionnaire = "https://hl7.lt/fhir/prostate/Questionnaire/questionnaire-prostate-adpp-primary-assessment"
 * status = #completed
 * subject = Reference(patient-male-example)
 * authored = "2024-05-26T08:30:00Z"

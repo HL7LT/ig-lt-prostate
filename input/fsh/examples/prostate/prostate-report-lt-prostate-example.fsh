@@ -74,6 +74,8 @@ Description: "ImagingReportLt-based programme anchor listing prostate observatio
 * result[+] = Reference(observation-prostate-piqual-example)
 * result[+] = Reference(observation-prostate-precise-followup-example)
 * result[+] = Reference(observation-prostate-gleason-gradegroup-example)
+// Referenced from the Composition but missing from result; dgr-1 requires both.
+* result[+] = Reference(observation-prostate-psa-example)
 * supportingInfo[+].reference = Reference(observation-prostate-psa-example)
 * supportingInfo[=].type = http://terminology.hl7.org/CodeSystem/v2-0936#RSLT
 * supportingInfo[+].reference = Reference(observation-prostate-volume-example)

@@ -24,9 +24,9 @@ Description: "Nature of observed change in pelvic organs: neoplasm-related, beni
 * ^status = #active
 * ^experimental = false
 * ^publisher = "HL7 Lithuania"
-* SnomedProstateExtension#change-neoplasm-related "Related to prostate neoplasm"
-* SnomedProstateExtension#change-benign "Benign change"
-* SnomedProstateExtension#change-non-neoplastic "Non-neoplastic / incidental"
+* SnomedProstateExtension#change-neoplasm-related "Related to prostate neoplasm (finding)"
+* SnomedProstateExtension#change-benign "Benign change (finding)"
+* SnomedProstateExtension#change-non-neoplastic "Non-neoplastic / incidental (finding)"
 
 ValueSet: DigitalRectalExaminationVS
 Id: digital-rectal-examination

@@ -2,9 +2,12 @@ Instance: conceptmap-prostate-pathology-questionnaire-to-fhir-lt-prostate
 InstanceOf: ConceptMap
 Usage: #definition
 Title: "ConceptMap: Prostate pathology Questionnaire → FHIR mapping"
-Description: "Maps each **linkId** in **CodeSystem/prostate-pathology-questionnaire-item** to a **prostate-fhir-mapping-target** code. **Source Questionnaire**: `https://hl7.lt/fhir/prostate/Questionnaire/prostate-pathology-espbi`."
-* url = "https://hl7.lt/fhir/prostate/ConceptMap/prostate-pathology-questionnaire-to-fhir"
-* sourceScopeUri = "https://hl7.lt/fhir/prostate/Questionnaire/prostate-pathology-espbi"
+Description: "Maps each **linkId** in **CodeSystem/prostate-pathology-questionnaire-item** to a **prostate-fhir-mapping-target** code. **Source Questionnaire**: `https://hl7.lt/fhir/prostate/Questionnaire/questionnaire-prostate-pathology-espbi`."
+* url = "https://hl7.lt/fhir/prostate/ConceptMap/conceptmap-prostate-pathology-questionnaire-to-fhir-lt-prostate"
+// ConceptMap.sourceScope must identify a ValueSet; it named the source
+// Questionnaire (https://hl7.lt/fhir/prostate/Questionnaire/questionnaire-prostate-pathology-espbi),
+// which the validator rejects. group.source below names the linkId CodeSystem,
+// and the Questionnaire is identified in the description above.
 * version = "0.1.0"
 * name = "ProstatePathologyQuestionnaireToFhir"
 * title = "Prostate pathology Questionnaire items to FHIR mapping"

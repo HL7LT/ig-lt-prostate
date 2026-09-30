@@ -32,7 +32,9 @@ the national mpMRI reporting form.
 * component[changeStatus].value[x] 1..1
 * component[changeStatus].value[x] only CodeableConcept
 * component[changeStatus].valueCodeableConcept from ProstateDamageAndChangeStatusVS (required)
-* component[changeNature].code = $sct#246454002 "Etiology (attribute)"
+// Code corrected: 246454002 is "Occurrence (attribute)" in SNOMED CT,
+// not what the display beside it said. 134198009 is the concept meant.
+* component[changeNature].code = $sct#134198009 "Etiology (attribute)"
 * component[changeNature].value[x] 1..1
 * component[changeNature].value[x] only CodeableConcept
 * component[changeNature].valueCodeableConcept from ProstateChangeNatureVS (required)

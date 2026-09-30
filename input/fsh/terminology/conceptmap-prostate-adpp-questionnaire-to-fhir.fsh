@@ -2,9 +2,12 @@ Instance: conceptmap-prostate-adpp-questionnaire-to-fhir-lt-prostate
 InstanceOf: ConceptMap
 Usage: #definition
 Title: "ConceptMap: ADPP Questionnaire → FHIR mapping"
-Description: "Maps each **linkId** in **CodeSystem/prostate-adpp-questionnaire-item** to a **prostate-fhir-mapping-target** code. Use **target.comment** for implementation notes. **Source Questionnaire**: `https://hl7.lt/fhir/prostate/Questionnaire/prostate-adpp-primary-assessment`."
-* url = "https://hl7.lt/fhir/prostate/ConceptMap/prostate-adpp-questionnaire-to-fhir"
-* sourceScopeUri = "https://hl7.lt/fhir/prostate/Questionnaire/prostate-adpp-primary-assessment"
+Description: "Maps each **linkId** in **CodeSystem/prostate-adpp-questionnaire-item** to a **prostate-fhir-mapping-target** code. Use **target.comment** for implementation notes. **Source Questionnaire**: `https://hl7.lt/fhir/prostate/Questionnaire/questionnaire-prostate-adpp-primary-assessment`."
+* url = "https://hl7.lt/fhir/prostate/ConceptMap/conceptmap-prostate-adpp-questionnaire-to-fhir-lt-prostate"
+// ConceptMap.sourceScope must identify a ValueSet; it named the source
+// Questionnaire (https://hl7.lt/fhir/prostate/Questionnaire/questionnaire-prostate-adpp-primary-assessment),
+// which the validator rejects. group.source below names the linkId CodeSystem,
+// and the Questionnaire is identified in the description above.
 * version = "0.1.0"
 * name = "ProstateAdppQuestionnaireToFhir"
 * title = "ADPP Questionnaire items to FHIR mapping"
