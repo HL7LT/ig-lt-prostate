@@ -62,17 +62,17 @@ patient/exam-level progression/regression category informed by lesion changes.
 * component[sizeChangeMm].valueQuantity.system = $ucum
 * component[sizeChangeMm].valueQuantity.code = #mm
 // --- Dimensions (D1/D2/D3, at least two required per Excel) ---
-* component[dimension1].code = ProstatePreciseComponentCS#dimension-1-mm "PSAD dimension 1 (mm, axial)"
+* component[dimension1].code = ProstatePreciseComponentCS#dimension-1-mm "Dimension 1 (mm, axial)"
 * component[dimension1].value[x] 1..1
 * component[dimension1].value[x] only Quantity
 * component[dimension1].valueQuantity.system = $ucum
 * component[dimension1].valueQuantity.code = #mm
-* component[dimension2].code = ProstatePreciseComponentCS#dimension-2-mm "PSAD dimension 2 (mm, axial)"
+* component[dimension2].code = ProstatePreciseComponentCS#dimension-2-mm "Dimension 2 (mm, axial)"
 * component[dimension2].value[x] 1..1
 * component[dimension2].value[x] only Quantity
 * component[dimension2].valueQuantity.system = $ucum
 * component[dimension2].valueQuantity.code = #mm
-* component[dimension3].code = ProstatePreciseComponentCS#dimension-3-mm "PSAD dimension 3 (mm, coronal/sagittal)"
+* component[dimension3].code = ProstatePreciseComponentCS#dimension-3-mm "Dimension 3 (mm, coronal/sagittal)"
 * component[dimension3].value[x] 1..1
 * component[dimension3].value[x] only Quantity
 * component[dimension3].valueQuantity.system = $ucum

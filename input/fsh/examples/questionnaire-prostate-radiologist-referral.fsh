@@ -3,7 +3,7 @@ InstanceOf: Questionnaire
 Usage: #example
 Title: "Questionnaire: Referral to radiologist (E027)"
 Description: "Questionnaire for the referral to a radiologist (form E027) in the Lithuanian prostate cancer screening programme. Patient demographics are omitted — they come from PatientLt."
-* url = "https://hl7.lt/fhir/prostate/Questionnaire/prostate-radiologist-referral"
+* url = "https://hl7.lt/fhir/prostate/Questionnaire/questionnaire-prostate-radiologist-referral"
 * version = "0.1.0"
 * name = "ProstateRadiologistReferral"
 * title = "Referral to a radiologist (E027)"
@@ -21,7 +21,7 @@ Description: "Questionnaire for the referral to a radiologist (form E027) in the
 * item[0].item[0].text = "Diagnosis (ICD-10)"
 * item[0].item[0].type = #coding
 * item[0].item[0].required = true
-* item[0].item[0].answerOption[0].valueCoding = $icd10#N40 "Enlargement of prostate"
+* item[0].item[0].answerOption[0].valueCoding = $icd10#N40 "Hyperplasia of prostate"
 * item[0].item[0].answerOption[1].valueCoding = $icd10#C61 "Malignant neoplasm of prostate"
 
 * item[0].item[1].linkId = "diagnosis-grade-group"
@@ -169,7 +169,7 @@ Description: "Questionnaire for the referral to a radiologist (form E027) in the
 * item[6].item[2].linkId = "prior-mpmri-pirads"
 * item[6].item[2].text = "Prior mpMRI PI-RADS category"
 * item[6].item[2].type = #coding
-* item[6].item[2].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#pirads-cat-1-2 "PI-RADS 1-2"
+* item[6].item[2].answerOption[0].valueCoding = $prostate-questionnaire-options-cs#pirads-cat-1-2 "PI-RADS 1–2"
 * item[6].item[2].answerOption[1].valueCoding = $prostate-questionnaire-options-cs#pirads-cat-3 "PI-RADS 3"
 * item[6].item[2].answerOption[2].valueCoding = $prostate-questionnaire-options-cs#pirads-cat-4 "PI-RADS 4"
 * item[6].item[2].answerOption[3].valueCoding = $prostate-questionnaire-options-cs#pirads-cat-5 "PI-RADS 5"

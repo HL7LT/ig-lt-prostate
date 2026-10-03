@@ -8,4 +8,4 @@ Description: "Incidental prostate conditions observed during mpMRI or PRECISE as
 * ^publisher = "HL7 Lithuania"
 * include $sct#266569009 "Benign prostatic hyperplasia (disorder)"
 * include $sct#9713002 "Prostatitis (disorder)"
-* include $sct#263756000 "Fibrosis (morphologic abnormality)"
+* include $sct#263756000 "Fibrosis (qualifier value)"

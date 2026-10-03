@@ -16,7 +16,9 @@ allowing free-text descriptions via CodeableConcept.text.
 * category 1..1
 * category = $observation-category#exam
 * code 1..1
-* code = $sct#365861007 "Finding of prostate (finding)"
+// Code corrected: 365861007 is "Finding of immune status" in SNOMED CT,
+// not what the display beside it said. 249604002 is the concept meant.
+* code = $sct#249604002 "Prostate finding"
 * subject 1..1
 * value[x] 1..1
 * value[x] only CodeableConcept

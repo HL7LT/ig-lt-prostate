@@ -10,8 +10,10 @@ Description: "Shows suspected urinary bladder changes with change nature classif
 * bodyStructure = Reference(bodyStructure-prostate-urinary-bladder-example)
 * component[changeStatus].code = $sct#260905004 "Condition (attribute)"
 * component[changeStatus].valueCodeableConcept = $sct#415684004 "Suspected (qualifier value)"
-* component[changeNature].code = $sct#246454002 "Etiology (attribute)"
-* component[changeNature].valueCodeableConcept = $snomed-prostate-extension-cs-url#change-non-neoplastic "Non-neoplastic / incidental"
+// Code corrected: 246454002 is "Occurrence (attribute)" in SNOMED CT,
+// not what the display beside it said. 134198009 is the concept meant.
+* component[changeNature].code = $sct#134198009 "Etiology (attribute)"
+* component[changeNature].valueCodeableConcept = $snomed-prostate-extension-cs-url#change-non-neoplastic "Non-neoplastic / incidental (finding)"
 * note.text = "Bladder wall thickening; non-neoplastic changes favored. Correlate clinically."
 
 Instance: observation-prostate-rectal-changes-absent-example

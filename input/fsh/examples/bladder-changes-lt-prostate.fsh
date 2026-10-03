@@ -10,8 +10,10 @@ Description: "Bladder changes suspected to be related to prostate neoplasm."
 * bodyStructure = Reference(bodyStructure-prostate-urinary-bladder-example)
 * component[changeStatus].code = $sct#260905004 "Condition (attribute)"
 * component[changeStatus].valueCodeableConcept = $sct#415684004 "Suspected (qualifier value)"
-* component[changeNature].code = $sct#246454002 "Etiology (attribute)"
-* component[changeNature].valueCodeableConcept = $snomed-prostate-extension-cs-url#change-neoplasm-related "Related to prostate neoplasm"
+// Code corrected: 246454002 is "Occurrence (attribute)" in SNOMED CT,
+// not what the display beside it said. 134198009 is the concept meant.
+* component[changeNature].code = $sct#134198009 "Etiology (attribute)"
+* component[changeNature].valueCodeableConcept = $snomed-prostate-extension-cs-url#change-neoplasm-related "Related to prostate neoplasm (finding)"
 * note.text = "Bladder wall thickening at base; likely neoplasm-related."
 
 Instance: observation-prostate-bladder-benign-example
@@ -26,6 +28,8 @@ Description: "Benign bladder changes unrelated to prostate neoplasm."
 * bodyStructure = Reference(bodyStructure-prostate-urinary-bladder-example)
 * component[changeStatus].code = $sct#260905004 "Condition (attribute)"
 * component[changeStatus].valueCodeableConcept = $sct#52101004 "Present (qualifier value)"
-* component[changeNature].code = $sct#246454002 "Etiology (attribute)"
-* component[changeNature].valueCodeableConcept = $snomed-prostate-extension-cs-url#change-benign "Benign change"
+// Code corrected: 246454002 is "Occurrence (attribute)" in SNOMED CT,
+// not what the display beside it said. 134198009 is the concept meant.
+* component[changeNature].code = $sct#134198009 "Etiology (attribute)"
+* component[changeNature].valueCodeableConcept = $snomed-prostate-extension-cs-url#change-benign "Benign change (finding)"
 * note.text = "Bladder wall trabeculation consistent with benign prostatic hyperplasia."

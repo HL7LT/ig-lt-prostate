@@ -25,19 +25,19 @@ Description: "Base imaging composition for prostate mpMRI report."
 * section[order].title = "Order"
 * section[order].text.status = #generated
 * section[order].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Order information not available.</p></div>"
-* section[order].emptyReason = $ImSectionEmptyReason#unknown "Unknown"
+* section[order].emptyReason = $list-empty-reason#notasked "Not Asked"
 * section[history].title = "History"
 * section[history].text.status = #generated
 * section[history].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Clinical history not documented.</p></div>"
-* section[history].emptyReason = $ImSectionEmptyReason#unknown "Unknown"
+* section[history].emptyReason = $list-empty-reason#notasked "Not Asked"
 * section[procedure].title = "Procedure"
 * section[procedure].text.status = #generated
 * section[procedure].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Procedure details not specified.</p></div>"
-* section[procedure].emptyReason = $ImSectionEmptyReason#unknown "Unknown"
+* section[procedure].emptyReason = $list-empty-reason#notasked "Not Asked"
 * section[comparison].title = "Comparison"
 * section[comparison].text.status = #generated
 * section[comparison].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>No prior imaging available for comparison.</p></div>"
-* section[comparison].emptyReason = $ImSectionEmptyReason#unknown "Unknown"
+* section[comparison].emptyReason = $list-empty-reason#notasked "Not Asked"
 * section[findings].title = "Findings"
 * section[findings].text.status = #generated
 * section[findings].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>PI-RADS 3 lesion noted.</p></div>"
@@ -47,4 +47,4 @@ Description: "Base imaging composition for prostate mpMRI report."
 * section[recommendation].title = "Recommendation"
 * section[recommendation].text.status = #generated
 * section[recommendation].text.div = "<div xmlns='http://www.w3.org/1999/xhtml'><p>Clinical recommendations pending.</p></div>"
-* section[recommendation].emptyReason = $ImSectionEmptyReason#unknown "Unknown"
+* section[recommendation].emptyReason = $list-empty-reason#notasked "Not Asked"
